@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sky Parado // parado.os</title>
+<meta name="description" content="Cybersecurity & Computer Science student — interactive terminal portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
+</head>
+<body>
+
+<!-- ===== boot overlay ===== -->
+<div id="boot"><div class="boot-box">
+  <p class="boot-line">initializing…</p>
+  <div class="boot-bar"><i></i></div>
+  <p class="boot-skip">click anywhere or press <b>ESC</b> to skip</p>
+</div></div>
+
+<!-- ===== nav ===== -->
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="index.html">
+    <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+    <span class="nm">SKY PARADO<small>PARADO.OS // NETSEC</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7M5 9v11h14V9"/></svg>home<span class="key">1</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>projects<span class="key">2</span></a>
+    <a href="certs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM9 20h6M12 15v5"/></svg>certs<span class="key">3</span></a>
+    <a href="experience.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg>experience<span class="key">4</span></a>
+    <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg>contact<span class="key">5</span></a>
+  </div>
+  <button class="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg><span class="tl">light</span></button>
+</div></nav>
+
+<main class="wrap hud-frame">
+
+  <!-- ===== hero ===== -->
+  <section class="hero">
+    <div class="prompt mono"><span class="u">sky@parado</span>:<span class="p">~</span>$ whoami</div>
+    <h1>Sky Hannah <span class="accent">Parado</span></h1>
+    <div class="role mono"><span id="typed" data-roles="Cybersecurity & Computer Science Student|Application & Cloud Security|CTF Champion · VAPT|VAPT · Secure Full-Stack Dev"></span><span class="cursor" aria-hidden="true"></span></div>
+    <p class="tagline">Computer Science undergraduate majoring in <span class="hl">Network &amp; Information Security</span>. CTF champion working both sides of application security — <span class="hl">vulnerability assessment</span>, <span class="hl">web-app testing</span>, and <span class="hl">secure full-stack development</span>.</p>
+    <div class="hero-cta">
+      <a class="btn" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>view missions</a>
+      <a class="btn ghost" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg>open uplink</a>
+      <a class="btn ghost" id="header-github" data-gh href="https://github.com/skyparado" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>github</a>
+    </div>
+  </section>
+
+  <!-- ===== character sheet ===== -->
+  <section class="sheet">
+    <div class="id-card panel reveal">
+      <div class="avatar">
+        <!-- PHOTO SLOT: swap picture_sky.png for another file if you like. Falls back to the "SP" monogram if missing. -->
+        <img src="picture_sky.png" alt="Sky Hannah Parado" onerror="this.remove()">
+        <span class="big mono">SP</span>
+        <span class="scan"></span>
+        <span class="lvl mono">LVL 3 · CS</span>
+      </div>
+      <div class="id-info">
+        <div class="id-row mono"><span class="k">degree</span><span class="val">BS Computer Science · Network and Information Security</span></div>
+        <div class="id-row mono"><span class="k">school</span><span class="val">De La Salle University</span></div>
+        <div class="id-row mono"><span class="k">status</span><span class="val on">● available for work</span></div>
+
+        <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg>stat allocation</div>
+        <div class="stat-row"><span class="k">ambition</span><span class="bar"><i data-val="95"></i></span><span class="v">95</span></div>
+        <div class="stat-row"><span class="k">creativity</span><span class="bar"><i data-val="88"></i></span><span class="v">88</span></div>
+        <div class="stat-row"><span class="k">passion</span><span class="bar"><i data-val="97"></i></span><span class="v">97</span></div>
+        <div class="stat-row"><span class="k">skill</span><span class="bar"><i data-val="90"></i></span><span class="v">90</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== highlights ===== -->
+  <section class="sec">
+    <div class="sec-head mono"><span class="dollar">$</span><span class="cmd">cat</span><span class="arg">~/highlights.md</span><span class="out">// career highlights</span></div>
+    <div class="ach-grid">
+
+      <article class="ach reveal">
+        <span class="unlocked mono">UNLOCKED</span>
+        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0z"/><path d="M6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3M9 20h6M10 15v5M14 15v5"/></svg></span>
+        <h3>CTF Champion 2026</h3>
+        <p>Won DLSU's Capture The Flag with <b style="color:var(--fg)">Team Prompt Patrol</b> — Department of Computer Technology.</p>
+        <div class="foot mono"><span class="rar">champion</span><span class="yr">2026</span></div>
+      </article>
+
+      <article class="ach epic reveal">
+        <span class="unlocked mono">UNLOCKED</span>
+        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.6 8.4 9 10 5.4-1.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Junior VAPT Practitioner</h3>
+        <p>NSSECU2 Advanced &amp; Offensive Security — recon, exploitation, CVSS scoring &amp; technical reporting.</p>
+        <div class="foot mono"><span class="rar">certified</span><span class="yr">Aug 2026</span></div>
+      </article>
+
+      <article class="ach rare reveal">
+        <span class="unlocked mono">UNLOCKED</span>
+        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg></span>
+        <h3>ISC2 Certified in Cybersecurity</h3>
+        <p>Passed the ISC2 CC exam — security principles, access control, network &amp; operations security.</p>
+        <div class="foot mono"><span class="rar">certified</span><span class="yr">2026</span></div>
+      </article>
+
+      <article class="ach reveal">
+        <span class="unlocked mono">UNLOCKED</span>
+        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></span>
+        <h3>First Dean's Lister</h3>
+        <p>Top academic standing at <b style="color:var(--fg)">De La Salle University</b> — AY 2025–2026, Terms 1 &amp; 2.</p>
+        <div class="foot mono"><span class="rar">honors</span><span class="yr">2025–26</span></div>
+      </article>
+
+      <article class="ach epic reveal">
+        <span class="unlocked mono">UNLOCKED</span>
+        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="13" rx="4"/><path d="M8 12H3M21 12h-5M8.5 8 5.5 6M15.5 8l3-2M8.5 16l-3 2M15.5 16l3 2M12 3v3"/></svg></span>
+        <h3>38 Findings · 0 False Positives</h3>
+        <p>My AI web-app fuzzer surfaced <b style="color:var(--fg)">7 vulnerability classes</b> with a clean run on a hardened control.</p>
+        <div class="foot mono"><span class="rar">0 false-pos</span><span class="yr">2026</span></div>
+      </article>
+
+      <article class="ach rare reveal">
+        <span class="unlocked mono">UNLOCKED</span>
+        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+        <h3>₱100K+ Raised</h3>
+        <p>Directed national &amp; international debate tournaments as <b style="color:var(--fg)">CIDA Vice President</b> — logistics to finance.</p>
+        <div class="foot mono"><span class="rar">₱100k+</span><span class="yr">2021–24</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== footer ===== -->
+  <footer class="footer mono">
+    <span><span class="g">$</span> session #<span data-visits>001</span> · <span data-year>2026</span> Sky Hannah Parado</span>
+    <span class="krew">
+      <a href="https://github.com/skyparado" target="_blank" rel="noopener">github</a>
+      <a href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">linkedin</a>
+      <a href="mailto:sky.parado@gmail.com">mail</a>
+      <span style="color:var(--comment)">press <b style="color:var(--cyan)">?</b> for keys</span>
+    </span>
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
