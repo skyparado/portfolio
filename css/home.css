@@ -1,0 +1,19 @@
+.home-summary{margin:38px 0 28px;padding:30px 0 26px;border-bottom:2px solid var(--line);max-width:900px;scroll-margin-top:110px}
+.home-summary h1{font:600 clamp(36px,5vw,58px)/1.1 var(--pixel-font);margin:16px 0 20px;color:var(--fg)}
+.home-summary h1 span{color:var(--purple)}
+.home-intro{font:400 18px/1.75 "IBM Plex Sans",sans-serif;color:var(--fg-dim);margin:0;max-width:72ch}
+.home-intro strong{color:var(--fg);font-weight:600}
+.home-focus{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--cyan);margin:18px 0 0}
+.home-highlights .section-title a{font-size:13px;color:var(--fg-dim);text-underline-offset:4px}
+.home-wins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.home-win{position:relative;display:block;padding:22px 24px;background:var(--panel-2);border:2px solid var(--line-2);text-decoration:none;color:var(--fg);box-shadow:0 3px 0 var(--bg-2)}
+.home-win::after{content:"?";position:absolute;right:16px;top:16px;color:var(--fg-dim);font-size:14px}
+.home-win:hover{border-color:var(--purple);background:var(--panel)}
+.home-win:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.win-value{font:500 30px/1.2 var(--pixel-font);color:var(--amber);display:block;margin-bottom:10px;padding-right:12px}
+.home-win:nth-child(3n+2) .win-value{color:var(--purple)}.home-win:nth-child(3n) .win-value{color:var(--cyan)}
+.home-win h3{font:600 17px/1.4 "IBM Plex Sans",sans-serif;margin:0 0 8px}
+.home-win p{font-size:14px;line-height:1.65;color:var(--fg-dim);margin:0}
+.home-more{font-size:14px;line-height:1.8;color:var(--fg-dim);margin:22px 0 34px}.home-more a{color:var(--fg);text-underline-offset:4px}
+@media(max-width:800px){.home-wins{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.home-summary{margin-top:18px;padding-top:18px}.home-intro{font-size:16px}.home-wins{grid-template-columns:1fr;gap:12px}.home-win{padding:18px 20px}.home-highlights .section-title{align-items:start}.home-highlights .section-title a{max-width:110px;text-align:right}.home-focus{font-size:12px;gap:6px}}

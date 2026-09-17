@@ -10,7 +10,7 @@
     {name:'Trophy tower',category:'Certificates',x:17,y:8,color:'#ffd074',title:'Small steps. Shiny milestones.',text:'CTF Champion with Team Prompt Patrol, ISC2 Certified in Cybersecurity, and Junior VAPT Practitioner. This is my collection of certifications, training, and achievements.',url:'certs.html',cards:['CTF Champion · Team Prompt Patrol','ISC2 Certified in Cybersecurity','Junior VAPT Practitioner']},
     {name:'Memory grove',category:'Experience',x:9,y:11,color:'#9be5a8',title:'Every chapter adds something.',text:'A journey through college, senior high, and junior high: academic awards, leadership, debate, and community work. Open the campaign log to see the full story.',url:'experience.html',cards:['College · DLSU','Leadership & debate','Community & volunteering']},
     {name:'Post office',category:'Contact',x:3,y:9,color:'#ffae87',title:'Let’s make something together.',text:'Have a project, opportunity, or idea? Find my email, GitHub, and LinkedIn on the contact page. I’d love to hear what you’re working on.',url:'contact.html',cards:['Projects & collaboration','Opportunities & conversations','Email · GitHub · LinkedIn']},
-    {name:'Skill garden',category:'Skills',x:17,y:3,color:'#b7a1ff',title:'What’s in my toolkit?',text:'Python, Java, C++, JavaScript, TypeScript, and SQL, alongside full-stack development, REST APIs, Git, and network security. My security toolkit includes VAPT, secure coding, and OWASP fundamentals.',url:'certs.html#loadout',cards:['Python · Java · C++','JavaScript · TypeScript · SQL','REST APIs · Git · full-stack','VAPT · secure coding · networks']}
+    {name:'Skill garden',category:'Skills',x:17,y:3,color:'#b7a1ff',title:'What’s in my toolkit?',text:'Python, Java, C++, JavaScript, TypeScript, and SQL, alongside full-stack development, REST APIs, Git, and network security. My security toolkit includes VAPT, secure coding, and OWASP fundamentals.',url:'skills.html',cards:['Python · Java · C++','JavaScript · TypeScript · SQL','REST APIs · Git · full-stack','VAPT · secure coding · networks']}
   ];
   const storageKey = 'parado.adventure.v2';
   let collected = new Set();
@@ -18,12 +18,12 @@
   const banner=document.createElement('section');
   banner.className='quest-banner';
   banner.innerHTML='<span class="quest-mini" aria-hidden="true"></span><div><span class="quest-kicker">BACK TO PARADO WORLD</span><h2>A portfolio you can wander through.</h2><p>Meet Sky and preview every stop before opening a page.</p></div><button type="button" class="quest-button quest-launch" aria-haspopup="dialog">Explore the world</button>';
-  if(!home)main.prepend(banner);
+  if(!home){const footer=main.querySelector('.footer');if(footer)footer.before(banner);else main.append(banner);}
   const world=document.createElement(home?'section':'dialog');
   world.className='quest-dialog'+(home?' quest-home':'');
   world.setAttribute('aria-labelledby','quest-title');
   world.innerHTML=`
-    <header class="quest-header"><div><span class="quest-kicker">SKY PARADO / A LITTLE WORLD OF MY OWN</span><${home?'h1':'h2'} id="quest-title">Come on in.<br><span>There’s a lot to explore.</span></${home?'h1':'h2'}><p class="quest-intro">Security student. Software builder. Curious human.<br>Pick a place — I’ll show you around.</p></div><div class="quest-header-actions">${home?'<a class="quest-button" href="#profile">Browse portfolio ↓</a>':'<button type="button" class="quest-button" data-close>Back to page ×</button>'}<button type="button" class="quest-motion"></button></div></header>
+    <header class="quest-header"><div><span class="quest-kicker">SKY PARADO / A LITTLE WORLD OF MY OWN</span><h2 id="quest-title">Choose your adventure.</h2><p class="quest-intro">Security student. Software builder. Curious human.<br>Pick a place — I’ll show you around.</p></div><div class="quest-header-actions">${home?'<a class="quest-button" href="#character">Character sheet ↓</a>':'<button type="button" class="quest-button" data-close>Back to page ×</button>'}<button type="button" class="quest-motion"></button></div></header>
     <div class="quest-hud"><span>✦ PLAY AS SKY</span><span data-score></span></div>
     <progress class="quest-progress" max="6" value="0" aria-label="Places discovered"></progress>
     <div class="quest-layout"><div class="quest-world-column">
@@ -34,8 +34,8 @@
     </div><aside class="quest-journal"><span class="quest-kicker" data-category>YOUR LITTLE TOUR GUIDE</span><canvas class="quest-scene" width="240" height="100" aria-hidden="true"></canvas><div class="quest-summary" aria-live="polite"><h3 data-title>Hi! I’m pixel Sky.</h3><p data-story>Welcome to my corner of the internet. Choose a destination to get a quick introduction before diving into the full section.</p></div><div class="quest-preview-card"><span data-card>Six places. One curious explorer.</span><button type="button" data-next aria-label="Next preview card" hidden>Next →</button></div><a class="quest-button" data-link hidden></a><div class="quest-destinations" aria-label="Choose a section"></div><p data-reward role="status"></p><button type="button" class="quest-reset">Restart discoveries</button></aside></div>
     <footer class="quest-footer">Take your time. Stay curious. <span data-save>Discoveries saved on this device.</span></footer>`;
   if(home){
-    main.prepend(world);
-    const hero=main.querySelector('.hero');if(hero)hero.id='profile';
+    const footer=main.querySelector('.footer');
+    if(footer)footer.before(world);else main.append(world);
     document.querySelector('#boot')?.remove();
   }else document.body.append(world);
   const $=s=>world.querySelector(s);
@@ -189,7 +189,8 @@
   function drawScene(){
     if(!sc)return;sc.imageSmoothingEnabled=false;
     const b=(x,y,w,h,c)=>box(sc,x,y,w,h,c),t=enabled()?frame:0,p=places[selected]||places[0];
-    b(0,0,240,100,'#242940');b(0,74,240,26,'#45415f');
+    const light=document.documentElement.dataset.theme==='light';
+    b(0,0,240,100,light?'#f3e5d8':'#242940');b(0,74,240,26,light?'#d6bbbc':'#45415f');
     b(12,12,51,43,'#7cb5c6');b(16,16,43,35,'#b8dbe0');b(35,13,4,42,'#eee0c4');b(12,32,50,3,'#eee0c4');
     b(186,20,39,5,p.color);b(191,10,5,10,'#a2cda5');b(201,6,5,14,'#eeb6cb');
     const bob=t%4<2?0:-1;
@@ -215,7 +216,30 @@
   companion.className='sky-companion';companion.width=24;companion.height=30;
   companion.setAttribute('aria-hidden','true');
   const walkway=document.createElement('div');
-  walkway.className='sky-walkway';walkway.setAttribute('aria-hidden','true');
+  walkway.className='sky-walkway';
+  // Social profiles shared across the site.
+  const gardenProfiles = [
+    {name:'Facebook', url:'https://www.facebook.com/skyhannah.parado.875/', color:'#acc9ef', icon:'<path d="M14 21v-8h3l1-4h-4V7c0-1 1-2 2-2h2V2h-3c-4 0-5 2-5 5v2H7v4h3v8z"/>'},
+    {name:'GitHub', url:'https://github.com/skyparado', color:'#d6c0ee', icon:'<path d="M5 8 4 3l5 3h6l5-3-1 5c2 2 2 7-1 9-1 1-3 1-4 1v4h-4v-4c-4 1-6-1-7-4l2-1c1 2 2 3 5 2-4-1-6-4-5-7z"/>'},
+    {name:'Instagram', url:'https://www.instagram.com/sky.parado/', color:'#f1bad3', icon:'<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="1.5"/>'},
+    {name:'LinkedIn', url:'https://linkedin.com/in/sky-hannah-parado-3a9218256', color:'#a9dcd9', icon:'<path d="M3 9h4v12H3zM9 9h4v2c2-4 8-3 8 2v8h-4v-7c0-3-4-3-4 0v7H9z"/><circle cx="5" cy="5" r="2"/>'},
+    {name:'Gmail', url:'mailto:sky.parado@gmail.com', color:'#f5d6a5', icon:'<path d="M3 6h18v13H3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="2"/>'}
+  ];
+  const tree=(x,pink=false)=>`<g transform="translate(${x} 0)"><path fill="#896779" d="M28 48h8v40h-8z"/><path fill="${pink?'#b9789d':'#4e897c'}" d="M12 22h40v10h8v29H4V32h8z"/><path fill="${pink?'#e7a9c8':'#87b99b'}" d="M20 10h24v8h10v25H10V26h10z"/><path fill="${pink?'#ffd1df':'#b7d5ad'}" d="M22 16h16v6H22zM14 29h9v6h-9z"/><path fill="${pink?'#f5c2d7':'#a1c6a2'}" d="M42 43h8v6h-8z"/></g>`;
+  walkway.innerHTML=`
+    <div class="sky-garden-scenery" aria-hidden="true">
+      <svg class="garden-trees garden-trees-left" viewBox="0 0 210 96" shape-rendering="crispEdges">${tree(0)}${tree(66,true)}${tree(138)}</svg>
+      <svg class="garden-trees garden-trees-right" viewBox="0 0 210 96" shape-rendering="crispEdges">${tree(0,true)}${tree(70)}${tree(140,true)}</svg>
+      <div class="garden-flowers"></div><span class="garden-mushroom"></span><span class="garden-mushroom second"></span>
+      <span class="garden-sparkle one">+</span><span class="garden-sparkle two">+</span>
+    </div>
+    <nav class="garden-socials" aria-label="Find Sky online">
+      <span class="garden-caption">a little corner of my internet</span>
+      <div class="garden-social-links">${gardenProfiles.map(p=>{
+        const contents=`<span class="garden-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${p.icon}</svg></span><span class="garden-social-name">${p.name}</span>`;
+        return p.url?`<a class="garden-social" style="--social-color:${p.color}" href="${p.url}" ${p.url.startsWith('https:')?'target="_blank" rel="noopener noreferrer"':''} aria-label="${p.name}${p.url.startsWith('https:')?' (opens in a new tab)':''}">${contents}</a>`:`<button type="button" class="garden-social" style="--social-color:${p.color}" aria-disabled="true" aria-label="${p.name}: coming soon" title="${p.name}: coming soon">${contents}<span class="garden-soon">soon</span></button>`;
+      }).join('')}</div>
+    </nav>`;
   walkway.append(companion);document.body.append(walkway);
   document.body.classList.add('has-sky-walkway');
   const companionContext=companion.getContext('2d');
@@ -276,6 +300,7 @@
   });
   paintCompanion();
 
+  new MutationObserver(()=>drawScene()).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   refresh();move(0,0);syncMotion();
 })();
 

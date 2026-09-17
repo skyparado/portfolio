@@ -7,66 +7,67 @@
 <meta name="description" content="Full record — leadership, service, honors & education across college, senior high & junior high.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/quest.css">
+<link rel="stylesheet" href="css/rpg.css">
+<link rel="stylesheet" href="css/notebook.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 </head>
-<body>
+<body class="rpg-site">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav class="nav"><div class="nav-inner">
   <a class="brand" href="index.html">
-    <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
-    <span class="nm">SKY PARADO<small>PARADO.OS // NETSEC</small></span>
+    <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 4h6v3h6V4h6v9h-3v3h-3v3H9v-3H6v-3H3z"/></svg></span>
+    <span class="nm">SKY PARADO<small>A LITTLE WORLD BY SKY</small></span>
   </a>
   <div class="nav-links">
-    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7M5 9v11h14V9"/></svg>home<span class="key">1</span></a>
-    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>projects<span class="key">2</span></a>
-    <a href="certs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM9 20h6M12 15v5"/></svg>certs<span class="key">3</span></a>
-    <a href="experience.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg>experience<span class="key">4</span></a>
-    <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg>contact<span class="key">5</span></a>
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 10h3V7h3V4h3V1h2v3h3v3h3v3h3v3h-3v9h-6v-6h-4v6H5v-9H2z"/></svg>home<span class="key">1</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 6h20v15H2zM8 2h8v3h-3V4h-2v1H8zM5 9v3h14V9z"/></svg>projects<span class="key">2</span></a>
+    <a href="certs.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h12v3h4v9h-5v3h-3v3h4v3H6v-3h4v-3H7v-3H2V5h4zM4 7v5h2V7zM18 7v5h2V7z"/></svg>trophies<span class="key">3</span></a>
+    <a href="experience.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h18v20H3zM7 6v2h10V6zM7 11v2h10v-2zM7 16v2h7v-2z"/></svg>journal<span class="key">4</span></a>
+    <a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v15H2zM5 8v9h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg>mail<span class="key">5</span></a>
+    <a href="skills.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M10 11H4V5h6v3h2v5h2V8h6v6h-6v4h4v4H6v-4h4z"/></svg>skills<span class="key">6</span></a>
   </div>
   <button class="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg><span class="tl">light</span></button>
 </div></nav>
 
-<main class="wrap hud-frame">
+<main id="main-content" class="wrap hud-frame experience-page">
   <section class="sec" style="margin-top:34px">
-    <div class="eyebrow">Full Record</div>
-    <h1 style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,5vw,40px);margin:12px 0 6px;color:var(--fg)">Past Organizations &amp; Experiences</h1>
-    <div class="sec-head mono" style="margin-top:18px"><span class="dollar">$</span><span class="cmd">journalctl</span><span class="arg">--all --by-era</span><span class="out">// college · senior high · junior high</span></div>
-    <div class="log-legend mono">
-      <span><i class="dot-tap"></i>roles &amp; service, by era</span>
-      <span class="pill loc os">OS</span> off-campus
-      <span class="pill loc">IS</span> in-school
-    </div>
+    <header class="page-banner"><div class="page-banner-copy"><div class="eyebrow">WORLD 04 / THE ADVENTURE JOURNAL</div><h1>Experience &amp; leadership</h1><p>My roles, contributions, and results across university, school organizations, and community projects.</p></div><img src="assets/pixel-journal.svg" alt="" class="page-vignette" aria-hidden="true"></header>
+    <div class="section-title"><h2>The story so far</h2><span>College / senior high / junior high</span></div>
+    <div class="experience-notebook" id="experience-notebook">
+<div class="notebook-topline"><span>SKY’S FIELD NOTES</span><span>Experience &amp; leadership</span></div>
+<nav class="notebook-tabs" aria-label="Notebook chapters"><a href="#college">College</a><a href="#senior-high">Senior high</a><a href="#junior-high">Junior high</a></nav>
+<div class="notebook-controls" hidden><button type="button" data-notebook-prev><span aria-hidden="true">&#8592;</span> Previous page</button><span class="notebook-page-number" aria-live="polite"></span><button type="button" data-notebook-next>Next page <span aria-hidden="true">&#8594;</span></button></div>
 
     <!-- ===================== COLLEGE ===================== -->
-    <div class="era">
-      <div class="era-head">
-        <span class="badge">era_01</span><h2>College</h2><span class="when mono">2024 — Present</span>
-      </div>
-      <div class="era-line"></div>
+    <section class="notebook-page" id="college">
+      <header class="notebook-chapter-heading"><span class="badge">chapter 01</span><div class="chapter-summary-copy"><h2 class="chapter-title">College</h2><span class="chapter-preview">De La Salle University &middot; 2 organizations &middot; 3 Dean’s List honors</span></div><span class="chapter-date">2024 — Present</span></header>
+      <div class="chapter-content">
+
       <p style="color:var(--fg-dim);font-size:14px;margin:0 0 4px"><b style="color:var(--fg)">De La Salle University</b> — BS Computer Science, Major in Network &amp; Information Security · Manila, PH</p>
 
       <div class="era-grid">
       <div class="era-main">
 
       <div class="era-sum reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 3 4-6"/></svg>Summary — awards &amp; experiences</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 3 4-6"/></svg>At a glance</h3>
         <ol class="sum-nums">
           <li><span class="num">3</span><span class="lbl">Dean's List honors</span></li>
           <li><span class="num">2</span><span class="lbl">organizations</span></li>
-          <li><span class="num">5</span><span class="lbl">certifications</span></li>
+          <li><span class="num">CC + VAPT</span><span class="lbl">Cybersecurity credentials</span></li>
         </ol>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Organizations &amp; Work</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Organizations &amp; Work</h3>
       <div class="org-grid">
-        <article class="org-card reveal"><div class="top"><span class="yr">25–26</span><span class="loc os">OS</span></div><h4>HackerCup 2026</h4><span class="role">Corporate Relations Asst. Team Lead</span><p>Assistant Team Lead for Corporate Relations of DLSU's flagship hackathon; secured sponsorships &amp; partnerships with tech companies and coordinated marketing + technical committees.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">25–26</span><span class="loc">IS</span></div><h4>La Salle Computer Society</h4><span class="role">Junior Officer · Technology Division</span><p>Completed the 40th LSCS Junior Officer Training Program and cleared into the Technology Division for the incoming officer cycle.</p></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">2025–2026</span><h4>HackerCup 2026</h4><p class="entry-role">Corporate Relations Asst. Team Lead</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li><strong>Secured sponsorships and partnerships</strong> with technology companies for DLSU's flagship hackathon.</li><li>Coordinated the marketing and technical committees as Assistant Team Lead for Corporate Relations.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">2025–2026</span><h4>La Salle Computer Society</h4><p class="entry-role">Junior Officer · Technology Division</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li><strong>Completed the 40th LSCS Junior Officer Training Program.</strong></li><li>Cleared into the Technology Division for the incoming officer cycle.</li></ul></div></article>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg>Academics</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg>Academics</h3>
       <div class="honors">
         <div class="honor-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.6 8.4 9 10 5.4-1.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span><b>First Dean's Lister</b> — AY 2025–2026, T1 &amp; T2</span><span class="g">DLSU</span></div>
         <div class="honor-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.6 8.4 9 10 5.4-1.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Second Dean's Lister</b> — AY 2024–2025, T1</span><span class="g">DLSU</span></div>
@@ -74,7 +75,7 @@
 
       </div>
       <aside class="era-skills reveal">
-        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><circle cx="12" cy="12" r="9"/></svg>Skills</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><circle cx="12" cy="12" r="9"/></svg>Skills used in this chapter</h4>
         <div class="chips">
           <span class="chip-x">Offensive Security</span>
           <span class="chip-x">VAPT</span>
@@ -88,21 +89,22 @@
         </div>
       </aside>
       </div>
-    </div>
+
+      </div>
+    </section>
 
     <!-- ===================== SENIOR HIGH ===================== -->
-    <div class="era">
-      <div class="era-head">
-        <span class="badge">era_02</span><h2>Senior High</h2><span class="when mono">Grades 11–12</span>
-      </div>
-      <div class="era-line"></div>
+    <section class="notebook-page" id="senior-high">
+      <header class="notebook-chapter-heading"><span class="badge">chapter 02</span><div class="chapter-summary-copy"><h2 class="chapter-title">Senior High</h2><span class="chapter-preview">Ateneo de Cebu &middot; Leadership, debate & community projects</span></div><span class="chapter-date">Grades 11–12</span></header>
+      <div class="chapter-content">
+
       <p style="color:var(--fg-dim);font-size:14px;margin:0 0 4px"><b style="color:var(--fg)">Sacred Heart School – Ateneo de Cebu</b> — STEM Strand · Cebu, PH · Top 10% of strand &amp; batch (GPA 96.40)</p>
 
       <div class="era-grid">
       <div class="era-main">
 
       <div class="era-sum reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 3 4-6"/></svg>Summary — awards &amp; experiences</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 3 4-6"/></svg>At a glance</h3>
         <ol class="sum-nums">
           <li><span class="num">2</span><span class="lbl">academic honors</span></li>
           <li><span class="num">6</span><span class="lbl">organizations</span></li>
@@ -110,14 +112,14 @@
         </ol>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Leadership &amp; Organizations</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Leadership &amp; Organizations</h3>
       <div class="org-grid">
-        <article class="org-card reveal"><div class="top"><span class="yr">11–12</span><span class="loc os">OS</span></div><h4>CIDA</h4><span class="role">Vice President</span><p>Hosted international &amp; national debate competitions, earning over <b>PHP 100,000</b> per cycle; directed logistics, registration, adjudication &amp; finance.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">12</span><span class="loc">IS</span></div><h4>ISLC</h4><span class="role">Organization Board / Student Body</span><p>Created school projects and organized appeals and initiatives on behalf of the student body.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">10–12</span><span class="loc os">OS</span></div><h4>Interact Metro Mandaue</h4><span class="role">Marketing Director</span><p>Led graphics &amp; assignments (video + photo) and headed projects such as Lottery for a Cause; volunteered across club initiatives.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">11–12</span><span class="loc">IS</span></div><h4>Gavel Club</h4><span class="role">Competition Delegate &amp; Hosting</span><p>Hosted in- and out-of-school events including courtside correspondence.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">11–12</span><span class="loc">IS</span></div><h4>Ignatian Debate League</h4><span class="role">Member</span><p>Competed and handled collaboration &amp; communication with other schools, briefing the executive board on competitions.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">11</span><span class="loc os">OS</span></div><h4>World Vision Ambassadorship</h4><span class="role">Project Head</span><p>Launched community projects under the student ambassadorship program.</p></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 11–12</span><h4>CIDA</h4><p class="entry-role">Vice President</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Hosted national and international debate competitions, <strong>earning over PHP 100,000 per cycle.</strong></li><li>Directed logistics, registration, adjudication, and finance.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grade 12</span><h4>ISLC</h4><p class="entry-role">Organization Board / Student Body</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Created school projects and organized appeals and initiatives on behalf of the student body.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 10–12</span><h4>Interact Metro Mandaue</h4><p class="entry-role">Marketing Director</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Led graphics work and assigned video and photography tasks.</li><li>Headed projects including <strong>Lottery for a Cause</strong> and volunteered across club initiatives.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 11–12</span><h4>Gavel Club</h4><p class="entry-role">Competition Delegate &amp; Hosting</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Hosted school and external events, including courtside correspondence.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 11–12</span><h4>Ignatian Debate League</h4><p class="entry-role">Member</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Competed in debate and coordinated with other schools.</li><li>Briefed the executive board on competitions.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grade 11</span><h4>World Vision Ambassadorship</h4><p class="entry-role">Project Head</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Launched community projects through the student ambassadorship program.</li></ul></div></article>
       </div>
       <div class="chips" style="margin-top:12px">
         <span class="chip-x"><b>Polaris</b> · Externals</span>
@@ -130,17 +132,17 @@
         <span class="chip-x"><b>SEEDs / Blueprint</b> Publications</span>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Work Immersion</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Work Immersion</h3>
       <div class="org-grid">
-        <article class="org-card reveal"><div class="top"><span class="yr">2024</span><span class="loc os">OS</span></div><h4>Uratex</h4><span class="role">Intern · Work Immersion</span><p>80-hour Grade 12 work immersion supporting sales operations &amp; inventory management — data tracking and reconciliation of stock records.</p></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">2024</span><h4>Uratex</h4><p class="entry-role">Intern · Work Immersion</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Completed an <strong>80-hour work immersion</strong> supporting sales operations and inventory management.</li><li>Tracked data and reconciled stock records.</li></ul></div></article>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>Community Service &amp; Projects</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>Community Service &amp; Projects</h3>
       <div class="org-grid">
-        <article class="org-card reveal"><div class="top"><span class="yr">2023</span><span class="loc os">OS</span></div><h4>VIV 2023</h4><span class="role">Organization Committee</span><p>Built a national-level debate competition — publication materials, forms &amp; Discord; <b>raised over PHP 100,000</b>.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">2023</span><span class="loc os">OS</span></div><h4>CIDA Novice Cup 2023</h4><span class="role">Organization Committee</span><p>Built a national-level debate competition end-to-end; <b>raised over PHP 80,000</b>.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">11–12</span><span class="loc os">OS</span></div><h4>Lottery for a Cause &amp; TEAM</h4><span class="role">Project Head</span><p>Awareness campaigns &amp; fundraisers for the Marawi Siege under Interact Metro Mandaue and World Vision.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">11</span><span class="loc os">OS</span></div><h4>Miss Cebu Pop Up @ IT Park</h4><span class="role">Project Head</span><p>Sold pre-loved clothes and raised funds for IACMM.</p></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">2023</span><h4>VIV 2023</h4><p class="entry-role">Organization Committee</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Helped build a national-level debate competition that <strong>raised over PHP 100,000.</strong></li><li>Created publication materials, forms, and the Discord setup.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">2023</span><h4>CIDA Novice Cup 2023</h4><p class="entry-role">Organization Committee</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Built a national-level debate competition end-to-end; <strong>raised over PHP 80,000.</strong></li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 11–12</span><h4>Lottery for a Cause &amp; TEAM</h4><p class="entry-role">Project Head</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Led awareness campaigns and fundraisers for the Marawi Siege through Interact Metro Mandaue and World Vision.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grade 11</span><h4>Miss Cebu Pop Up @ IT Park</h4><p class="entry-role">Project Head</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Sold pre-loved clothing and raised funds for IACMM.</li></ul></div></article>
       </div>
       <div class="chips" style="margin-top:12px">
         <span class="chip-x">5k for a Cause · Marawi</span>
@@ -154,7 +156,7 @@
         <span class="chip-x">Rainbow Run Festival</span>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM9 20h6M12 15v5"/></svg>Honors &amp; Certificates</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM9 20h6M12 15v5"/></svg>Honors &amp; Certificates</h3>
       <div class="honors">
         <div class="honor-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0z"/><path d="M9 20h6M12 15v5"/></svg><span><b>First Honors</b></span><span class="g">Grade 11</span></div>
         <div class="honor-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0z"/><path d="M9 20h6M12 15v5"/></svg><span><b>Second Honors</b> · Honors for Grades 11–12</span><span class="g">Grade 12</span></div>
@@ -162,7 +164,7 @@
         <div class="honor-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.6 8.4 9 10 5.4-1.6 9-5 9-10V6z"/></svg><span>Service Award, Gavel, Polaris, IDL &amp; ISLC certificates</span><span class="g">Grade 12</span></div>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Programs</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Programs</h3>
       <div class="chips">
         <span class="chip-x"><b>ShellNexplorers</b> · Innovation (G12)</span>
         <span class="chip-x"><b>IC2E Singapore</b> · Design Thinking (G11)</span>
@@ -173,7 +175,7 @@
 
       </div>
       <aside class="era-skills reveal">
-        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><circle cx="12" cy="12" r="9"/></svg>Skills</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><circle cx="12" cy="12" r="9"/></svg>Skills used in this chapter</h4>
         <div class="chips">
           <span class="chip-x">Competitive Debate</span>
           <span class="chip-x">Hosting / Emcee</span>
@@ -186,21 +188,22 @@
         </div>
       </aside>
       </div>
-    </div>
+
+      </div>
+    </section>
 
     <!-- ===================== JUNIOR HIGH ===================== -->
-    <div class="era">
-      <div class="era-head">
-        <span class="badge">era_03</span><h2>Junior High</h2><span class="when mono">Grades 7–10</span>
-      </div>
-      <div class="era-line"></div>
+    <section class="notebook-page" id="junior-high">
+      <header class="notebook-chapter-heading"><span class="badge">chapter 03</span><div class="chapter-summary-copy"><h2 class="chapter-title">Junior High</h2><span class="chapter-preview">Debate, publications, finance & school service</span></div><span class="chapter-date">Grades 7–10</span></header>
+      <div class="chapter-content">
+
       <p style="color:var(--fg-dim);font-size:14px;margin:0 0 4px">Foundations in debate, publications &amp; service — Cebu, PH.</p>
 
       <div class="era-grid">
       <div class="era-main">
 
       <div class="era-sum reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 3 4-6"/></svg>Summary — awards &amp; experiences</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 3 4-6"/></svg>At a glance</h3>
         <ol class="sum-nums">
           <li><span class="num">7</span><span class="lbl">debate tournaments</span></li>
           <li><span class="num">4</span><span class="lbl">clubs &amp; roles</span></li>
@@ -208,15 +211,15 @@
         </ol>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Roles &amp; Clubs</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Roles &amp; Clubs</h3>
       <div class="org-grid">
-        <article class="org-card reveal"><div class="top"><span class="yr">7–8</span><span class="loc">IS</span></div><h4>Hijas Debate Society</h4><span class="role">Treasurer &amp; Head Trainer</span><p>Managed in-school funds and served as head debate trainer for the batch.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">7–8</span><span class="loc os">OS</span></div><h4>Cebu Debate Society</h4><span class="role">Treasurer</span><p>Managed competition funds used to run tournaments.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">10</span><span class="loc">IS</span></div><h4>SEEDs Publication</h4><span class="role">Graphics</span><p>Graphics layout for SEEDs; graphics for Simply Physche Blueprint.</p></article>
-        <article class="org-card reveal"><div class="top"><span class="yr">8</span><span class="loc">IS</span></div><h4>Choir &amp; Share Publication</h4><span class="role">Member / Photographer</span><p>Performed at masses &amp; school events; publication photographer.</p></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 7–8</span><h4>Hijas Debate Society</h4><p class="entry-role">Treasurer &amp; Head Trainer</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Managed school funds and served as <strong>head debate trainer</strong> for the batch.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grades 7–8</span><h4>Cebu Debate Society</h4><p class="entry-role">Treasurer</p><span class="entry-context">Off-campus</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Managed competition funds used to run tournaments.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grade 10</span><h4>SEEDs Publication</h4><p class="entry-role">Graphics</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Created graphic layouts for SEEDs and graphics for Simply Physche Blueprint.</li></ul></div></article>
+        <article class="experience-entry reveal"><header class="entry-heading"><span class="entry-period">Grade 8</span><h4>Choir &amp; Share Publication</h4><p class="entry-role">Member / Photographer</p><span class="entry-context">School organization</span></header><div class="entry-work"><h5>What I contributed</h5><ul><li>Performed at masses and school events.</li><li>Served as a publication photographer.</li></ul></div></article>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>Debate Competitions</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>Debate Competitions</h3>
       <div class="chips">
         <span class="chip-x"><b>PWSDC 2021</b> · Quarter-Finalist</span>
         <span class="chip-x">Ateneo Debate Camp 2021</span>
@@ -227,7 +230,7 @@
         <span class="chip-x">Speak Up 2019</span>
       </div>
 
-      <div class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Programs</div>
+      <h3 class="sub-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Programs</h3>
       <div class="chips">
         <span class="chip-x"><b>Ateneo Debate Camp</b> · Speaking &amp; Matter (G10)</span>
         <span class="chip-x"><b>We Are One</b> · Interact Exchange (G10)</span>
@@ -235,7 +238,7 @@
 
       </div>
       <aside class="era-skills reveal">
-        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><circle cx="12" cy="12" r="9"/></svg>Skills</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-3 7h5l-3 7"/><circle cx="12" cy="12" r="9"/></svg>Skills used in this chapter</h4>
         <div class="chips">
           <span class="chip-x">Debate &amp; Training</span>
           <span class="chip-x">Treasury / Finance</span>
@@ -246,7 +249,12 @@
         </div>
       </aside>
       </div>
-    </div>
+
+      </div>
+    </section>
+
+<div class="notebook-controls" hidden><button type="button" data-notebook-prev><span aria-hidden="true">&#8592;</span> Previous page</button><span class="notebook-page-number" aria-live="polite"></span><button type="button" data-notebook-next>Next page <span aria-hidden="true">&#8594;</span></button></div>
+</div>
 
   </section>
 
@@ -262,5 +270,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/quest.js"></script>
+<script src="js/notebook.js"></script>
 </body>
 </html>

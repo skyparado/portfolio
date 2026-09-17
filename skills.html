@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Garden // Sky Parado</title>
+<meta name="description" content="Explore Sky Parado's skills in an interactive pixel garden. Search programming, security, networking, and leadership skills with portfolio examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/quest.css">
+<link rel="stylesheet" href="css/rpg.css">
+<link rel="stylesheet" href="css/skills.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
+<!--
+  ============================================================
+  SOCIAL LINK SLOTS — already filled with your profiles.
+  Update the href values below if any URL changes (search: data-gh).
+    header-github  /  header-linkedin
+  ============================================================
+-->
+</head>
+<body class="rpg-site">
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="brand" href="index.html">
+    <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 4h6v3h6V4h6v9h-3v3h-3v3H9v-3H6v-3H3z"/></svg></span>
+    <span class="nm">SKY PARADO<small>A LITTLE WORLD BY SKY</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 10h3V7h3V4h3V1h2v3h3v3h3v3h3v3h-3v9h-6v-6h-4v6H5v-9H2z"/></svg>home<span class="key">1</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 6h20v15H2zM8 2h8v3h-3V4h-2v1H8zM5 9v3h14V9z"/></svg>projects<span class="key">2</span></a>
+    <a href="certs.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h12v3h4v9h-5v3h-3v3h4v3H6v-3h4v-3H7v-3H2V5h4zM4 7v5h2V7zM18 7v5h2V7z"/></svg>trophies<span class="key">3</span></a>
+    <a href="experience.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h18v20H3zM7 6v2h10V6zM7 11v2h10v-2zM7 16v2h7v-2z"/></svg>journal<span class="key">4</span></a>
+    <a href="contact.html" ><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v15H2zM5 8v9h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg>mail<span class="key">5</span></a>
+    <a href="skills.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M10 11H4V5h6v3h2v5h2V8h6v6h-6v4h4v4H6v-4h4z"/></svg>skills<span class="key">6</span></a>
+  </div>
+  <button class="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg><span class="tl">light</span></button>
+</div></nav>
+
+<main id="main-content" class="wrap hud-frame skills-page">
+  <section class="sec">
+    <header class="page-banner"><div class="page-banner-copy"><div class="eyebrow">WORLD 06 / THE SKILL GARDEN</div><h1>A little garden of skills.</h1><p>Search for a skill or pick a floating word. Pixel Sky will tell you where it fits into my work.</p></div><img class="page-vignette" src="assets/pixel-skill-tree.svg" alt="" aria-hidden="true"></header>
+    <div class="skill-explorer" id="skill-explorer" hidden>
+      <form class="skill-search" role="search" aria-label="Search Sky's skills">
+        <label for="skill-query">What skill are you looking for?</label>
+        <div class="skill-search-row"><span class="skill-search-symbol" aria-hidden="true">&gt;_</span><input id="skill-query" name="q" type="search" placeholder="Try Python, security, or leadership..." autocomplete="off" maxlength="100" aria-controls="skill-cloud" aria-describedby="skill-search-help"><button type="submit">Ask Sky <span aria-hidden="true">&#8594;</span></button><button type="button" id="skill-clear" hidden>Clear</button></div>
+        <p id="skill-search-help">Search updates as you type. Press Enter to inspect the closest match.</p>
+      </form>
+      <div class="skill-toolbar"><div class="skill-filters" role="group" aria-label="Skill categories"></div><button type="button" class="skill-motion" aria-pressed="false">Pause floating</button></div>
+      <div class="skill-layout">
+        <section class="skill-garden" aria-labelledby="skill-garden-title">
+          <div class="skill-garden-bar"><h2 id="skill-garden-title">Pick a skill</h2><span id="skill-count" role="status" aria-live="polite"></span></div>
+          <div class="skill-cloud" id="skill-cloud" role="group" aria-label="Matching skills"></div>
+          <p class="skill-empty" hidden>No matching skills here. Try another word or choose a different category.</p>
+          <div class="skill-garden-base" aria-hidden="true"><span class="skill-flower"></span><img src="assets/pixel-sky.svg" alt=""><span class="skill-sprout"></span></div>
+          <p class="skill-garden-hint">Every word is a little piece of my toolkit.</p>
+        </section>
+        <aside class="skill-dialogue" aria-labelledby="skill-answer-title">
+          <header class="skill-speaker"><img src="assets/pixel-sky.svg" alt="" aria-hidden="true"><div><span>PIXEL SKY</span><p>Your skill guide</p></div><span class="skill-speaker-star" aria-hidden="true">&#10022;</span></header>
+          <div class="skill-answer"><p class="skill-question">Let&#8217;s explore my toolkit.</p><span class="skill-category" hidden></span><h2 id="skill-answer-title">What would you like to know?</h2><p class="skill-answer-text">Pick a floating skill, or type a word above. I&#8217;ll show you how it connects to my projects, training, or experience.</p><div class="skill-evidence" hidden><h3>From my portfolio</h3><p></p><a href="certs.html#loadout">See the evidence <span aria-hidden="true">&#8599;</span></a></div><div class="skill-related" hidden><h3>Explore nearby skills</h3><div></div></div></div>
+          <p class="skill-dialogue-foot">A skill collection, one discovery at a time.</p>
+        </aside>
+      </div>
+      <p id="skill-announcement" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+    <noscript><div class="panel" style="padding:24px"><h2>My skill inventory</h2><p>Python, Java, C++, JavaScript, TypeScript, SQL, HTML, CSS, VAPT, OWASP Top 10, Nmap, Burp Suite, Git/GitHub, REST APIs, TCP/IP, and leadership.</p><a href="certs.html#loadout">Browse the full skill list</a></div></noscript>
+  </section>
+  <footer class="footer mono">
+    <span><span class="g">$</span> session #<span data-visits>001</span> · <span data-year>2026</span> Sky Hannah Parado</span>
+    <span class="krew">
+      <a href="https://github.com/skyparado" target="_blank" rel="noopener">github</a>
+      <a href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">linkedin</a>
+      <a href="mailto:sky.parado@gmail.com">mail</a>
+    </span>
+  </footer>
+</main>
+<script src="js/main.js"></script>
+<script src="js/quest.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿/* A paper notebook, with the pixel aesthetic in its cover and chapter tabs. */
+.experience-notebook{--paper:#302f42;--paper-ink:#f3eddf;--paper-muted:#c7c1d1;--rule:#7f719721;--binding:#887195;--paper-border:#74647e;position:relative;margin:25px 0 42px;padding:0 24px 16px 52px;background:linear-gradient(90deg,#65516f 0 17px,#463b55 17px 25px,var(--paper) 25px);border:3px solid var(--binding);box-shadow:4px 4px 0 var(--paper-border),7px 7px 0 var(--bg-2);scroll-margin-top:110px}
+[data-theme="light"] .experience-notebook{--paper:#fff9ec;--paper-ink:#403548;--paper-muted:#665970;--rule:#967eaf21;--binding:#ae91b8;--paper-border:#d6c2cf;background:linear-gradient(90deg,#b396b9 0 17px,#977da6 17px 25px,var(--paper) 25px)}
+.experience-notebook::before{content:"";position:absolute;top:32px;bottom:30px;left:8px;width:25px;pointer-events:none;background:repeating-linear-gradient(180deg,transparent 0 26px,var(--paper-border) 26px 30px,#dbccd6 30px 34px,var(--binding) 34px 38px,transparent 38px 64px);z-index:1}
+.notebook-topline{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px 0 16px;color:var(--paper-muted);font:10px/1.5 "JetBrains Mono",monospace;letter-spacing:.07em;border-bottom:1px solid var(--paper-border)}
+.notebook-topline>span:first-child{font:500 19px var(--pixel-font);letter-spacing:0;color:var(--paper-ink)}
+.notebook-tabs{display:flex;gap:8px;padding:20px 0 0;border-bottom:2px solid var(--paper-border)}
+.notebook-tabs a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid var(--paper-border);border-bottom:0;background:var(--panel);color:var(--fg-dim);text-decoration:none;font:600 15px/1.5 "IBM Plex Sans",sans-serif;position:relative;top:2px}
+.notebook-tabs a:nth-child(2){border-top:4px solid var(--purple)}.notebook-tabs a:nth-child(3){border-top:4px solid var(--cyan)}.notebook-tabs a:first-child{border-top:4px solid var(--accent)}
+.notebook-tabs a[aria-selected="true"]{background:var(--paper);color:var(--paper-ink);border-bottom:2px solid var(--paper);padding-bottom:8px}
+.notebook-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--paper-border)}
+.notebook-controls[hidden],.notebook-page[hidden]{display:none!important}
+.notebook-controls button{cursor:pointer;min-height:44px;padding:8px 12px;border:1px solid var(--paper-border);border-radius:0;background:var(--panel);color:var(--fg);font:500 13px/1.4 "IBM Plex Sans",sans-serif}
+.notebook-controls button:disabled{opacity:.45;cursor:default}
+.notebook-page-number{font:12px/1.5 "JetBrains Mono",monospace;color:var(--paper-muted);text-align:center}
+.experience-page .notebook-page{margin:0;padding:26px 0 20px;border:0;background:repeating-linear-gradient(180deg,transparent 0 31px,var(--rule) 31px 32px);color:var(--paper-ink);scroll-margin-top:110px}
+.notebook-chapter-heading{display:flex;align-items:center;gap:18px;padding:12px 0 22px;border-bottom:2px solid var(--paper-border)}
+.notebook-chapter-heading .badge{font:10px/1.5 "JetBrains Mono",monospace;padding:5px 8px;background:var(--accent);color:var(--bg);white-space:nowrap}
+.notebook-chapter-heading .chapter-title{font:600 30px/1.3 "IBM Plex Sans",sans-serif;color:var(--paper-ink);margin:0}
+.notebook-chapter-heading .chapter-preview,.notebook-chapter-heading .chapter-date{color:var(--paper-muted)}
+.experience-page .notebook-page .chapter-content{padding:24px 0 0}
+.experience-page .notebook-page .era-sum,.experience-page .notebook-page .experience-entry,.experience-page .notebook-page .era-skills,.experience-page .notebook-page .honor-item{background:color-mix(in srgb,var(--paper) 92%,var(--accent));box-shadow:none;border-color:var(--paper-border)}
+.experience-page .notebook-page .experience-entry{border-left:3px solid var(--accent-dim)}
+.experience-page .notebook-page .entry-heading h4,.experience-page .notebook-page .entry-work strong,.experience-page .notebook-page .honor-item b,.experience-page .notebook-page .sub-label{color:var(--paper-ink)}
+.experience-page .notebook-page .entry-work li,.experience-page .notebook-page .entry-context,.experience-page .notebook-page .entry-period{color:var(--paper-muted)}
+.experience-page .notebook-page .era-sum{padding:18px 22px}.experience-page .notebook-page .sub-label{background:var(--paper);padding:7px 0}
+.experience-notebook>.notebook-controls:last-child{border-bottom:0;border-top:2px solid var(--paper-border);margin-top:8px}
+@media(max-width:800px){.experience-notebook{padding-right:18px;padding-left:42px}.notebook-tabs a{padding:9px 16px}.notebook-chapter-heading{flex-wrap:wrap}.notebook-chapter-heading .chapter-summary-copy{flex:1}.notebook-chapter-heading .chapter-date{width:100%}}
+@media(max-width:600px){.experience-notebook{padding-right:12px;padding-left:32px;background:linear-gradient(90deg,#65516f 0 11px,#463b55 11px 18px,var(--paper) 18px);scroll-margin-top:12px}.experience-notebook::before{left:2px;width:22px}.notebook-topline{flex-wrap:wrap;gap:5px}.notebook-topline>span:first-child{font-size:17px}.notebook-topline>span:last-child{font-size:9px}.notebook-tabs{gap:4px}.notebook-tabs a{flex:1;min-width:0;font-size:12px;padding:8px 4px;text-align:center}.notebook-controls{flex-wrap:wrap;gap:8px}.notebook-page-number{order:-1;width:100%;font-size:11px}.notebook-controls button{font-size:12px;padding:8px}.notebook-chapter-heading{gap:12px}.notebook-chapter-heading .chapter-title{font-size:26px}.notebook-chapter-heading .chapter-preview{font-size:13px}.experience-page .notebook-page .experience-entry{padding:16px}.experience-page .notebook-page .chapter-content{padding-top:18px}.experience-page .notebook-page .era-sum{padding:16px}.experience-page .notebook-page .entry-work{padding-left:0}.experience-page .notebook-page .era-skills{padding:16px}}

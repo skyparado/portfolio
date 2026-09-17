@@ -1,0 +1,273 @@
+﻿/* SKY'S LITTLE WORLD — shared RPG design system. Loaded after component styles. */
+:root,:root:not([data-theme="light"]){
+  --bg:#202333;--bg-2:#272a3e;--panel:#30334b;--panel-2:#292d42;
+  --line:#4d5069;--line-2:#666980;--fg:#f5eddf;--fg-dim:#c4c1d0;--comment:#aba9bf;
+  --accent:#d3b7ed;--accent-dim:#877198;--accent-glow:transparent;
+  --cyan:#a5d7d4;--purple:#efb5d0;--amber:#f2d297;--red:#efaaaa;
+  --radius:0px;--maxw:1180px;--shadow:none;--frame-light:#77768e;
+  --pixel-font:"Pixelify Sans","Courier New",monospace;
+}
+:root[data-theme="light"]{
+  --bg:#eee7df;--bg-2:#e3dcdf;--panel:#fff9ef;--panel-2:#f8f0e6;
+  --line:#c3b4c6;--line-2:#a896af;--fg:#393448;--fg-dim:#5e566a;--comment:#70647a;
+  --accent:#775091;--accent-dim:#aa8abb;--cyan:#316f72;--purple:#9b4c75;--amber:#8c5c20;
+  --red:#ab444e;--frame-light:#d8c9da;
+}
+.rpg-site{background:radial-gradient(circle,var(--line) 1px,transparent 1px) 0 0/24px 24px,var(--bg);font-size:15px;line-height:1.7}
+.rpg-site::before,.rpg-site::after,.hud-frame::before,.hud-frame::after{display:none}
+.rpg-site a,.rpg-site button,.rpg-site input,.rpg-site textarea{touch-action:manipulation}
+.rpg-site :focus-visible{outline:3px solid var(--amber);outline-offset:4px}
+.rpg-site svg{stroke-linecap:square;stroke-linejoin:miter}
+.skip-link{position:fixed;top:-100px;left:16px;z-index:10000;background:var(--panel);padding:12px;color:var(--fg)}
+.skip-link:focus{top:12px}
+.hud-frame{margin:28px auto 0}.sec{margin:42px 0}.rpg-site main{min-width:0}
+/* The always-available game menu. */
+.nav{background:var(--bg-2);backdrop-filter:none;border-bottom:3px solid var(--line);box-shadow:none}
+.nav-inner{min-height:82px;gap:20px}.brand{flex-shrink:0}
+.brand .logo{width:38px;height:38px;background:var(--panel);border:2px solid var(--accent-dim);box-shadow:inset 0 0 0 3px var(--bg-2);color:var(--purple)}
+.brand .logo svg{width:23px;height:23px}.brand .nm{font:600 22px/1 var(--pixel-font);letter-spacing:.02em}
+.brand small{font:8px/1.8 "JetBrains Mono",monospace;letter-spacing:.12em;color:var(--fg-dim);margin-top:5px}
+.nav-links{gap:6px;flex-wrap:nowrap}.nav-links a{min-height:44px;padding:8px 11px;font:500 18px/1 var(--pixel-font);color:var(--fg-dim);border:2px solid transparent}
+.nav-links a svg{width:16px;height:16px}.nav-links a .key{display:none}
+.nav-links a.active{border-color:var(--accent-dim);background:var(--panel);color:var(--fg);box-shadow:inset 0 -3px var(--accent-dim)}
+.nav-links a:hover{background:var(--panel);border-color:var(--line-2);color:var(--fg)}
+.theme-btn{min-height:44px;border:2px solid var(--line);background:var(--panel);box-shadow:none;padding:8px;color:var(--fg)}
+/* Chapter title screens. */
+.page-banner{display:grid;grid-template-columns:minmax(0,1fr) 260px;align-items:stretch;border:3px solid var(--line-2);background:var(--panel-2);margin:0 0 32px;box-shadow:inset 0 0 0 3px var(--bg-2);overflow:hidden}
+.page-banner-copy{padding:30px 32px;align-self:center}.eyebrow,.pixel-post .eyebrow{font:10px/1.7 "JetBrains Mono",monospace;letter-spacing:.1em;color:var(--accent)}
+.eyebrow::before{width:8px;height:8px;background:var(--purple);flex:none}
+.page-banner h1,.hero h1{font:600 clamp(34px,4.6vw,55px)/1.08 var(--pixel-font);letter-spacing:-.025em;color:var(--fg);margin:14px 0;text-shadow:none;text-wrap:balance}
+.page-banner p{font-size:14px;color:var(--fg-dim);max-width:58ch;margin:12px 0 0;line-height:1.8}
+.page-landscape{display:block;width:100%;height:100%;object-fit:cover;image-rendering:pixelated;border-left:3px solid var(--line-2)}
+.section-title{display:flex;align-items:center;gap:16px;justify-content:space-between;margin:26px 0 20px;padding-bottom:12px;border-bottom:2px solid var(--line)}
+.section-title h2{font:500 27px/1.2 var(--pixel-font);margin:0;display:flex;align-items:center;gap:12px}
+.section-title h2::before{content:"";width:8px;height:8px;flex:none;background:var(--amber)}
+.section-title>span{font:10px/1.6 "JetBrains Mono",monospace;color:var(--fg-dim);text-align:right}
+/* Single frame language for every inventory, journal, and dialogue panel. */
+.rpg-site :is(.panel,.tile,.mission,.pcard,.ach,.cert,.org-card,.era-skills,.era-sum,.school,.log-row,.honor-item,.term,.chan,.quest-banner){border-radius:0;background:var(--panel-2);border:2px solid var(--line-2);box-shadow:inset 0 0 0 3px var(--bg-2);transition:background .15s steps(2,end),border-color .15s steps(2,end),transform .15s steps(2,end)}
+.rpg-site :is(.tile,.mission,.pcard,.ach,.cert,.org-card,.log-row,.chan):hover{box-shadow:inset 0 0 0 3px var(--bg-2);border-color:var(--accent);transform:translateY(-2px)}
+.rpg-site :is(.org-card,.pcard,.cert)::before{box-shadow:none;border-radius:0;transform:none;width:6px;height:6px}
+.rpg-site .org-card::after,.rpg-site .cert .thumb:not(.pending)::before,.rpg-site .pc-holo,.rpg-site .pc-shine{display:none}
+.rpg-site :is(.btn,.gh-link,.m-more,.quest-button,.quest-motion,.quest-reset,.quest-controls button,.quest-destinations button,.deck-nav,.chip-x,.tag,.pill,.rarity,.badge,.honor-item,.school,.log-row .loc,.log-row .yr,.org-card .loc,.org-card .yr,.pc-type,.pc-art,.pc-orb,.lb img,.modal-box){border-radius:0;box-shadow:none}
+.rpg-site :is(.btn,.gh-link,.quest-button,.m-more,.quest-controls button){min-height:44px;border-width:2px;background:var(--panel);color:var(--fg)}
+.rpg-site :is(.btn,.gh-link,.quest-button):hover{box-shadow:none;transform:translateY(-2px);background:color-mix(in srgb,var(--accent) 15%,var(--panel))}
+.rpg-site :is(.btn,.quest-button):active{transform:translateY(1px)}
+.rpg-site :is(.ic,.m-ico,.medal,.id-stats .ids){border-radius:0;box-shadow:none}
+.rpg-site :is(.m-sub,.pc-foot,.cert .meta .sub,.org-card .loc,.id-row .k){color:var(--fg-dim)}
+/* Player introduction + world map. */
+.hero{position:relative;padding:35px 390px 35px 32px;border:3px solid var(--line-2);background:var(--panel-2);margin:34px 0;min-height:340px;overflow:hidden}
+.hero h1{font-size:clamp(38px,5vw,62px)}.hero h1 .accent{text-shadow:none;color:var(--purple)}
+.hero-landscape{position:absolute;right:0;top:0;width:350px;height:100%;object-fit:cover;image-rendering:pixelated;border-left:3px solid var(--line-2)}
+.hero .role{font-size:12px;line-height:1.7;min-height:42px}.hero .tagline{font-size:14px;margin:12px 0 22px;line-height:1.8}
+.hero-cta{gap:9px}.hero-cta .btn{font-size:11px;padding:9px 12px}.hero-cta .btn:first-child{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.cursor{width:7px;height:12px}.sheet{max-width:none;margin-top:34px}.id-card{padding:26px;gap:30px}
+.id-card .avatar{border:3px solid var(--accent-dim);background:var(--panel)}.id-card .avatar .scan{display:none}
+.id-row{gap:15px}.id-row .val{text-align:right}.id-info{gap:16px}.id-stats .ids b{text-shadow:none}
+.bar{height:12px;border:2px solid var(--line-2)}.bar i{background:repeating-linear-gradient(90deg,var(--cyan) 0 7px,transparent 7px 10px)}
+.tile{padding:22px;gap:13px}.tile h3{font:500 24px var(--pixel-font)}.tile p{font-size:14px}.tile .go{opacity:1;transform:none}.tile .ic{border:2px solid var(--accent-dim);width:44px;height:44px}
+.quest-dialog{--accent:var(--purple);--accent-dim:#887294;--panel-2:var(--bg-2);--fg:#f5eddf;--fg-dim:#c4c1d0;border:3px solid #9382a3;background:#292d42;box-shadow:inset 0 0 0 4px #363a52}
+.quest-home{padding:28px;margin:34px 0}.quest-header h2{font:500 34px/1.15 var(--pixel-font);text-shadow:none;letter-spacing:0;color:#f5eddf;margin:10px 0}.quest-intro{font-family:"IBM Plex Sans",sans-serif;font-size:14px;color:#c4c1d0}
+.quest-map{border:4px solid #b1c5a4;box-shadow:none}.quest-map::after{display:none}.quest-journal{border-left:2px dashed #68617c}.quest-journal h3{font-family:var(--pixel-font);font-size:27px;line-height:1.2}
+.quest-map-stop{font-size:9px;box-shadow:none}.quest-help{font-size:10px}.quest-dialog .quest-button{color:#f5eddf;background:#363a52;border-color:#9382a3}
+.quest-dialog .quest-journal [data-link]{color:#292d42;background:var(--scene-color)}
+.quest-dialog .quest-destinations button{background:#30354d;color:#f5eddf;border-color:var(--stop-color)}
+.quest-banner{padding:20px 24px;margin:38px 0}.quest-banner::after{animation:none;height:2px}.quest-banner h2{font:500 25px var(--pixel-font)}.quest-banner .quest-mini{animation:none}.quest-banner p{font-size:12px}
+/* Workshop inventory. */
+.deck{border:2px solid var(--line);background:var(--bg-2);padding:16px 12px}.deck-nav{background:var(--panel);width:44px;height:44px;min-height:44px;border:2px solid var(--line-2)}
+.deck-dots button,.deck-dots button.on{border-radius:0;box-shadow:none;width:12px;height:12px}.deck-foot{padding:8px 0}
+.rpg-site .pcard{border:2px solid color-mix(in srgb,var(--type) 65%,var(--line));background:var(--panel-2);padding:18px;min-height:440px;gap:14px;transform-style:flat}
+.rpg-site .pcard.active{box-shadow:inset 0 0 0 3px var(--bg-2)}.pcard .pc-bar{min-height:42px}.pc-bar .m-title{font:600 21px/1.1 var(--pixel-font)}.pc-hp b{text-shadow:none;font:600 28px var(--pixel-font)}
+.pc-orb{width:9px;height:9px;background:var(--type);box-shadow:none}
+.pc-art{border:2px solid var(--line-2);background:repeating-conic-gradient(color-mix(in srgb,var(--type) 9%,var(--panel)) 0 25%,var(--panel) 0 50%) 0 0/24px 24px}
+.pc-art .m-ico{border:3px double var(--type);background:var(--panel-2);box-shadow:none;border-radius:0;width:64px;height:64px}
+.pc-type,.pc-art .rarity{backdrop-filter:none;background:var(--panel-2);border-width:1px}
+.pcard .tag{font-size:10px}.pcard .status .dot{border-radius:0;box-shadow:none;animation:none}
+.pcard-tr{min-height:0!important}.rpg-site .tr-grid .pcard-tr:hover{box-shadow:inset 0 0 0 3px var(--bg-2)}
+/* Trophy shelves and certificate inventory. */
+.ach-grid{gap:18px}.rpg-site .ach-grid .ach{padding:24px;background:var(--panel-2);border:2px solid color-mix(in srgb,var(--achievement-color) 55%,var(--line));border-top:5px solid var(--achievement-color);box-shadow:inset 0 0 0 3px var(--bg-2);gap:17px}
+.ach-grid .ach h3{font:500 27px/1.15 var(--pixel-font);letter-spacing:0}.ach-grid .ach p{color:var(--fg-dim);font-size:14px;line-height:1.8}
+.ach-grid .ach .medal{background:var(--panel);border:2px solid var(--achievement-color);box-shadow:none;width:54px;height:54px}
+.rpg-site .ach:hover .medal{animation:none}.ach-grid .ach .unlocked{font-size:8px;background:var(--panel);padding:4px 7px}.ach-grid .ach .foot{border-top:2px dotted var(--line);font-size:10px}
+.cert-cat{font:500 23px/1.4 var(--pixel-font);letter-spacing:0;text-transform:none;margin-top:34px}.cert-cat::before{width:10px;height:10px;transform:none;border:0;background:var(--amber)}
+.cert-grid{gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),1fr))}
+.rpg-site .cert{padding:12px;gap:14px;background:var(--panel-2)}.cert .thumb{border:2px solid var(--line);background:var(--panel)}.cert .thumb img{object-fit:contain;transform:none!important}
+.cert .meta{padding:2px 6px 6px}.cert .meta h4{font:500 22px/1.2 var(--pixel-font)}.cert .meta .sub{font-size:11px;line-height:1.7}.cert .meta .yr{font-size:10px}
+/* Adventure chapters. */
+.era{margin:36px 0 54px}.era-head{background:var(--panel);padding:15px 18px;border:2px solid var(--line-2)}
+.era-head h2{font:500 30px var(--pixel-font)}.era-head .badge{font-size:10px;box-shadow:none}.era-line{height:0;margin:0 0 20px}.era-head .when{color:var(--fg-dim)}
+.era-skills{top:105px;padding:20px}.era-sum{padding:20px}.sum-nums .num{font:600 36px var(--pixel-font)}.sum-nums .lbl{font-size:12px;line-height:1.5}.sum-nums li{border-left:3px solid var(--accent-dim)}
+.org-card{padding:20px!important;gap:5px}.org-card h4{font:500 25px/1.15 var(--pixel-font)}.org-card p{font-size:14px;line-height:1.7}.org-card .role{font-size:11px;line-height:1.6}
+.rpg-site .org-card:hover{box-shadow:inset 0 0 0 3px var(--bg-2)}.honor-item{padding:14px;font-size:14px}.chip-x{padding:7px 10px;border-color:var(--line-2)}.sub-label{line-height:1.6}
+.log-row{padding:16px}.log-main .t{font-size:15px}.log-main p{font-size:14px}.rpg-site .log-row.open{box-shadow:inset 0 0 0 3px var(--bg-2)}
+/* Post office, overlays, and persistent garden. */
+.pixel-post .term{border-color:var(--accent-dim)}.pixel-post .term-bar{background:var(--panel);border-color:var(--accent-dim)}.post-letter-head h2{font:500 29px var(--pixel-font)}
+.pixel-post .chan{border-left:5px solid var(--channel);padding:17px}.pixel-post .chan .ic{background:var(--panel)}.pixel-post .post-status{border-bottom:2px solid var(--line)}
+.post-stamp{transform:none}.pixel-post .btn{font:500 19px var(--pixel-font);box-shadow:none}.pixel-post .btn:hover{box-shadow:none}
+.pixel-post .field input,.pixel-post .field textarea{font-size:14px}.post-menu-title{margin-bottom:8px}
+.lb img{border:3px solid var(--line-2);box-shadow:none}.lb .x,.lb .arw{border-radius:0;border-width:2px}.lb .cap{background:var(--panel);padding:10px 20px;bottom:0;border-top:2px solid var(--line)}
+.rpg-site .modal-box{border:3px solid var(--line-2);box-shadow:none}
+.rpg-site #palette .pal-box{border-radius:0;border:3px solid var(--line-2);box-shadow:none}.rpg-site #palette .pal-list li,.rpg-site #palette .pk{border-radius:0}
+#toast{border-radius:0;border:2px solid var(--accent-dim);box-shadow:none;bottom:145px}
+.footer{margin-top:42px;padding:22px 0;border-top:2px solid var(--line);font-size:10px;gap:16px;line-height:1.8}
+.sky-walkway{border-color:var(--line-2)}.garden-caption{font-family:var(--pixel-font);font-size:14px;line-height:1;margin-bottom:7px;letter-spacing:.025em}
+.garden-icon{box-shadow:none;border-width:2px}.garden-social-name{font-size:9px}.sky-walkway .sky-companion{filter:none}
+/* Fit the game menu and panels to smaller screens without shrinking body text. */
+@media(min-width:920px){.ach-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.ach-grid .ach{grid-column:span 2}.ach-grid .ach:nth-last-child(-n+2){grid-column:span 3}}
+@media(max-width:1050px){.nav-inner{flex-wrap:wrap;gap:12px;padding-top:14px;padding-bottom:12px}.nav-links{order:3;flex:1 0 100%;justify-content:center}.theme-btn{margin-left:auto}.hero{padding-right:320px}.hero-landscape{width:290px}.page-banner{grid-template-columns:minmax(0,1fr) 210px}.era-skills{top:150px}}
+@media(max-width:800px){.page-banner-copy{padding:25px}.page-banner{grid-template-columns:minmax(0,1fr) 180px}.hero{padding:28px}.hero-landscape{position:static;width:100%;height:180px;border:0;border-bottom:3px solid var(--line-2);margin:-28px -28px 24px;width:calc(100% + 56px);object-position:center 55%}.hero h1{font-size:48px}.quest-home{padding:20px}.quest-journal{border-left:0}.era-skills{position:static}.section-title{align-items:flex-start;flex-direction:column;gap:8px}.section-title>span{text-align:left}.id-card{padding:20px}.quest-header h2{font-size:30px}}
+@media(max-width:600px){.hud-frame{margin-top:18px}.nav-inner{gap:10px}.brand .nm{font-size:21px}.brand small{display:block;font-size:7px}.nav-links{gap:4px;justify-content:space-between}.nav-links a{flex:1;justify-content:center;padding:7px 3px;font-size:16px;gap:5px}.nav-links a svg{display:none}.nav{position:relative}.page-banner{display:flex;flex-direction:column-reverse}.page-landscape{height:100px;object-position:center 46%;border-left:0;border-bottom:3px solid var(--line-2)}.page-banner-copy{padding:23px}.page-banner h1{font-size:36px}.page-banner p{font-size:14px}.page-banner{margin-bottom:25px}.hero{margin-top:20px}.hero h1{font-size:42px}.hero .role{font-size:12px}.hero .tagline{font-size:14px}.hero-cta .btn{min-height:44px}.section-title h2{font-size:25px}.rpg-site .ach-grid .ach{padding:22px}.ach-grid .ach h3{font-size:26px}.deck{gap:6px;padding:8px}.deck-viewport{flex-basis:100%;order:1;mask-image:none;-webkit-mask-image:none}.deck-nav{order:2}.deck-nav.next{order:3}.deck-foot{order:4}.pcard{flex-basis:calc(100% - 16px)}.deck-track{gap:16px}.era-head{gap:8px}.era-head .when{width:100%;margin:0}.id-row{flex-wrap:wrap;gap:4px}.id-row .val{text-align:left}.quest-banner{padding:18px}.quest-banner .quest-mini{display:none}.quest-header-actions{width:100%}.quest-header-actions>*{flex:1}.quest-map-stop{font-size:7px}.quest-scene{max-width:100%}.footer{flex-wrap:wrap}.garden-caption{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.rpg-site *, .rpg-site *::before,.rpg-site *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+#character{scroll-margin-top:110px}
+.pixel-post input::placeholder,.pixel-post textarea::placeholder{color:var(--comment);opacity:1}
+:root[data-theme="light"] .pixel-post .chan{--channel:var(--accent)}
+:root[data-theme="light"] .pixel-post .chan:nth-of-type(2){--channel:var(--cyan)}
+:root[data-theme="light"] .pixel-post .chan:nth-of-type(3){--channel:var(--purple)}
+:root[data-theme="light"] .pixel-post .chan:nth-of-type(4){--channel:var(--amber)}
+:root[data-theme="light"] .pixel-post .chan:last-child{--channel:#447956}
+@media(max-width:360px){.nav-links a{font-size:14px}.brand .nm{font-size:19px}.page-banner h1{font-size:32px}.page-banner-copy{padding:20px}.hero{padding:22px}.hero-landscape{margin:-22px -22px 22px;width:calc(100% + 44px)}.hero h1{font-size:36px}.hero-cta .btn{font-size:10px;padding:8px}.quest-home{padding:14px}.quest-header-actions{flex-wrap:wrap}.quest-header-actions>*{flex-basis:100%}}
+
+/* Atmospheric depth: distant pixel scenery and softly lit game panels. */
+:root{--depth-shadow:rgba(9,12,26,.38);--edge-light:rgba(244,225,255,.12);--edge-shade:rgba(10,14,28,.24)}
+:root[data-theme="light"]{--depth-shadow:rgba(72,50,83,.18);--edge-light:rgba(255,255,255,.8);--edge-shade:rgba(101,76,115,.12)}
+.rpg-site{
+  background:
+    radial-gradient(ellipse at 12% 8%,#69507944,transparent 48%),
+    radial-gradient(ellipse at 90% 36%,#416b7e33,transparent 52%),
+    linear-gradient(180deg,#27283f 0%,#242b40 48%,#1c303c 100%);
+  background-attachment:fixed;
+}
+.rpg-site::before{content:"";display:block;position:fixed;inset:0;z-index:0;pointer-events:none;opacity:1;animation:none;background:url('../assets/pixel-horizon.svg') center bottom/cover no-repeat}
+:root[data-theme="light"] .rpg-site{background:radial-gradient(ellipse at 8% 5%,#ffe6cd99,transparent 48%),radial-gradient(ellipse at 95% 18%,#d2c3e899,transparent 50%),linear-gradient(180deg,#e6dce8,#e6e4e4 52%,#cfddd7);background-attachment:fixed}
+:root[data-theme="light"] .rpg-site::before{opacity:.19}
+.rpg-site .nav{background:linear-gradient(180deg,var(--panel),var(--bg-2));box-shadow:0 5px 14px -9px var(--depth-shadow),inset 0 1px var(--edge-light)}
+.rpg-site :is(.page-banner,.hero){background:radial-gradient(ellipse at 0 0,color-mix(in srgb,var(--accent) 13%,transparent),transparent 70%),linear-gradient(145deg,var(--panel),var(--panel-2));border-top-color:var(--frame-light);box-shadow:inset 0 0 0 3px var(--bg-2),inset 0 5px var(--edge-light),0 10px 26px -15px var(--depth-shadow)}
+.rpg-site :is(.panel,.tile,.mission,.pcard,.cert,.org-card,.era-skills,.era-sum,.school,.log-row,.honor-item,.term,.chan,.quest-banner),
+.rpg-site .ach-grid .ach,.rpg-site .pcard.active{
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface-tint,var(--accent)) 7%,var(--panel)) 0%,var(--panel-2) 75%);
+  box-shadow:inset 0 1px var(--edge-light),inset 1px 0 var(--edge-light),inset 0 -3px var(--edge-shade),0 7px 18px -12px var(--depth-shadow);
+}
+.rpg-site .ach-grid .ach{--surface-tint:var(--achievement-color)}
+.rpg-site :is(.pcard,.org-card,.cert){--surface-tint:var(--type,var(--accent))}
+.rpg-site .pixel-post .chan{--surface-tint:var(--channel)}
+.rpg-site :is(.tile,.mission,.pcard,.cert,.org-card,.log-row,.chan):hover,
+.rpg-site .ach-grid .ach:hover,.rpg-site .tr-grid .pcard-tr:hover{
+  box-shadow:inset 0 1px var(--edge-light),inset 1px 0 var(--edge-light),inset 0 -3px var(--edge-shade),0 10px 22px -13px var(--depth-shadow);
+}
+.rpg-site :is(.btn,.gh-link,.theme-btn,.deck-nav){box-shadow:inset 0 2px var(--edge-light),inset 0 -2px var(--edge-shade)}
+.rpg-site :is(.btn,.gh-link,.theme-btn,.deck-nav):active{box-shadow:inset 0 2px var(--edge-shade)}
+.rpg-site .deck{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 82%,transparent),color-mix(in srgb,var(--panel) 60%,transparent));box-shadow:inset 0 2px 8px var(--edge-shade)}
+.rpg-site .section-title{border-bottom-color:var(--line-2)}
+.rpg-site .section-title h2{text-shadow:0 2px var(--bg)}
+.rpg-site .quest-dialog{background:radial-gradient(ellipse at 5% 0,#6b526533,transparent 60%),linear-gradient(145deg,#33354e,#292d42 75%);box-shadow:inset 0 0 0 4px #363a52,0 10px 24px -14px var(--depth-shadow)}
+.rpg-site .sky-walkway{box-shadow:0 -6px 20px -12px var(--depth-shadow)}
+@media(max-width:600px){.rpg-site::before{background-size:auto 100%;background-position:20% bottom}}
+
+/* Readable content, with pixel lettering reserved for the game interface. */
+.rpg-site .ach-grid .ach h3,.rpg-site .cert .meta h4,.rpg-site .pc-bar .m-title,.rpg-site .tile h3{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:21px;font-weight:600;line-height:1.4;letter-spacing:0;
+}
+.rpg-site .ach-grid .ach p,.rpg-site .org-card p{font-size:15px}
+.experience-page{--reading-font:"IBM Plex Sans",system-ui,sans-serif}
+.experience-page .page-banner h1{font-family:var(--reading-font);font-size:clamp(30px,4vw,44px);font-weight:600;line-height:1.2}
+.experience-page .page-banner p{font-size:16px;line-height:1.7}
+.experience-page .section-title h2{font:600 26px/1.4 var(--reading-font);text-shadow:none}
+.experience-jump{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 32px}
+.experience-jump a{font:500 15px/1.5 var(--reading-font);padding:9px 16px;border:1px solid var(--line-2);background:var(--panel-2);text-decoration:none;color:var(--fg)}
+.experience-jump a:hover{border-color:var(--accent);background:var(--panel)}
+.experience-page .era{scroll-margin-top:110px}
+.experience-page .era-head h2{font:600 28px/1.3 var(--reading-font)}
+.experience-page .era-head .when{font:400 15px/1.5 var(--reading-font)}
+.experience-page .era>p{font-size:16px!important;line-height:1.7}
+.experience-page .era-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+.experience-page .era-main{min-width:0}
+.experience-page .era-sum{padding:22px 26px;margin-bottom:30px;background:var(--panel-2)}
+.experience-page .era-sum h3{font:600 16px/1.5 var(--reading-font);letter-spacing:0;text-transform:none;margin-bottom:18px;color:var(--fg)}
+.experience-page .sum-nums{gap:24px}
+.experience-page .sum-nums .num{font:600 30px/1.2 var(--reading-font);font-variant-numeric:tabular-nums}
+.experience-page .sum-nums .lbl{font:400 15px/1.5 var(--reading-font);color:var(--fg-dim);margin-top:5px}
+.experience-page .sub-label{font:600 21px/1.4 var(--reading-font);letter-spacing:0;text-transform:none;color:var(--fg);margin:30px 0 16px}
+.experience-page .org-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.experience-entry{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.6fr);gap:30px;padding:26px 28px;background:var(--panel-2);border:1px solid var(--line-2);border-left:4px solid var(--accent-dim);box-shadow:0 5px 16px -12px var(--depth-shadow)}
+.entry-heading{min-width:0}.entry-period{font:500 14px/1.5 var(--reading-font);color:var(--fg-dim)}
+.entry-heading h4{font:600 23px/1.3 var(--reading-font);color:var(--fg);margin:7px 0 10px}
+.entry-heading .entry-role{font:600 16px/1.5 var(--reading-font);color:var(--cyan);margin:0 0 12px}
+.entry-context{font:400 13px/1.5 var(--reading-font);color:var(--fg-dim)}
+.entry-work{border-left:1px solid var(--line);padding-left:28px;align-self:stretch}
+.entry-work h5{font:600 14px/1.5 var(--reading-font);color:var(--fg-dim);margin:0 0 10px}
+.entry-work ul{margin:0;padding-left:20px;display:grid;gap:10px;max-width:70ch}
+.entry-work li{font:400 16px/1.75 var(--reading-font);color:var(--fg-dim);padding-left:4px}
+.entry-work li::marker{color:var(--accent)}.entry-work strong{font-weight:600;color:var(--fg)}
+.experience-page .era-skills{position:static;padding:20px 24px;background:var(--panel-2);border:1px solid var(--line);box-shadow:none}
+.experience-page .era-skills h4{font:600 16px/1.5 var(--reading-font);text-transform:none;letter-spacing:0;color:var(--fg);margin-bottom:13px}
+.experience-page .era-skills .chips{flex-direction:row;flex-wrap:wrap;gap:8px}
+.experience-page .era-skills .chip-x{width:auto}
+.experience-page .chip-x{font:400 14px/1.5 var(--reading-font);padding:7px 11px}
+.experience-page .honors{grid-template-columns:minmax(0,1fr)}
+.experience-page .honor-item{font:400 16px/1.6 var(--reading-font);padding:17px 20px;box-shadow:none;background:var(--panel-2)}
+.experience-page .honor-item .g{font:400 13px/1.4 var(--reading-font)}
+@media(max-width:700px){.experience-entry{grid-template-columns:minmax(0,1fr);gap:18px;padding:22px}.entry-work{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.entry-heading h4{font-size:22px}.experience-page .era-sum{padding:20px}.experience-page .sum-nums{grid-template-columns:minmax(0,1fr);gap:18px}.experience-page .sum-nums li{padding-left:14px}.experience-page .era-head .when{font-size:14px}.experience-page .honor-item{flex-wrap:wrap}.experience-page .honor-item>span:not(.g){flex:1;min-width:0}.experience-page .honor-item .g{margin-left:26px}.experience-page .era-skills{padding:20px}}
+
+/* Small transparent illustrations give each destination its own identity. */
+.rpg-site .page-banner{display:grid;grid-template-columns:minmax(0,1fr) 220px;align-items:center;padding-right:24px;overflow:visible}
+.page-vignette{display:block;width:200px;height:160px;object-fit:contain;image-rendering:pixelated;justify-self:center;pointer-events:none}
+.rpg-site .hero{padding-right:300px;min-height:0}
+.hero-vignette{position:absolute;right:30px;top:50%;transform:translateY(-50%);width:240px;height:192px;object-fit:contain;image-rendering:pixelated;pointer-events:none}
+@media(max-width:800px){.rpg-site .page-banner{grid-template-columns:minmax(0,1fr) 155px;padding-right:12px}.page-vignette{width:150px;height:120px}.rpg-site .hero{padding-right:240px}.hero-vignette{width:190px;height:152px;right:24px}}
+@media(max-width:600px){.rpg-site .page-banner{grid-template-columns:minmax(0,1fr) 84px;padding-right:12px}.page-vignette{width:88px;height:88px}.rpg-site .page-banner-copy{padding:22px 10px 22px 20px}.rpg-site .page-banner h1{font-size:30px}.rpg-site .page-banner .eyebrow{font-size:9px;letter-spacing:.05em}.rpg-site .page-banner p{font-size:14px}.rpg-site .hero{padding:24px}.hero-vignette{position:static;float:right;transform:none;width:100px;height:100px;margin:0 0 10px 10px}.rpg-site .hero .tagline{clear:both}.rpg-site .hero h1{font-size:36px}}
+@media(max-width:360px){.rpg-site .page-banner{grid-template-columns:minmax(0,1fr) 64px;padding-right:8px}.page-vignette{width:68px;height:76px}.rpg-site .page-banner h1{font-size:28px}.hero-vignette{width:80px;height:88px}.rpg-site .hero{padding:20px}}
+
+/* Expandable experience chapters: summary outside, complete record inside. */
+.experience-page .chapter-container{margin:18px 0;border:2px solid var(--line-2);background:var(--panel-2);box-shadow:0 7px 18px -12px var(--depth-shadow);scroll-margin-top:105px}
+.chapter-summary{display:flex;align-items:center;gap:18px;padding:22px 24px;list-style:none;cursor:pointer;background:linear-gradient(135deg,var(--panel),var(--panel-2));min-height:100px}
+.chapter-summary::-webkit-details-marker{display:none}
+.chapter-summary::marker{content:""}
+.chapter-summary:hover{background:color-mix(in srgb,var(--accent) 8%,var(--panel))}
+.chapter-summary .badge{font:10px/1.5 "JetBrains Mono",monospace;color:var(--bg);background:var(--accent);padding:5px 8px;white-space:nowrap}
+.chapter-summary-copy{flex:1;min-width:0;display:grid;gap:6px}
+.chapter-title{font:600 25px/1.25 var(--reading-font);color:var(--fg)}
+.chapter-preview{font:400 14px/1.65 var(--reading-font);color:var(--fg-dim)}
+.chapter-date{font:400 13px/1.5 var(--reading-font);color:var(--fg-dim);white-space:nowrap}
+.chapter-toggle{display:flex;gap:10px;align-items:center;font:500 13px/1.5 var(--reading-font);color:var(--accent)}
+.chapter-chevron{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--accent-dim);font:20px/1 monospace}
+.chapter-container:not([open]) .when-open,.chapter-container[open] .when-closed{display:none}
+.chapter-container[open]>.chapter-summary{border-bottom:2px solid var(--line);background:var(--panel)}
+.chapter-container[open] .chapter-chevron{transform:rotate(45deg)}
+.chapter-content{padding:26px}
+.experience-page .chapter-content>p{font-size:16px!important;line-height:1.7}
+.experience-page .chapter-content .era-grid{margin-top:22px}
+.experience-page .chapter-content .era-sum{background:var(--panel);border:1px solid var(--line);box-shadow:none}
+.experience-page .chapter-content .experience-entry{background:var(--panel);box-shadow:none}
+.experience-page .chapter-content .era-skills{background:var(--panel)}
+@media(max-width:800px){.chapter-summary{flex-wrap:wrap;gap:12px;padding:20px}.chapter-summary-copy{flex-basis:calc(100% - 120px)}.chapter-date{margin-left:0}.chapter-toggle{margin-left:auto}.chapter-content{padding:20px}}
+@media(max-width:480px){.chapter-summary{padding:16px}.chapter-summary .badge{font-size:9px}.chapter-title{font-size:22px}.chapter-preview{font-size:13px}.chapter-content{padding:14px}.experience-page .chapter-content .experience-entry{padding:18px}.experience-page .chapter-container{scroll-margin-top:16px}}
+/* Daytime world: themed panels, controls, labels and scene accompany the map. */
+:root[data-theme="light"] .rpg-site .quest-dialog{
+ --fg:#393448;--fg-dim:#62576c;--accent:#775091;--accent-dim:#aa8abb;--panel-2:#f3e9e2;
+ color:var(--fg);border-color:#aa96b5;background:linear-gradient(145deg,#fff9ef,#f1e7ed);box-shadow:inset 0 0 0 4px #e9dce9,0 10px 24px -14px var(--depth-shadow);
+}
+:root[data-theme="light"] .quest-dialog .quest-header h2{color:#393448}
+:root[data-theme="light"] .quest-dialog :is(.quest-intro,.quest-help,.quest-footer,.quest-journal p){color:#62576c}
+:root[data-theme="light"] .quest-dialog :is(.quest-kicker,.quest-journal h3){color:#775091}
+:root[data-theme="light"] .quest-dialog :is(.quest-hud,.quest-near,[data-reward]){color:#805722}
+:root[data-theme="light"] .quest-dialog .quest-journal [data-story]{color:#443d50}
+:root[data-theme="light"] .quest-dialog .quest-journal{border-color:#c3b4c6}
+:root[data-theme="light"] .quest-dialog .quest-scene{border-color:#b795b0;background:#f3e5d8}
+:root[data-theme="light"] .quest-dialog .quest-preview-card{background:#e9dfe9;color:#443d50;border-color:#a786a9}
+:root[data-theme="light"] .quest-dialog :is(.quest-button,.quest-controls button,.quest-motion,.quest-reset,.quest-preview-card button){background:#fffaf2;color:#55425f;border:2px solid #aa96b5;box-shadow:inset 0 2px #ffffff}
+:root[data-theme="light"] .quest-dialog :is(.quest-button,.quest-controls button,.quest-motion,.quest-reset,.quest-preview-card button):hover{background:#e9dcec;color:#443d50;filter:none}
+:root[data-theme="light"] .quest-dialog button:disabled{color:#756b7e;background:#e7e1e6;border-color:#c5b9ca;opacity:1;cursor:default}
+:root[data-theme="light"] .quest-dialog .quest-journal [data-link]{background:#775091;color:#fffaf2;border-color:#775091;box-shadow:none}
+:root[data-theme="light"] .quest-dialog .quest-destinations button{background:color-mix(in srgb,var(--stop-color) 18%,#fffaf2);color:#443d50;border-color:color-mix(in srgb,var(--stop-color) 45%,#776580)}
+:root[data-theme="light"] .quest-dialog .quest-destinations button[aria-pressed="true"]{background:color-mix(in srgb,var(--stop-color) 42%,#fffaf2);color:#393448;border-color:#775091}
+:root[data-theme="light"] .quest-dialog .quest-map-stop{background:#fff7e9;color:#443d50;border-color:#776580}
+:root[data-theme="light"] .quest-dialog .quest-map-stop:hover{background:#eadcf0}
+:root[data-theme="light"] .quest-dialog .quest-map{border-color:#91b69c;box-shadow:0 3px 0 #c8d6c8}
+:root[data-theme="light"] .quest-dialog .quest-footer{border-color:#c3b4c6}
+:root[data-theme="light"] .quest-dialog .quest-progress{background:#e0d4e5;accent-color:#88609e}
+:root[data-theme="light"] .quest-dialog .quest-progress::-webkit-progress-bar{background:#e0d4e5}
+:root[data-theme="light"] .quest-dialog .quest-progress::-webkit-progress-value{background:repeating-linear-gradient(90deg,#88609e 0 12px,#e0d4e5 12px 15px)}
+:root[data-theme="light"] .quest-dialog .quest-progress::-moz-progress-bar{background:repeating-linear-gradient(90deg,#88609e 0 12px,#e0d4e5 12px 15px)}
+
+/* Six destinations keep a comfortable target size on narrow screens. */
+@media(max-width:600px){.rpg-site .nav-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:4px}.rpg-site .nav-links a{font-size:17px;min-height:40px}.rpg-site .nav-links a svg{display:block;width:14px;height:14px}}

@@ -7,69 +7,57 @@
 <meta name="description" content="Competitions & certifications unlocked by Sky Parado.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/quest.css">
+<link rel="stylesheet" href="css/rpg.css">
+<link rel="stylesheet" href="css/trophies.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 </head>
-<body>
+<body class="rpg-site">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav class="nav"><div class="nav-inner">
   <a class="brand" href="index.html">
-    <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
-    <span class="nm">SKY PARADO<small>PARADO.OS // NETSEC</small></span>
+    <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 4h6v3h6V4h6v9h-3v3h-3v3H9v-3H6v-3H3z"/></svg></span>
+    <span class="nm">SKY PARADO<small>A LITTLE WORLD BY SKY</small></span>
   </a>
   <div class="nav-links">
-    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7M5 9v11h14V9"/></svg>home<span class="key">1</span></a>
-    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>projects<span class="key">2</span></a>
-    <a href="certs.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM9 20h6M12 15v5"/></svg>certs<span class="key">3</span></a>
-    <a href="experience.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg>experience<span class="key">4</span></a>
-    <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg>contact<span class="key">5</span></a>
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 10h3V7h3V4h3V1h2v3h3v3h3v3h3v3h-3v9h-6v-6h-4v6H5v-9H2z"/></svg>home<span class="key">1</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 6h20v15H2zM8 2h8v3h-3V4h-2v1H8zM5 9v3h14V9z"/></svg>projects<span class="key">2</span></a>
+    <a href="certs.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h12v3h4v9h-5v3h-3v3h4v3H6v-3h4v-3H7v-3H2V5h4zM4 7v5h2V7zM18 7v5h2V7z"/></svg>trophies<span class="key">3</span></a>
+    <a href="experience.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h18v20H3zM7 6v2h10V6zM7 11v2h10v-2zM7 16v2h7v-2z"/></svg>journal<span class="key">4</span></a>
+    <a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v15H2zM5 8v9h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg>mail<span class="key">5</span></a>
+    <a href="skills.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M10 11H4V5h6v3h2v5h2V8h6v6h-6v4h4v4H6v-4h4z"/></svg>skills<span class="key">6</span></a>
   </div>
   <button class="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg><span class="tl">light</span></button>
 </div></nav>
 
-<main class="wrap hud-frame">
+<main id="main-content" class="wrap hud-frame">
   <section class="sec" style="margin-top:34px">
-    <div class="eyebrow">Trophy Case</div>
-    <h1 style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,5vw,40px);margin:12px 0 6px;color:var(--fg)">Achievements Unlocked</h1>
-    <div class="sec-head mono" style="margin-top:18px"><span class="dollar">$</span><span class="cmd">cat</span><span class="arg">/var/log/achievements</span><span class="out">// 3 unlocked</span></div>
+    <header class="page-banner"><div class="page-banner-copy"><div class="eyebrow">WORLD 03 / THE TROPHY ROOM</div><h1>Little wins. Big adventures.</h1><p>Competition milestones, earned certificates, and the skills collected on my journey.</p></div><img src="assets/pixel-trophies.svg" alt="" class="page-vignette" aria-hidden="true"></header>
+    <div class="section-title"><h2>The trophy case</h2><span>Five milestones, each with a story</span></div>
 
-    <div class="ach-grid">
-
-      <article class="ach reveal">
-        <span class="unlocked mono">UNLOCKED</span>
-        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0z"/><path d="M6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3M9 20h6M10 15v5M14 15v5"/></svg></span>
-        <h3>Champion — DLSU Capture The Flag 2026</h3>
-        <p>Team <b style="color:var(--fg)">Prompt Patrol</b> (5 members), Department of Computer Technology, De La Salle University.</p>
-        <div class="foot mono"><span class="rar">legendary</span><span class="yr">2026</span></div>
-      </article>
-
-      <article class="ach epic reveal">
-        <span class="unlocked mono">UNLOCKED</span>
-        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.6 8.4 9 10 5.4-1.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <h3>Junior VAPT Practitioner</h3>
-        <p>NSSECU2 Advanced &amp; Offensive Security, DLSU. Recon, enumeration, validation, controlled exploitation, priv-esc, CVSS v3.1 scoring &amp; technical reporting.</p>
-        <div class="foot mono"><span class="rar">epic</span><span class="yr">Aug 2026</span></div>
-      </article>
-
-      <article class="ach rare reveal">
-        <span class="unlocked mono">UNLOCKED</span>
-        <span class="medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg></span>
-        <h3>ISC2 Certified in Cybersecurity (CC)</h3>
-        <p>Passed the ISC2 CC certification exam — foundational security principles, access control, network &amp; operations security.</p>
-        <div class="foot mono"><span class="rar">rare</span><span class="yr">2026</span></div>
-      </article>
-
+    <div class="trophy-case">
+      <div class="trophy-case-top"><span>SKY'S TROPHY CABINET</span><span class="trophy-case-count">05 / COLLECTED</span></div>
+      <div class="trophy-gallery" role="group" aria-label="Achievement trophies"><button class="trophy-slot" type="button" id="trophy-0" aria-controls="trophy-info-0" aria-pressed="true"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#bb864f" d="M20 17H8v24h7v6h13v-7H16V24h4zM60 17h12v24h-7v6H52v-7h12V24h-4z"/><path fill="#edc778" d="M20 9h40v10h-4v27h-7v7H31v-7h-7V19h-4zM36 51h8v15h-8z"/><path fill="#ffe9af" d="M27 15h26v5H27zM28 22h5v18h-5z"/><path fill="#bf8d62" d="M26 65h28v6H26z"/><path fill="#82677c" d="M20 71h40v7H20z"/></svg></span><span class="trophy-plaque"><strong>DLSU CTF</strong><span>Champion</span></span></button><button class="trophy-slot" type="button" id="trophy-1" aria-controls="trophy-info-1" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#9a829d" d="M20 19H9v23h6v6h14v-6H16V25h4zM60 19h11v23h-6v6H51v-6h13V25h-4z"/><path fill="#c9bfdc" d="M20 12h40v11h-4v23h-7v8H31v-8h-7V23h-4zM36 52h8v13h-8z"/><path fill="#f0e9f8" d="M27 17h26v5H27zM28 25h5v13h-5z"/><path fill="#e7a8c6" d="M28 64h24v7H28z"/><path fill="#82677c" d="M22 71h36v7H22z"/></svg></span><span class="trophy-plaque"><strong>ISO CTF</strong><span>2nd place</span></span></button><button class="trophy-slot" type="button" id="trophy-2" aria-controls="trophy-info-2" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#799fc1" d="M20 7h13l13 28-13 7zM60 7H47L34 35l13 7z"/><path fill="#a9d8db" d="M29 32h22v6h9v27h-9v8H29v-8h-9V38h9z"/><path fill="#648da1" d="M31 39h18v6h5v15h-5v6H31v-6h-5V45h5z"/><path fill="#e7efcc" d="M37 43h6v8h8v6h-8v8h-6v-8h-8v-6h8z"/></svg></span><span class="trophy-plaque"><strong>K17 CTF</strong><span>152 / 682</span></span></button><button class="trophy-slot" type="button" id="trophy-3" aria-controls="trophy-info-3" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#9b729c" d="M12 12h56v39h-7v10h-8v8H27v-8h-8V51h-7z"/><path fill="#e7a8c6" d="M19 19h42v29h-7v10h-8v7H34v-7h-8V48h-7z"/><path fill="#fff0dc" d="M25 36h7v7h8V29h7v-7h7v14h-7v14H32v-7h-7z"/><path fill="#82677c" d="M27 72h26v6H27z"/></svg></span><span class="trophy-plaque"><strong>VAPT</strong><span>Practitioner</span></span></button><button class="trophy-slot" type="button" id="trophy-4" aria-controls="trophy-info-4" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#719795" d="M26 12h28v7h7v23H19V19h7z"/><path fill="#292d42" d="M30 21h20v21H30z"/><path fill="#a9d4bd" d="M13 37h54v36H13z"/><path fill="#d5edd0" d="M19 42h42v5H19z"/><path fill="#587c77" d="M34 50h12v9h-3v8h-6v-8h-3z"/></svg></span><span class="trophy-plaque"><strong>ISC2 CC</strong><span>Exam passed</span></span></button></div>
+      <div class="trophy-case-help">Hover to inspect &middot; tap or use Tab and arrow keys to choose</div>
+      <div class="trophy-details"><article class="trophy-info" id="trophy-info-0" aria-labelledby="trophy-title-0"><div class="trophy-info-meta"><span>legendary</span><span>2026</span></div><h3 id="trophy-title-0">Champion — DLSU Capture The Flag 2026</h3><p>Team <b style="color:var(--fg)">Prompt Patrol</b> (5 members), Department of Computer Technology, De La Salle University.</p><button class="trophy-certificate" type="button" data-certificate="assets/certs/ctf-champion-2026.jpg">View certificate <span aria-hidden="true">&#8599;</span></button></article><article class="trophy-info" id="trophy-info-1" aria-labelledby="trophy-title-1"><div class="trophy-info-meta"><span>2nd place</span><span>2026</span></div><h3 id="trophy-title-1">2nd Place &mdash; ISO CTF 2026</h3><p>Uncharted Knowledge, hosted by the Information Security Organization. Awarded to Sky Hannah Parado.</p><button class="trophy-certificate" type="button" data-certificate="assets/certs/iso-ctf-2026-second-place.png">View certificate <span aria-hidden="true">&#8599;</span></button></article><article class="trophy-info" id="trophy-info-2" aria-labelledby="trophy-title-2"><div class="trophy-info-meta"><span>top 23%</span><span>2026</span></div><h3 id="trophy-title-2">152 / 682 &mdash; K17 CTF 2026</h3><p>Team <b>SlayTheFlagII</b> placed 152nd out of 682 with <b>2,700 points</b>.</p></article><article class="trophy-info" id="trophy-info-3" aria-labelledby="trophy-title-3"><div class="trophy-info-meta"><span>epic</span><span>Aug 2026</span></div><h3 id="trophy-title-3">Junior VAPT Practitioner</h3><p>NSSECU2 Advanced &amp; Offensive Security, DLSU. Recon, enumeration, validation, controlled exploitation, priv-esc, CVSS v3.1 scoring &amp; technical reporting.</p><button class="trophy-certificate" type="button" data-certificate="assets/certs/vapt-practitioner.jpg">View certificate <span aria-hidden="true">&#8599;</span></button></article><article class="trophy-info" id="trophy-info-4" aria-labelledby="trophy-title-4"><div class="trophy-info-meta"><span>rare</span><span>2026</span></div><h3 id="trophy-title-4">ISC2 Certified in Cybersecurity (CC)</h3><p>Passed the ISC2 CC certification exam — foundational security principles, access control, network &amp; operations security.</p></article></div>
+      <p class="trophy-announcement" role="status" aria-live="polite"></p>
     </div>
   </section>
 
   <!-- certificate wall -->
   <section class="sec">
-    <div class="sec-head mono"><span class="dollar">$</span><span class="cmd">open</span><span class="arg">~/certs/*</span><span class="out">// 24 files · click to expand</span></div>
+    <div class="section-title"><h2>Certificate collection</h2><span>25 certificates / select to inspect</span></div>
 
     <div class="cert-cat"><b>Cybersecurity &amp; Technical</b><span class="n">01</span></div>
     <div class="cert-grid" style="--type:var(--amber)">
+      <button class="cert reveal" data-full="assets/certs/iso-ctf-2026-second-place.png" data-cap="2nd Place &mdash; ISO 2026 CTF: Uncharted Knowledge &middot; Sky Hannah Parado">
+        <span class="thumb"><img src="assets/certs/iso-ctf-2026-second-place.png" alt="Sky Hannah Parado's certificate for second place in ISO's 2026 CTF: Uncharted Knowledge" loading="lazy"></span>
+        <span class="meta"><h4>2nd Place &mdash; ISO CTF 2026</h4><span class="sub">Uncharted Knowledge &middot; Information Security Organization</span><span class="yr">2026</span></span>
+      </button>
+
       <button class="cert reveal" data-full="assets/certs/ctf-champion-2026.jpg" data-cap="Champion — DLSU Capture The Flag 2026 · Team Prompt Patrol">
         <span class="thumb"><img src="assets/certs/ctf-champion-2026.jpg" alt="CTF Champion 2026 certificate — Sky Parado, Team Prompt Patrol" loading="lazy" onerror="this.closest('.thumb').classList.add('pending');this.remove()" data-pending="drop ctf-champion-2026.jpg here"></span>
         <span class="meta"><h4>CTF Champion 2026</h4><span class="sub">Sky Parado · Team Prompt Patrol · DCT, DLSU Manila</span><span class="yr">Jul 2026</span></span>
@@ -191,7 +179,7 @@
 
   <!-- skills as loadout -->
   <section class="sec" id="loadout">
-    <div class="sec-head mono"><span class="dollar">$</span><span class="cmd">ls</span><span class="arg">-la ~/loadout</span><span class="out">// equipped skills</span></div>
+    <div class="section-title"><h2>Skill inventory</h2><a href="skills.html">Explore the interactive skill garden &#8594;</a></div>
     <div class="ach-grid" style="grid-template-columns:1fr">
       <div class="mission reveal" style="grid-template-columns:1fr">
         <div class="stack" style="gap:8px">
@@ -236,5 +224,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/quest.js"></script>
+<script src="js/trophies.js"></script>
 </body>
 </html>

@@ -136,6 +136,7 @@
     { t: 'Certs',      d: 'achievements unlocked',      u: 'certs.html',      k: '3' },
     { t: 'Experience', d: 'campaign log',               u: 'experience.html', k: '4' },
     { t: 'Contact',    d: 'open an uplink',             u: 'contact.html',    k: '5' },
+    { t: 'Skills', d: 'search the skill garden', u: 'skills.html', k: '6' },
     { t: 'Toggle theme', d: 'switch night / light',     act: () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') },
     { t: 'GitHub',     d: 'github.com/skyparado',       u: 'https://github.com/skyparado', ext: true },
   ];
@@ -207,9 +208,9 @@
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const tag = (e.target.tagName || '').toLowerCase();
     if (tag === 'input' || tag === 'textarea' || pal.classList.contains('open')) return;
-    const map = { '1': 'index.html', '2': 'projects.html', '3': 'certs.html', '4': 'experience.html', '5': 'contact.html' };
+    const map = { '1': 'index.html', '2': 'projects.html', '3': 'certs.html', '4': 'experience.html', '5': 'contact.html', '6': 'skills.html' };
     if (map[e.key]) window.location.href = map[e.key];
-    if (e.key === '?') toast('shortcuts: 1-5 pages · Ctrl+K palette · T theme');
+    if (e.key === '?') toast('shortcuts: 1-6 pages · Ctrl+K palette · T theme');
     if (e.key.toLowerCase() === 't') setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
@@ -258,9 +259,9 @@
       const email = $('#c-email', form).value.trim();
       const msg = $('#c-msg', form).value.trim();
       const note = $('#formNote', form);
-      if (!email || !msg) { note.textContent = '! error: email and message required.'; note.classList.remove('ok'); return; }
+      if (!email || !msg) { note.textContent = 'Please add your email address and a message.'; note.classList.remove('ok'); return; }
       note.classList.add('ok');
-      note.textContent = 'packet queued... opening mail client for ' + name + '.';
+      note.textContent = 'Your letter is ready, ' + name + '. Opening your email app...';
       const body = encodeURIComponent(`From: ${name} <${email}>\n\n${msg}`);
       setTimeout(() => { window.location.href = `mailto:sky.parado@gmail.com?subject=${encodeURIComponent('uplink from ' + name)}&body=${body}`; }, 700);
     });

@@ -7,228 +7,84 @@
 <meta name="description" content="Projects & builds by Sky Parado — offensive security, full-stack, networking.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/quest.css">
+<link rel="stylesheet" href="css/rpg.css">
+<link rel="stylesheet" href="css/projects.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
-<!--
-  ============================================================
-  GITHUB LINK SLOTS  (search: data-gh)
-    proj-fuzzer      -> InvestigatoryScanner          [LINKED]
-    proj-cito        -> CITO-Citation-Tool            [LINKED]
-    proj-netprog     -> Custom_Ping_Utility_Using_ICMP[LINKED]
-    proj-campuscart  -> href="#"  (no repo yet — paste URL when ready)
-  Additional repos are linked in the "Additional Repositories" grid below.
-  ============================================================
--->
+
 </head>
-<body>
+<body class="rpg-site">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav class="nav"><div class="nav-inner">
   <a class="brand" href="index.html">
-    <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
-    <span class="nm">SKY PARADO<small>PARADO.OS // NETSEC</small></span>
+    <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 4h6v3h6V4h6v9h-3v3h-3v3H9v-3H6v-3H3z"/></svg></span>
+    <span class="nm">SKY PARADO<small>A LITTLE WORLD BY SKY</small></span>
   </a>
   <div class="nav-links">
-    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7M5 9v11h14V9"/></svg>home<span class="key">1</span></a>
-    <a href="projects.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>projects<span class="key">2</span></a>
-    <a href="certs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM9 20h6M12 15v5"/></svg>certs<span class="key">3</span></a>
-    <a href="experience.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg>experience<span class="key">4</span></a>
-    <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg>contact<span class="key">5</span></a>
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 10h3V7h3V4h3V1h2v3h3v3h3v3h3v3h-3v9h-6v-6h-4v6H5v-9H2z"/></svg>home<span class="key">1</span></a>
+    <a href="projects.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 6h20v15H2zM8 2h8v3h-3V4h-2v1H8zM5 9v3h14V9z"/></svg>projects<span class="key">2</span></a>
+    <a href="certs.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h12v3h4v9h-5v3h-3v3h4v3H6v-3h4v-3H7v-3H2V5h4zM4 7v5h2V7zM18 7v5h2V7z"/></svg>trophies<span class="key">3</span></a>
+    <a href="experience.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h18v20H3zM7 6v2h10V6zM7 11v2h10v-2zM7 16v2h7v-2z"/></svg>journal<span class="key">4</span></a>
+    <a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v15H2zM5 8v9h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg>mail<span class="key">5</span></a>
+    <a href="skills.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M10 11H4V5h6v3h2v5h2V8h6v6h-6v4h4v4H6v-4h4z"/></svg>skills<span class="key">6</span></a>
   </div>
   <button class="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg><span class="tl">light</span></button>
 </div></nav>
 
-<main class="wrap hud-frame">
-  <section class="sec" style="margin-top:34px">
-    <div class="eyebrow">Mission Board</div>
-    <h1 style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,5vw,40px);margin:12px 0 6px;color:var(--fg)">Projects &amp; Builds</h1>
-    <div class="sec-head mono" style="margin-top:18px"><span class="dollar">$</span><span class="cmd">git</span><span class="arg">clone ~/projects/*</span><span class="out">// 4 cards · ◂ ▸ / swipe / click to draw</span></div>
-
-    <div class="deck" data-deck>
-      <button class="deck-nav prev" type="button" aria-label="Previous card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
-
-      <div class="deck-viewport" tabindex="0" aria-label="Project card deck" aria-roledescription="carousel">
-        <div class="deck-track">
-
-          <!-- Fuzzer -->
-          <article class="mission pcard" style="--type:var(--amber)" data-hp="190">
-            <div class="pc-bar">
-              <div class="pc-name"><span class="m-title">ai-webapp-fuzzer</span><span class="m-sub mono">2026 · offensive security</span></div>
-              <div class="pc-hp mono"><b>190</b>HP<i class="pc-orb"></i></div>
-            </div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span>
-              <span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/><circle cx="12" cy="12" r="3.2"/></svg></span>
-              <span class="pc-type mono">⚡ OFFENSE</span>
-              <span class="rarity legendary">legendary</span>
-            </div>
-            <div class="stack"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">OWASP Top 10</span></div>
-            <p class="pc-summary">A hybrid scanner that audits <b>LLM-built web apps</b> — mutating payloads for SQLi, XSS &amp; traversal. Surfaced <b>38 findings across 7 vuln classes</b> with <b>zero false positives</b> on a hardened control.</p>
-            <div class="m-foot">
-              <a class="gh-link" id="proj-fuzzer" data-gh href="https://github.com/skyparado/InvestigatoryScanner" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><span class="lbl-view">view repo</span><span class="lbl-add">add link</span></a>
-              <span class="status">connected<span class="dot"></span></span>
-            </div>
-          </article>
-
-          <!-- CITO -->
-          <article class="mission pcard" style="--type:var(--purple)" data-hp="110">
-            <div class="pc-bar">
-              <div class="pc-name"><span class="m-title">cito-docs-addon</span><span class="m-sub mono">2026 · google workspace</span></div>
-              <div class="pc-hp mono"><b>110</b>HP<i class="pc-orb"></i></div>
-            </div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span>
-              <span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M14 4v5h5M8 13h8M8 17h5"/></svg></span>
-              <span class="pc-type mono">✦ WORKSPACE</span>
-              <span class="rarity epic">epic</span>
-            </div>
-            <div class="stack"><span class="tag">Apps Script</span><span class="tag">TypeScript</span><span class="tag">API</span></div>
-            <p class="pc-summary">A Google Workspace add-on: highlight any text and instantly pull <b>credible, citable research</b> for or against it. I built the first version — <b>OAuth-scoped</b> with secure token storage.</p>
-            <div class="m-foot">
-              <a class="gh-link" id="proj-cito" data-gh href="https://github.com/skyparado/CITO-Citation-Tool" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><span class="lbl-view">view repo</span><span class="lbl-add">add link</span></a>
-              <span class="m-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>oauth scoped</span></span>
-            </div>
-          </article>
-
-          <!-- CampusCart -->
-          <article class="mission pcard" style="--type:var(--cyan)" data-hp="150">
-            <div class="pc-bar">
-              <div class="pc-name"><span class="m-title">campuscart</span><span class="m-sub mono">2026 · full-stack · team of 5</span></div>
-              <div class="pc-hp mono"><b>150</b>HP<i class="pc-orb"></i></div>
-            </div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span>
-              <span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.4 12.2a1 1 0 0 0 1 .8h9.4a1 1 0 0 0 1-.8L21 7H6"/></svg></span>
-              <span class="pc-type mono">◆ FULL-STACK</span>
-              <span class="rarity epic">epic</span>
-            </div>
-            <div class="stack"><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Secure SDLC</span></div>
-            <p class="pc-summary">An end-to-end campus marketplace built with a <b>team of 5</b>. I led the frontend and hardened the backend — <b>secure auth, sanitized inputs</b> &amp; parameterized SQL, threat-modelled from design to release.</p>
-            <div class="m-foot">
-              <a class="gh-link" id="proj-campuscart" data-gh href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><span class="lbl-view">view repo</span><span class="lbl-add">add link</span></a>
-              <span class="m-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg>hardened</span></span>
-            </div>
-          </article>
-
-          <!-- Network Programming -->
-          <article class="mission pcard" style="--type:var(--cyan)" data-hp="90">
-            <div class="pc-bar">
-              <div class="pc-name"><span class="m-title">net-programming-utils</span><span class="m-sub mono">2025–2026 · tcp/ip · icmp</span></div>
-              <div class="pc-hp mono"><b>90</b>HP<i class="pc-orb"></i></div>
-            </div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span>
-              <span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M6.5 6.5 10.5 10.5M17.5 6.5 13.5 10.5M6.5 17.5 10.5 13.5M17.5 17.5 13.5 13.5"/></svg></span>
-              <span class="pc-type mono">≈ NETWORK</span>
-              <span class="rarity rare">rare</span>
-            </div>
-            <div class="stack"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Sockets</span></div>
-            <p class="pc-summary">Custom <b>ping</b>, <b>traceroute</b> and a <b>VoIP simulator</b> built from raw ICMP sockets — protocol behaviour implemented by hand, not called from a library.</p>
-            <div class="m-foot">
-              <a class="gh-link" id="proj-netprog" data-gh href="https://github.com/skyparado/Custom_Ping_Utility_Using_ICMP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><span class="lbl-view">view repo</span><span class="lbl-add">add link</span></a>
-              <span class="m-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4z"/></svg>raw sockets</span></span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <button class="deck-nav next" type="button" aria-label="Next card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
-
-      <div class="deck-foot">
-        <div class="deck-dots" role="tablist" aria-label="Select card"></div>
-        <div class="deck-count mono"><b>01</b> / 04</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== side quests · trainer deck ===== -->
-  <section class="sec">
-    <div class="eyebrow">Side Quests</div>
-    <div class="sec-head mono" style="margin-top:14px"><span class="dollar">$</span><span class="cmd">git</span><span class="arg">remote -v</span><span class="out">// 6 trainer cards · click to view repo</span></div>
-
-    <div class="tr-grid">
-
-          <a class="pcard pcard-tr" style="--type:var(--purple)" href="https://github.com/skyparado/QLearning_Machine" target="_blank" rel="noopener">
-            <div class="pc-bar"><div class="pc-name"><span class="m-title">QLearning_Machine</span><span class="m-sub mono">reinforcement learning · python</span></div><span class="pc-badge mono">TR</span></div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span><span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
-              <span class="pc-type mono">◇ AI</span>
-            </div>
-            <div class="pc-foot mono"><span>view repo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          </a>
-
-          <a class="pcard pcard-tr" style="--type:var(--cyan)" href="https://github.com/skyparado/Traceroute_Using_ICMP" target="_blank" rel="noopener">
-            <div class="pc-bar"><div class="pc-name"><span class="m-title">Traceroute_Using_ICMP</span><span class="m-sub mono">networking · raw icmp</span></div><span class="pc-badge mono">TR</span></div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span><span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
-              <span class="pc-type mono">≈ NETWORK</span>
-            </div>
-            <div class="pc-foot mono"><span>view repo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          </a>
-
-          <a class="pcard pcard-tr" style="--type:var(--purple)" href="https://github.com/skyparado/PINOYBOT_LanguageClassiefierBot" target="_blank" rel="noopener">
-            <div class="pc-bar"><div class="pc-name"><span class="m-title">PINOYBOT_LangClassifier</span><span class="m-sub mono">nlp · language detection · python</span></div><span class="pc-badge mono">TR</span></div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span><span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
-              <span class="pc-type mono">◇ NLP</span>
-            </div>
-            <div class="pc-foot mono"><span>view repo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          </a>
-
-          <a class="pcard pcard-tr" style="--type:var(--amber)" href="https://github.com/skyparado/Sokoban_Solver" target="_blank" rel="noopener">
-            <div class="pc-bar"><div class="pc-name"><span class="m-title">Sokoban_Solver</span><span class="m-sub mono">search · pathfinding · ai</span></div><span class="pc-badge mono">TR</span></div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span><span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
-              <span class="pc-type mono">◇ AI</span>
-            </div>
-            <div class="pc-foot mono"><span>view repo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          </a>
-
-          <a class="pcard pcard-tr" style="--type:var(--amber)" href="https://github.com/skyparado/CacheMemoryMachine_8-WayBSA" target="_blank" rel="noopener">
-            <div class="pc-bar"><div class="pc-name"><span class="m-title">CacheMemory_8-WayBSA</span><span class="m-sub mono">computer architecture · simulator</span></div><span class="pc-badge mono">TR</span></div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span><span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
-              <span class="pc-type mono">▦ SYSTEMS</span>
-            </div>
-            <div class="pc-foot mono"><span>view repo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          </a>
-
-          <a class="pcard pcard-tr" style="--type:var(--purple)" href="https://github.com/skyparado/WebsiteArchive_Evolution_of_Computer_Data_Storage" target="_blank" rel="noopener">
-            <div class="pc-bar"><div class="pc-name"><span class="m-title">WebsiteArchive · Storage</span><span class="m-sub mono">web · html/css · informational</span></div><span class="pc-badge mono">TR</span></div>
-            <div class="pc-art">
-              <span class="pc-holo" aria-hidden="true"></span><span class="pc-shine" aria-hidden="true"></span>
-              <span class="m-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
-              <span class="pc-type mono">◆ WEB</span>
-            </div>
-            <div class="pc-foot mono"><span>view repo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          </a>
-
-    </div>
-  </section>
-
-  <footer class="footer mono">
-    <span><span class="g">$</span> session #<span data-visits>001</span> · <span data-year>2026</span> Sky Hannah Parado</span>
-    <span class="krew">
-      <a href="https://github.com/skyparado" target="_blank" rel="noopener">github</a>
-      <a href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">linkedin</a>
-      <a href="mailto:sky.parado@gmail.com">mail</a>
-    </span>
-  </footer>
-</main>
+<main id="main-content" class="wrap hud-frame project-workshop"><section class="sec" style="margin-top:34px">
+<header class="page-banner"><div class="page-banner-copy"><div class="eyebrow">WORLD 02 / THE WORKSHOP</div><h1>Projects &amp; side quests</h1><p>Things I have built, problems I have explored, and a few experiments along the way.</p></div><img src="assets/pixel-workbench.svg" alt="" class="page-vignette" aria-hidden="true"></header>
+<div class="project-browser" hidden>
+<div class="project-browser-label"><span>Browse the workshop</span><span id="project-count" role="status" aria-live="polite">10 projects</span></div>
+<div class="project-filters" role="group" aria-label="Filter projects by category">
+<button type="button" data-project-filter="all" aria-pressed="true">All projects</button>
+<button type="button" data-project-filter="security" aria-pressed="false">Security</button>
+<button type="button" data-project-filter="web" aria-pressed="false">Web &amp; apps</button>
+<button type="button" data-project-filter="network" aria-pressed="false">Networking</button>
+<button type="button" data-project-filter="ai" aria-pressed="false">AI</button>
+<button type="button" data-project-filter="systems" aria-pressed="false">Systems</button>
+</div></div><section class="project-group"><div class="section-title"><h2>Featured projects</h2><span>A closer look at my work</span></div><div class="project-grid">
+<article class="work-card" data-category="security" id="proj-fuzzer">
+<div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Security</span><time>2026</time></div>
+<h3>AI Web App Scanner</h3><p class="work-description">Audits web apps built with LLMs for common security weaknesses.</p>
+<p class="work-highlight">38 findings across 7 vulnerability classes</p>
+<ul class="work-tags" aria-label="Technologies"><li>Python</li><li>LLM</li><li>OWASP Top 10</li></ul>
+<details class="work-details"><summary>Project details</summary><div><h4>Validation</h4><p>Recorded zero false positives on a hardened control. The scanner combines multiple approaches to audit generated applications.</p></div></details>
+<div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/InvestigatoryScanner" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card" data-category="web" id="proj-cito">
+<div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Web &amp; apps</span><time>2026</time></div>
+<h3>CITO Citation Tool</h3><p class="work-description">Find supporting or opposing research without leaving your Google document.</p>
+<p class="work-highlight">Built the first version of the add-on</p>
+<ul class="work-tags" aria-label="Technologies"><li>Apps Script</li><li>TypeScript</li><li>API</li></ul>
+<details class="work-details"><summary>Project details</summary><div><h4>My contribution</h4><p>Built the initial Google Workspace add-on, including scoped OAuth permissions and secure token storage. Highlight text to look for credible, citable research.</p></div></details>
+<div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/CITO-Citation-Tool" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card" data-category="web" id="proj-campuscart">
+<div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Web &amp; apps</span><time>2026</time></div>
+<h3>CampusCart</h3><p class="work-description">A campus marketplace built with a five-person team.</p>
+<p class="work-highlight">Led the frontend and strengthened backend security</p>
+<ul class="work-tags" aria-label="Technologies"><li>JavaScript</li><li>SQL</li><li>Secure SDLC</li></ul>
+<details class="work-details"><summary>Project details</summary><div><h4>My contribution</h4><p>Implemented secure authentication, sanitized inputs and parameterized SQL, with threat modelling from design through release.</p></div></details>
+<div class="work-card-footer"><span class="project-unlinked">Repository not linked yet</span></div></article>
+<article class="work-card" data-category="network" id="proj-netprog">
+<div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Networking</span><time>2025?2026</time></div>
+<h3>Network Programming Utilities</h3><p class="work-description">Custom ping, traceroute and a VoIP simulator exploring how networks communicate.</p>
+<p class="work-highlight">Implemented protocol behaviour by hand</p>
+<ul class="work-tags" aria-label="Technologies"><li>Python</li><li>Java</li><li>Sockets</li></ul>
+<details class="work-details"><summary>Project details</summary><div><h4>Technical notes</h4><p>Explored TCP/IP and ICMP through custom networking utilities, including raw ICMP sockets. The repository below contains the custom ping utility.</p></div></details>
+<div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/Custom_Ping_Utility_Using_ICMP" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+</div></section><section class="project-group"><div class="section-title"><h2>Smaller builds &amp; experiments</h2><span>More from the workshop</span></div><div class="project-grid project-grid-small">
+<article class="work-card work-card-small" data-category="ai"><div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>AI</span></div><h3>Q-Learning Machine</h3><p class="work-description">A reinforcement learning project in Python.</p><div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/QLearning_Machine" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card work-card-small" data-category="network"><div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Networking</span></div><h3>ICMP Traceroute</h3><p class="work-description">A networking utility built with raw ICMP.</p><div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/Traceroute_Using_ICMP" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card work-card-small" data-category="ai"><div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>AI</span></div><h3>PINOYBOT Language Classifier</h3><p class="work-description">A Python NLP project for language detection.</p><div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/PINOYBOT_LanguageClassiefierBot" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card work-card-small" data-category="ai"><div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>AI</span></div><h3>Sokoban Solver</h3><p class="work-description">Exploring AI search and pathfinding through Sokoban.</p><div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/Sokoban_Solver" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card work-card-small" data-category="systems"><div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Systems</span></div><h3>8-Way Cache Simulator</h3><p class="work-description">A computer architecture project exploring cache memory.</p><div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/CacheMemoryMachine_8-WayBSA" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+<article class="work-card work-card-small" data-category="web"><div class="work-card-top"><span class="work-icon"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h8V2h5v3h7v17H2zm3 5v9h14v-9z"/></svg></span><span>Web &amp; apps</span></div><h3>History of Data Storage</h3><p class="work-description">An informational HTML/CSS website about the evolution of computer data storage.</p><div class="work-card-footer"><a class="project-repo" href="https://github.com/skyparado/WebsiteArchive_Evolution_of_Computer_Data_Storage" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a></div></article>
+</div></section></section></main>
 
 <script src="js/main.js"></script>
 <script src="js/quest.js"></script>
-<script src="js/deck.js"></script>
+<script src="js/projects.js"></script>
 </body>
 </html>

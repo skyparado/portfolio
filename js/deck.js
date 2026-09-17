@@ -1,13 +1,11 @@
 /* =====================================================================
    PARADO // projects — Pokémon-TCG card decks
    One card on stage, neighbours peeking. Shift through with arrows,
-   swipe/drag, dots, or by clicking a side card. Active card gets a
-   pointer-driven holographic foil + parallax tilt.
+   swipe/drag, dots, or by clicking a side card. Cards keep their crisp, flat pixel-game framing.
    Supports any number of independent [data-deck] carousels on a page.
    ===================================================================== */
 (function () {
   'use strict';
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function initDeck(deck) {
     const viewport = deck.querySelector('.deck-viewport');
@@ -91,23 +89,6 @@
     if (viewport.hasAttribute('tabindex')) viewport.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
-    });
-
-    /* ---- holographic tilt on the active card ---- */
-    if (!reduce) cards.forEach((card) => {
-      const holo  = card.querySelector('.pc-holo');
-      const shine = card.querySelector('.pc-shine');
-      const art   = card.querySelector('.pc-art');
-      card.addEventListener('pointermove', (e) => {
-        if (!card.classList.contains('active') || dragging) return;
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width;   // 0..1
-        const py = (e.clientY - r.top) / r.height;   // 0..1
-        card.style.transform = `perspective(900px) rotateX(${(0.5 - py) * 14}deg) rotateY(${(px - 0.5) * 12}deg)`;
-        if (art)   { art.style.setProperty('--mx', (px * 100) + '%'); art.style.setProperty('--my', (py * 100) + '%'); }
-        if (shine) shine.style.setProperty('--sx', (100 - px * 100) + '%');
-      });
-      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
     });
 
     /* ---- init + keep centred on resize ---- */
