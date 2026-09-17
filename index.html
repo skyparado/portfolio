@@ -44,10 +44,19 @@
 <main id="main-content" class="wrap hud-frame">
 
   <section class="home-summary" id="character" aria-labelledby="home-title">
+    <div class="home-profile-photo"><img src="picture_sky.png" alt="Sky Hannah Parado" width="240" height="280"><span>PLAYER 01 / SKY</span></div>
+    <div class="home-profile-copy">
     <div class="eyebrow">A LITTLE ABOUT ME</div>
-    <h1 id="home-title">Hi, I'm <span>Sky Parado.</span></h1>
+    <h1 id="home-title">Hi, I'm <span>Sky Hannah Parado.</span></h1>
     <p class="home-intro">Computer Science student at <strong>De La Salle University</strong>, majoring in Network &amp; Information Security. I build web applications, explore cybersecurity, and compete in capture-the-flag challenges.</p>
     <p class="home-focus">Cybersecurity <span aria-hidden="true">&middot;</span> Software development <span aria-hidden="true">&middot;</span> Community leadership</p>
+    <dl class="home-profile-facts">
+      <div><dt>Degree</dt><dd>BS Computer Science</dd></div>
+      <div><dt>Major</dt><dd>Network &amp; Information Security</dd></div>
+      <div><dt>University</dt><dd>De La Salle University</dd></div>
+      <div><dt>Status</dt><dd class="profile-available">Available for work</dd></div>
+    </dl>
+    </div>
   </section>
 
   <section class="home-highlights" aria-labelledby="highlights-title">
@@ -61,6 +70,38 @@
       <a class="home-win" href="projects.html#proj-fuzzer"><span class="win-value">38 findings</span><h3>AI Web App Scanner</h3><p>7 vulnerability classes; zero false positives on a hardened control.</p></a>
     </div>
     <p class="home-more">Beyond the highlights: <a href="projects.html">browse my projects</a> or <a href="experience.html">read my experience</a>.</p>
+  </section>
+
+  <section class="resume-overview" aria-labelledby="resume-title">
+    <div class="section-title"><h2 id="resume-title">Skills &amp; experience</h2><a href="skills.html">Explore all skills &#8599;</a></div>
+    <div class="resume-columns">
+      <div class="resume-panel">
+        <h3>Project experience</h3>
+        <p class="resume-note">Bars show the number of listed projects in each area, on a 0&ndash;3 scale.</p>
+        <ul class="resume-bars">
+          <li><div><span>Web development</span><span>3 projects</span></div><meter min="0" max="3" value="3" aria-label="Web development: 3 projects">3 of 3</meter><p>CITO, CampusCart, Data Storage website</p></li>
+          <li><div><span>AI &amp; problem solving</span><span>3 projects</span></div><meter min="0" max="3" value="3" aria-label="AI and problem solving: 3 projects">3 of 3</meter><p>Q-Learning, PINOYBOT, Sokoban Solver</p></li>
+          <li><div><span>Networking</span><span>2 projects</span></div><meter min="0" max="3" value="2" aria-label="Networking: 2 projects">2 of 3</meter><p>Network Programming Utilities, ICMP Traceroute</p></li>
+          <li><div><span>Application security</span><span>1 project</span></div><meter min="0" max="3" value="1" aria-label="Application security: 1 project">1 of 3</meter><p>AI Web App Scanner</p></li>
+          <li><div><span>Computer systems</span><span>1 project</span></div><meter min="0" max="3" value="1" aria-label="Computer systems: 1 project">1 of 3</meter><p>8-Way Cache Simulator</p></li>
+        </ul>
+        <a class="resume-link" href="projects.html">See the projects behind the bars &#8599;</a>
+      </div>
+      <div class="resume-panel">
+        <h3>Technical toolkit</h3>
+        <dl class="resume-toolkit">
+          <div><dt>Languages</dt><dd>Python, Java, C++, JavaScript, TypeScript, SQL, HTML &amp; CSS</dd></div>
+          <div><dt>Security</dt><dd>VAPT, OWASP Top 10, Burp Suite, Nmap, CVSS v3.1, secure SDLC</dd></div>
+          <div><dt>Development &amp; networking</dt><dd>Git / GitHub, REST APIs, Apps Script, TCP/IP, ICMP, sockets</dd></div>
+        </dl>
+        <h3 class="resume-experience-title">Leadership &amp; teamwork</h3>
+        <ul class="resume-roles">
+          <li><strong>Corporate Relations Assistant Team Lead</strong><span>HackerCup 2026</span><p>Secured sponsorships and partnerships; coordinated marketing and technical committees.</p></li>
+          <li><strong>Junior Officer &middot; Technology Division</strong><span>La Salle Computer Society</span><p>Completed the 40th Junior Officer Training Program and cleared into the Technology Division.</p></li>
+        </ul>
+        <a class="resume-link" href="experience.html">Read my full experience &#8599;</a>
+      </div>
+    </div>
   </section>
 
   <!-- ===== footer ===== -->

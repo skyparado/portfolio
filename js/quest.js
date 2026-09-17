@@ -23,7 +23,7 @@
   world.className='quest-dialog'+(home?' quest-home':'');
   world.setAttribute('aria-labelledby','quest-title');
   world.innerHTML=`
-    <header class="quest-header"><div><span class="quest-kicker">SKY PARADO / A LITTLE WORLD OF MY OWN</span><h2 id="quest-title">Choose your adventure.</h2><p class="quest-intro">Security student. Software builder. Curious human.<br>Pick a place — I’ll show you around.</p></div><div class="quest-header-actions">${home?'<a class="quest-button" href="#character">Character sheet ↓</a>':'<button type="button" class="quest-button" data-close>Back to page ×</button>'}<button type="button" class="quest-motion"></button></div></header>
+    <header class="quest-header"><div><span class="quest-kicker">SKY PARADO / A LITTLE WORLD OF MY OWN</span><h2 id="quest-title">Choose your adventure.</h2><p class="quest-intro">Security student. Software builder. Curious human.<br>Pick a place — I’ll show you around.</p></div><div class="quest-header-actions">${home?'<a class="quest-button" href="#character">Back to summary &uarr;</a>':'<button type="button" class="quest-button" data-close>Back to page ×</button>'}<button type="button" class="quest-motion"></button></div></header>
     <div class="quest-hud"><span>✦ PLAY AS SKY</span><span data-score></span></div>
     <progress class="quest-progress" max="6" value="0" aria-label="Places discovered"></progress>
     <div class="quest-layout"><div class="quest-world-column">

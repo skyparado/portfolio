@@ -7,7 +7,7 @@
 .home-highlights .section-title a{font-size:13px;color:var(--fg-dim);text-underline-offset:4px}
 .home-wins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .home-win{position:relative;display:block;padding:22px 24px;background:var(--panel-2);border:2px solid var(--line-2);text-decoration:none;color:var(--fg);box-shadow:0 3px 0 var(--bg-2)}
-.home-win::after{content:"?";position:absolute;right:16px;top:16px;color:var(--fg-dim);font-size:14px}
+.home-win::after{content:"\2197";position:absolute;right:16px;top:16px;color:var(--fg-dim);font-size:14px}
 .home-win:hover{border-color:var(--purple);background:var(--panel)}
 .home-win:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .win-value{font:500 30px/1.2 var(--pixel-font);color:var(--amber);display:block;margin-bottom:10px;padding-right:12px}
@@ -17,3 +17,35 @@
 .home-more{font-size:14px;line-height:1.8;color:var(--fg-dim);margin:22px 0 34px}.home-more a{color:var(--fg);text-underline-offset:4px}
 @media(max-width:800px){.home-wins{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:500px){.home-summary{margin-top:18px;padding-top:18px}.home-intro{font-size:16px}.home-wins{grid-template-columns:1fr;gap:12px}.home-win{padding:18px 20px}.home-highlights .section-title{align-items:start}.home-highlights .section-title a{max-width:110px;text-align:right}.home-focus{font-size:12px;gap:6px}}
+.home-profile-photo{border:3px solid var(--accent-dim);padding:6px;background:var(--panel);box-shadow:4px 4px 0 var(--bg-2)}
+.home-profile-photo img{display:block;width:100%;height:auto;aspect-ratio:6/7;object-fit:cover;object-position:center top}
+.home-profile-photo span{display:block;padding:12px 4px 6px;text-align:center;color:var(--purple);font:11px/1.5 "JetBrains Mono",monospace}
+.home-profile-copy{min-width:0}
+.home-profile-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;border-top:1px solid var(--line);padding-top:18px;margin:20px 0 0}
+.home-profile-facts div{min-width:0}.home-profile-facts dt{font:11px/1.5 "JetBrains Mono",monospace;color:var(--fg-dim);margin-bottom:4px}.home-profile-facts dd{margin:0;font-size:14px;line-height:1.5;color:var(--fg)}.home-profile-facts .profile-available{color:var(--cyan)}
+.home-summary:has(.home-profile-copy){display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:start;max-width:none;padding:28px;background:var(--panel-2);border:2px solid var(--line-2)}
+@media(max-width:700px){.home-summary:has(.home-profile-copy){grid-template-columns:1fr;padding:22px;gap:24px}.home-profile-photo{width:180px}}
+@media(max-width:400px){.home-profile-facts{grid-template-columns:1fr}}
+
+/* Resume overview: factual project counts rather than proficiency percentages. */
+.resume-overview{margin:32px 0}
+.resume-overview .section-title a,.resume-link{font-size:13px;color:var(--fg);text-underline-offset:4px}
+.resume-columns{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.resume-panel{padding:26px;background:var(--panel-2);border:2px solid var(--line-2);min-width:0}
+.resume-panel h3{font:600 21px/1.4 "IBM Plex Sans",sans-serif;margin:0 0 10px}
+.resume-note{font-size:13px;line-height:1.6;color:var(--fg-dim);margin:0 0 22px}
+.resume-bars{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:20px}
+.resume-bars li>div{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;margin-bottom:8px}
+.resume-bars li>div span:last-child{font:11px/1.6 "JetBrains Mono",monospace;color:var(--fg-dim);white-space:nowrap}
+.resume-bars meter{display:block;appearance:none;-webkit-appearance:none;width:100%;height:16px;border:1px solid var(--line-2);background:var(--bg-2);border-radius:0;overflow:hidden}
+.resume-bars meter::-webkit-meter-bar{background:var(--bg-2);border:0;border-radius:0;height:14px}
+.resume-bars meter::-webkit-meter-optimum-value{background:repeating-linear-gradient(90deg,var(--purple) 0 12px,var(--bg-2) 12px 15px);border-radius:0}
+.resume-bars meter::-moz-meter-bar{background:repeating-linear-gradient(90deg,var(--purple) 0 12px,var(--bg-2) 12px 15px)}
+.resume-bars p{font-size:12px;line-height:1.6;margin:6px 0 0;color:var(--fg-dim)}
+.resume-toolkit{margin:18px 0 26px;display:grid;gap:16px}
+.resume-toolkit dt{font-size:13px;font-weight:600;color:var(--cyan);margin-bottom:5px}
+.resume-toolkit dd{font-size:14px;line-height:1.7;margin:0;color:var(--fg-dim)}
+.resume-panel .resume-experience-title{padding-top:20px;border-top:1px solid var(--line)}
+.resume-roles{list-style:none;padding:0;margin:16px 0 22px;display:grid;gap:20px}
+.resume-roles strong{display:block;font-size:14px;line-height:1.5}.resume-roles span{display:block;color:var(--purple);font-size:13px;margin-top:4px}.resume-roles p{font-size:14px;line-height:1.7;color:var(--fg-dim);margin:7px 0 0}
+@media(max-width:750px){.resume-columns{grid-template-columns:1fr}.resume-panel{padding:20px}}
