@@ -35,5 +35,8 @@
   book.querySelectorAll('[data-notebook-next]').forEach(b=>b.addEventListener('click',()=>show(current+1,true,true)));
   function fromHash(){const i=pages.findIndex(p=>p.id===location.hash.slice(1));show(i<0?0:i);if(i>=0)requestAnimationFrame(()=>book.scrollIntoView({block:'start'}));}
   window.addEventListener('hashchange',fromHash);
+  /* quest tally under each chapter title */
+  pages.forEach(page=>{const all=page.querySelectorAll('.experience-entry').length,now=page.querySelectorAll('.experience-entry.is-now').length,copy=page.querySelector('.chapter-summary-copy');
+    if(copy&&all)copy.insertAdjacentHTML('beforeend','<span class="quest-tally">'+(now?now+' ACTIVE \u00b7 ':'')+(all-now)+' CLEARED</span>');});
   book.classList.add('is-paged');fromHash();
 })();

@@ -1,0 +1,383 @@
+- generic [active] [ref=f40e1]:
+  - link "Skip to content" [ref=f40e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f40e3]:
+    - generic [ref=f40e4]:
+      - link "SKY PARADO A LITTLE WORLD BY SKY" [ref=f40e5] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=f40e9]:
+          - text: SKY PARADO
+          - generic [ref=f40e10]: A LITTLE WORLD BY SKY
+      - generic [ref=f40e11]:
+        - link "about" [ref=f40e12] [cursor=pointer]:
+          - /url: "#character"
+        - link "journal" [ref=f40e15] [cursor=pointer]:
+          - /url: experience.html
+        - link "projects" [ref=f40e18] [cursor=pointer]:
+          - /url: projects.html
+        - link "skills" [ref=f40e21] [cursor=pointer]:
+          - /url: skills.html
+        - link "trophies" [ref=f40e24] [cursor=pointer]:
+          - /url: certs.html
+        - link "mail" [ref=f40e27] [cursor=pointer]:
+          - /url: contact.html
+      - button "Toggle theme" [ref=f40e30] [cursor=pointer]:
+        - generic [ref=f40e33]: dark
+  - main [ref=f40e34]:
+    - region "SKY P." [ref=f40e35]:
+      - generic [ref=f40e36]:
+        - figure "Sky Hannah Parado · Computer Science student at De La Salle University · President of the Information Security Organization · builds web apps, breaks them safely, plays CTFs" [ref=f40e37]:
+          - generic [ref=f40e38]: No.001
+          - img "Sky Hannah Parado" [ref=f40e39]
+        - generic [ref=f40e40]:
+          - heading "SKY P." [level=1] [ref=f40e41]
+          - button "Sound effects · click to mute or unmute" [pressed] [ref=f40e42] [cursor=pointer]: ♪
+        - generic [ref=f40e43]:
+          - generic [ref=f40e44]:
+            - term [ref=f40e45]: PROJECTS
+            - definition [ref=f40e46]: "10"
+          - generic [ref=f40e47]:
+            - term [ref=f40e48]: CERTS
+            - definition [ref=f40e49]: "25"
+          - generic [ref=f40e50]:
+            - term [ref=f40e51]: CTFS
+            - definition [ref=f40e52]: "5"
+          - generic [ref=f40e53]:
+            - term [ref=f40e54]: DEAN'S LIST
+            - definition [ref=f40e55]: ×3
+      - generic [ref=f40e56]:
+        - generic [ref=f40e57]:
+          - generic [ref=f40e58]: SKY'S INVENTORY
+          - generic [ref=f40e59]: 12 / ITEMS
+        - generic [ref=f40e60]:
+          - link "Web & apps ×3 · CITO, CampusCart, History of Data Storage · see them in the workshop" [ref=f40e61] [cursor=pointer]:
+            - /url: projects.html
+            - generic [ref=f40e62]: ×3
+          - link "AI ×3 · CatBot, PINOYBOT, Sokoban Solver · see them in the workshop" [ref=f40e102] [cursor=pointer]:
+            - /url: projects.html
+            - generic [ref=f40e103]: ×3
+          - link "Networking ×2 · ping, traceroute and VoIP by hand · see them in the workshop" [ref=f40e136] [cursor=pointer]:
+            - /url: projects.html
+            - generic [ref=f40e137]: ×2
+          - link "Security ×2 · AI Web App Scanner, CampusCart hardening · see them in the workshop" [ref=f40e162] [cursor=pointer]:
+            - /url: projects.html
+            - generic [ref=f40e163]: ×2
+          - link "Systems ×1 · 8-way cache simulator · see them in the workshop" [ref=f40e205] [cursor=pointer]:
+            - /url: projects.html
+            - generic [ref=f40e206]: ×1
+          - link "38 findings · AI Web App Scanner · zero false positives" [ref=f40e253] [cursor=pointer]:
+            - /url: "#proj-fuzzer"
+            - generic [ref=f40e254]: "38"
+          - link "Dean's List ×3 · First Dean's Lister twice, Second once" [ref=f40e304] [cursor=pointer]:
+            - /url: "#experience"
+            - generic [ref=f40e305]: ×3
+          - link "Trophies ×5 · DLSU CTF champion, ISO CTF 2nd place, top 8% at CSCTF, top 12% at PINK+ CTF" [ref=f40e333] [cursor=pointer]:
+            - /url: "#trophies"
+            - generic [ref=f40e334]: ×5
+          - link "Journal · four work roles and four organizations at De La Salle University" [ref=f40e362] [cursor=pointer]:
+            - /url: "#experience"
+          - link "Tool rack · Python, Java, C++, JavaScript, Burp Suite, Nmap, Apps Script…" [ref=f40e411] [cursor=pointer]:
+            - /url: "#skills"
+          - link "Post office · available for work · send a letter" [ref=f40e456] [cursor=pointer]:
+            - /url: "#contact"
+          - link "GitHub · github.com/skyparado" [ref=f40e491] [cursor=pointer]:
+            - /url: https://github.com/skyparado
+            - generic [ref=f40e492]: GH
+        - paragraph [aria-hidden] [ref=f40e493]: ▸ point at an item to inspect it
+    - region "Experience" [ref=f40e494]:
+      - generic [ref=f40e495]:
+        - heading "Experience" [level=2] [ref=f40e496]
+        - generic [ref=f40e497]: $ cat journal.log
+      - tablist "Chapters" [ref=f40e498]:
+        - tab "Work" [selected] [ref=f40e499] [cursor=pointer]
+        - tab "College" [ref=f40e500] [cursor=pointer]
+        - tab "Senior high" [ref=f40e501] [cursor=pointer]
+        - tab "Junior high" [ref=f40e502] [cursor=pointer]
+      - tabpanel "Work" [ref=f40e503]:
+        - generic [ref=f40e504]:
+          - generic [ref=f40e505]:
+            - heading "Work experience" [level=3] [ref=f40e506]
+            - paragraph [ref=f40e507]: Internships, contract and freelance work · Remote
+          - generic [ref=f40e508]: 2026 — Present
+        - list [ref=f40e509]:
+          - listitem [ref=f40e510]:
+            - generic [ref=f40e552]: Nov — Dec 2026
+            - heading "SOC Analyst & Ethical Hacking Intern TechBiz Security ■ ACTIVE" [level=4] [ref=f40e554]:
+              - text: SOC Analyst & Ethical Hacking Intern
+              - generic [ref=f40e555]: TechBiz Security
+              - text: ■ ACTIVE
+          - listitem [ref=f40e556]:
+            - generic [ref=f40e596]: Sep — Dec 2026
+            - heading "IT & Web Maintenance Intern AHEAD Tutorial and Review Center ■ ACTIVE" [level=4] [ref=f40e598]:
+              - text: IT & Web Maintenance Intern
+              - generic [ref=f40e599]: AHEAD Tutorial and Review Center
+              - text: ■ ACTIVE
+          - listitem [ref=f40e600]:
+            - generic [ref=f40e634]: Oct — Nov 2026
+            - heading "Web Developer The Good Trade PH CLEARED" [level=4] [ref=f40e636]:
+              - text: Web Developer
+              - generic [ref=f40e637]: The Good Trade PH
+              - text: CLEARED
+          - listitem [ref=f40e638]:
+            - generic [ref=f40e671]: Sep 2026 — Now
+            - heading "Analyst / AI Trainer DataAnnotation ■ ACTIVE" [level=4] [ref=f40e673]:
+              - text: Analyst / AI Trainer
+              - generic [ref=f40e674]: DataAnnotation
+              - text: ■ ACTIVE
+      - text: ■ ACTIVE ■ ACTIVE ■ ACTIVE CLEARED CLEARED CLEARED CLEARED CLEARED CLEARED CLEARED CLEARED CLEARED CLEARED CLEARED
+      - link "VIEW MORE the full adventure journal →" [ref=f40e675] [cursor=pointer]:
+        - /url: experience.html
+        - generic [ref=f40e676]: VIEW MORE
+        - generic [ref=f40e677]: the full adventure journal →
+    - region "Projects" [ref=f40e678]:
+      - generic [ref=f40e679]:
+        - heading "Projects" [level=2] [ref=f40e680]
+        - generic [ref=f40e681]: 4 of 10 pinned
+      - generic [ref=f40e682]:
+        - article [ref=f40e683]:
+          - generic [ref=f40e734]:
+            - generic [ref=f40e735]: Security
+            - time [ref=f40e736]: "2026"
+          - heading "AI Web App Scanner" [level=3] [ref=f40e737]
+          - link "View repository ↗" [ref=f40e738] [cursor=pointer]:
+            - /url: https://github.com/skyparado/InvestigatoryScanner
+        - article [ref=f40e739]:
+          - generic [ref=f40e785]:
+            - generic [ref=f40e786]: Web & apps
+            - time [ref=f40e787]: "2026"
+          - heading "CITO Citation Tool" [level=3] [ref=f40e788]
+          - link "View repository ↗" [ref=f40e789] [cursor=pointer]:
+            - /url: https://github.com/skyparado/CITO-Citation-Tool
+        - article [ref=f40e790]:
+          - generic [ref=f40e825]:
+            - generic [ref=f40e826]: Web & apps
+            - time [ref=f40e827]: "2026"
+          - heading "CampusCart" [level=3] [ref=f40e828]
+          - generic [ref=f40e829]: Repository not linked yet
+        - article [ref=f40e830]:
+          - generic [ref=f40e856]:
+            - generic [ref=f40e857]: Networking
+            - time [ref=f40e858]: 2025 — 2026
+          - heading "Network Programming Utilities" [level=3] [ref=f40e859]
+          - link "View repository ↗" [ref=f40e860] [cursor=pointer]:
+            - /url: https://github.com/skyparado/Custom_Ping_Utility_Using_ICMP
+      - link "VIEW MORE all 10 projects in the workshop →" [ref=f40e861] [cursor=pointer]:
+        - /url: projects.html
+        - generic [ref=f40e862]: VIEW MORE
+        - generic [ref=f40e863]: all 10 projects in the workshop →
+    - region "Skills" [ref=f40e864]:
+      - generic [ref=f40e865]:
+        - heading "Skills" [level=2] [ref=f40e866]
+        - generic [ref=f40e867]: 38 keys
+      - generic [ref=f40e868]:
+        - generic [ref=f40e869]:
+          - generic [ref=f40e870]: SKY'S KEYBOARD
+          - generic [ref=f40e875]: 38 KEYS · PRESS ONE
+        - group "Security" [ref=f40e876]:
+          - button "VAPT" [ref=f40e919] [cursor=pointer]
+          - button "Pen testing" [ref=f40e920] [cursor=pointer]
+          - button "OWASP Top 10" [ref=f40e921] [cursor=pointer]
+          - button "Burp Suite" [ref=f40e922] [cursor=pointer]
+          - button "Nmap" [ref=f40e923] [cursor=pointer]
+          - button "CVSS v3.1" [ref=f40e924] [cursor=pointer]
+          - button "API security" [ref=f40e925] [cursor=pointer]
+          - button "Secure SDLC" [ref=f40e926] [cursor=pointer]
+          - button "Secure coding" [ref=f40e927] [cursor=pointer]
+        - group "Languages" [ref=f40e928]:
+          - button "Python" [ref=f40e974] [cursor=pointer]
+          - button "Java" [ref=f40e975] [cursor=pointer]
+          - button "C++" [ref=f40e976] [cursor=pointer]
+          - button "JavaScript" [ref=f40e977] [cursor=pointer]
+          - button "TypeScript" [ref=f40e978] [cursor=pointer]
+          - button "SQL" [ref=f40e979] [cursor=pointer]
+          - button "HTML & CSS" [ref=f40e980] [cursor=pointer]
+        - group "AI & automation" [ref=f40e981]:
+          - button "LLM integration" [ref=f40e1015] [cursor=pointer]
+          - button "Prompt engineering" [ref=f40e1016] [cursor=pointer]
+          - button "AI security testing" [ref=f40e1017] [cursor=pointer]
+          - button "Apps Script" [ref=f40e1018] [cursor=pointer]
+          - button "Workflow automation" [ref=f40e1019] [cursor=pointer]
+          - button "API integration" [ref=f40e1020] [cursor=pointer]
+        - group "Dev & tools" [ref=f40e1021]:
+          - button "Full-stack web" [ref=f40e1062] [cursor=pointer]
+          - button "REST APIs" [ref=f40e1063] [cursor=pointer]
+          - button "Git / GitHub" [ref=f40e1064] [cursor=pointer]
+          - button "Figma" [ref=f40e1065] [cursor=pointer]
+          - button "WordPress" [ref=f40e1066] [cursor=pointer]
+          - button "Google Workspace" [ref=f40e1067] [cursor=pointer]
+          - button "TCP/IP & sockets" [ref=f40e1068] [cursor=pointer]
+        - group "Leadership" [ref=f40e1069]:
+          - button "Team leadership" [ref=f40e1091] [cursor=pointer]
+          - button "Project management" [ref=f40e1092] [cursor=pointer]
+          - button "Stakeholders" [ref=f40e1093] [cursor=pointer]
+          - button "Corporate relations" [ref=f40e1094] [cursor=pointer]
+          - button "Event management" [ref=f40e1095] [cursor=pointer]
+          - button "Tech docs" [ref=f40e1096] [cursor=pointer]
+          - button "QA" [ref=f40e1097] [cursor=pointer]
+          - button "Debate" [ref=f40e1098] [cursor=pointer]
+          - button "Public speaking" [ref=f40e1099] [cursor=pointer]
+        - status [ref=f40e1101]: press a key
+      - link "VIEW MORE wander the skill garden →" [ref=f40e1102] [cursor=pointer]:
+        - /url: skills.html
+        - generic [ref=f40e1103]: VIEW MORE
+        - generic [ref=f40e1104]: wander the skill garden →
+    - region "Certifications & trophies" [ref=f40e1105]:
+      - generic [ref=f40e1106]:
+        - heading "Certifications & trophies" [level=2] [ref=f40e1107]
+        - generic [ref=f40e1108]: $ cat trophies.log
+      - generic [ref=f40e1109]:
+        - generic [ref=f40e1110]:
+          - generic [ref=f40e1111]: SKY'S TROPHY CABINET
+          - generic [ref=f40e1112]: 05 / COLLECTED
+        - group "Achievement trophies" [ref=f40e1113]:
+          - button "DLSU CTF Champion" [pressed] [ref=f40e1114] [cursor=pointer]:
+            - generic [ref=f40e1122]:
+              - strong [ref=f40e1123]: DLSU CTF
+              - generic [ref=f40e1124]: Champion
+          - button "ISO CTF 2nd place" [ref=f40e1125] [cursor=pointer]:
+            - generic [ref=f40e1133]:
+              - strong [ref=f40e1134]: ISO CTF
+              - generic [ref=f40e1135]: 2nd place
+          - button "K17 CTF 152 / 682" [ref=f40e1136] [cursor=pointer]:
+            - generic [ref=f40e1143]:
+              - strong [ref=f40e1144]: K17 CTF
+              - generic [ref=f40e1145]: 152 / 682
+          - button "VAPT Practitioner" [ref=f40e1146] [cursor=pointer]:
+            - generic [ref=f40e1153]:
+              - strong [ref=f40e1154]: VAPT
+              - generic [ref=f40e1155]: Practitioner
+          - button "ISC2 CC Exam passed" [ref=f40e1156] [cursor=pointer]:
+            - generic [ref=f40e1164]:
+              - strong [ref=f40e1165]: ISC2 CC
+              - generic [ref=f40e1166]: Exam passed
+        - generic [ref=f40e1167]: Hover to inspect · tap or use Tab and arrow keys to choose
+        - article [ref=f40e1169]:
+          - generic [ref=f40e1170]:
+            - generic [ref=f40e1171]: legendary
+            - generic [ref=f40e1172]: "2026"
+          - heading "Champion — DLSU Capture The Flag 2026" [level=3] [ref=f40e1173]
+          - paragraph [ref=f40e1174]: Team Prompt Patrol (5 members), Department of Computer Technology, De La Salle University.
+        - status [ref=f40e1175]: Champion — DLSU Capture The Flag 2026
+      - link "VIEW MORE trophy room · all 25 certificates →" [ref=f40e1176] [cursor=pointer]:
+        - /url: certs.html
+        - generic [ref=f40e1177]: VIEW MORE
+        - generic [ref=f40e1178]: trophy room · all 25 certificates →
+    - region "Send a little hello" [ref=f40e1179]:
+      - generic [ref=f40e1180]:
+        - heading "Send a little hello" [level=2] [ref=f40e1181]
+        - generic [ref=f40e1182]: $ ./post-office.sh
+      - generic [ref=f40e1183]:
+        - generic [ref=f40e1184]:
+          - paragraph [ref=f40e1185]: A project, an opportunity, or a good idea? There is always room for a new adventure. Email is the fastest way to reach me.
+          - list [ref=f40e1186]:
+            - listitem [ref=f40e1187]:
+              - generic [ref=f40e1188]: email
+              - link "sky.parado@gmail.com" [ref=f40e1189] [cursor=pointer]:
+                - /url: mailto:sky.parado@gmail.com
+            - listitem [ref=f40e1190]:
+              - generic [ref=f40e1191]: github
+              - link "github.com/skyparado" [ref=f40e1192] [cursor=pointer]:
+                - /url: https://github.com/skyparado
+            - listitem [ref=f40e1193]:
+              - generic [ref=f40e1194]: linkedin
+              - link "in/sky-hannah-parado" [ref=f40e1195] [cursor=pointer]:
+                - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+            - listitem [ref=f40e1196]:
+              - generic [ref=f40e1197]: home base
+              - generic [ref=f40e1198]: Malate, Manila
+        - generic [ref=f40e1199]:
+          - generic [ref=f40e1200]: "NEW LETTER · TO: SKY PARADO"
+          - generic [ref=f40e1201]:
+            - text: your name
+            - textbox "your name" [ref=f40e1202]
+          - generic [ref=f40e1203]:
+            - text: your email
+            - textbox "your email" [ref=f40e1204]
+          - generic [ref=f40e1205]:
+            - text: your letter
+            - textbox "your letter" [ref=f40e1206]
+          - button "Prepare letter →" [ref=f40e1207] [cursor=pointer]
+          - paragraph [ref=f40e1208]: Opens your email app. Send your letter from there.
+    - region "Choose your adventure." [ref=f40e1209]:
+      - generic [ref=f40e1210]:
+        - generic [ref=f40e1211]:
+          - text: SKY PARADO / A LITTLE WORLD OF MY OWN
+          - heading "Choose your adventure." [level=2] [ref=f40e1212]
+          - paragraph [ref=f40e1213]: Security student. Software builder. Curious human.Pick a place — I’ll show you around.
+        - generic [ref=f40e1214]:
+          - link "Back to summary ↑" [ref=f40e1215] [cursor=pointer]:
+            - /url: "#character"
+          - button "Pause motion" [ref=f40e1216] [cursor=pointer]
+      - generic [ref=f40e1217]:
+        - generic [ref=f40e1218]: ✦ PLAY AS SKY
+        - generic [ref=f40e1219]: 0 / 6 PLACES DISCOVERED
+      - progressbar "Places discovered" [ref=f40e1220]
+      - generic [ref=f40e1221]:
+        - generic [ref=f40e1222]:
+          - generic [ref=f40e1223]:
+            - generic "Explore Sky's world using arrow keys or W A S D. Press E to preview a nearby place. You can also click or tap a destination on the map." [ref=f40e1224]
+            - generic:
+              - button "Cozy cottage [About me] — preview" [ref=f40e1225] [cursor=pointer]: About me
+              - button "Build lab [Projects] — preview" [ref=f40e1226] [cursor=pointer]: Projects
+              - button "Trophy tower [Certificates] — preview" [ref=f40e1227] [cursor=pointer]: Certificates
+              - button "Memory grove [Experience] — preview" [ref=f40e1228] [cursor=pointer]: Experience
+              - button "Post office [Contact] — preview" [ref=f40e1229] [cursor=pointer]: Contact
+              - button "Skill garden [Skills] — preview" [ref=f40e1230] [cursor=pointer]: Skills
+          - paragraph [ref=f40e1231]: WASD / arrows to walk · E to explore · Click a place to visitYou’re Sky! Click the map or use the controls to move.
+          - generic "Movement controls" [ref=f40e1232]:
+            - button "Move up" [ref=f40e1233] [cursor=pointer]: ↑
+            - button "Move left" [ref=f40e1234] [cursor=pointer]: ←
+            - button "Move down" [ref=f40e1235] [cursor=pointer]: ↓
+            - button "Move right" [ref=f40e1236] [cursor=pointer]: →
+            - button "Explore [E]" [disabled] [ref=f40e1237]
+          - status [ref=f40e1238]: Follow the paths, or select any labeled destination.
+        - complementary [ref=f40e1239]:
+          - text: YOUR LITTLE TOUR GUIDE
+          - generic [ref=f40e1241]:
+            - heading "Hi! I’m pixel Sky." [level=3] [ref=f40e1242]
+            - paragraph [ref=f40e1243]: Welcome to my corner of the internet. Choose a destination to get a quick introduction before diving into the full section.
+          - generic [ref=f40e1244]: Six places. One curious explorer.
+          - generic "Choose a section" [ref=f40e1246]:
+            - button "◇ Cozy cottage [About me]" [ref=f40e1247] [cursor=pointer]
+            - button "◇ Build lab [Projects]" [ref=f40e1248] [cursor=pointer]
+            - button "◇ Trophy tower [Certificates]" [ref=f40e1249] [cursor=pointer]
+            - button "◇ Memory grove [Experience]" [ref=f40e1250] [cursor=pointer]
+            - button "◇ Post office [Contact]" [ref=f40e1251] [cursor=pointer]
+            - button "◇ Skill garden [Skills]" [ref=f40e1252] [cursor=pointer]
+          - status
+          - button "Restart discoveries" [ref=f40e1253] [cursor=pointer]
+      - generic [ref=f40e1254]:
+        - text: Take your time. Stay curious.
+        - generic [ref=f40e1255]: Discoveries saved on this device.
+    - generic [ref=f40e1256]:
+      - generic [ref=f40e1257]: "$ session #040 · 2026 Sky Hannah Parado"
+      - generic [ref=f40e1258]:
+        - link "github" [ref=f40e1259] [cursor=pointer]:
+          - /url: https://github.com/skyparado
+        - link "linkedin" [ref=f40e1260] [cursor=pointer]:
+          - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+        - link "mail" [ref=f40e1261] [cursor=pointer]:
+          - /url: mailto:sky.parado@gmail.com
+        - generic [ref=f40e1262]: press ? for keys
+  - generic:
+    - generic [aria-hidden]:
+      - generic: +
+      - generic: +
+    - navigation "Find Sky online" [ref=f40e1263]:
+      - generic [ref=f40e1264]: a little corner of my internet
+      - generic [ref=f40e1265]:
+        - link "Facebook (opens in a new tab)" [ref=f40e1266] [cursor=pointer]:
+          - /url: https://www.facebook.com/skyhannah.parado.875/
+          - generic [ref=f40e1270]: Facebook
+        - link "GitHub (opens in a new tab)" [ref=f40e1271] [cursor=pointer]:
+          - /url: https://github.com/skyparado
+          - generic [ref=f40e1275]: GitHub
+        - link "Instagram (opens in a new tab)" [ref=f40e1276] [cursor=pointer]:
+          - /url: https://www.instagram.com/sky.parado/
+          - generic [ref=f40e1282]: Instagram
+        - link "LinkedIn (opens in a new tab)" [ref=f40e1283] [cursor=pointer]:
+          - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+          - generic [ref=f40e1288]: LinkedIn
+        - link "Gmail" [ref=f40e1289] [cursor=pointer]:
+          - /url: mailto:sky.parado@gmail.com
+  - button "Chat with Pixel Sky, the site guide" [ref=f40e1296] [cursor=pointer]

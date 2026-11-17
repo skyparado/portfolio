@@ -8,6 +8,21 @@
 .project-workshop :is(button,a,summary):focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
 .work-card{--project-color:var(--purple);display:flex;flex-direction:column;padding:26px;background:var(--panel-2);border:2px solid var(--line-2);border-top:4px solid var(--project-color);min-width:0;scroll-margin-top:110px;box-shadow:0 4px 0 var(--bg-2)}
+/* picture banner: a pixel item (drawn by js/items.js) on a shelf, tinted by category */
+.work-card{--pad:26px}
+.work-banner{position:relative;display:grid;place-items:center;height:150px;margin:calc(-1*var(--pad)) calc(-1*var(--pad)) 22px;border-bottom:3px solid var(--line-2);
+  background:repeating-linear-gradient(90deg,transparent 0 23px,color-mix(in srgb,var(--project-color) 12%,transparent) 23px 24px),
+    linear-gradient(180deg,color-mix(in srgb,var(--project-color) 26%,var(--panel)),var(--panel))}
+.work-banner::after{content:"";position:absolute;bottom:20px;left:50%;width:96px;height:5px;margin-left:-48px;background:color-mix(in srgb,var(--project-color) 45%,var(--line))}
+.work-banner [data-item]{display:block;position:relative;z-index:1;width:88px;transition:transform .15s steps(3,end)}
+.work-banner [data-item]>svg{display:block;width:100%;height:auto}
+.work-card:hover .work-banner [data-item]{transform:translateY(-7px)}
+.work-card-small{--pad:22px}
+.work-card-small .work-banner{height:110px;margin-bottom:18px}
+.work-card-small .work-banner [data-item]{width:64px}
+.work-card-small .work-banner::after{bottom:14px;width:76px;margin-left:-38px}
+@media(max-width:600px){.work-card,.work-card-small{--pad:20px}}
+@media(prefers-reduced-motion:reduce){.work-banner [data-item]{transition:none}.work-card:hover .work-banner [data-item]{transform:none}}
 .work-card[data-category="security"]{--project-color:var(--amber)}
 .work-card[data-category="network"]{--project-color:var(--cyan)}
 .work-card[data-category="ai"]{--project-color:var(--pink,var(--purple))}

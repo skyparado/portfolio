@@ -1,0 +1,257 @@
+- generic [active] [ref=f31e1]:
+  - link "Skip to content" [ref=f31e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f31e3]:
+    - generic [ref=f31e4]:
+      - link "SKY PARADO A LITTLE WORLD BY SKY" [ref=f31e5] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f31e9]:
+          - text: SKY PARADO
+          - generic [ref=f31e10]: A LITTLE WORLD BY SKY
+      - generic [ref=f31e11]:
+        - link "home" [ref=f31e12] [cursor=pointer]:
+          - /url: index.html
+        - link "projects" [ref=f31e15] [cursor=pointer]:
+          - /url: projects.html
+        - link "trophies" [ref=f31e18] [cursor=pointer]:
+          - /url: certs.html
+        - link "journal" [ref=f31e21] [cursor=pointer]:
+          - /url: experience.html
+        - link "mail" [ref=f31e24] [cursor=pointer]:
+          - /url: contact.html
+        - link "skills" [ref=f31e27] [cursor=pointer]:
+          - /url: skills.html
+      - button "Toggle theme" [ref=f31e30] [cursor=pointer]:
+        - generic [ref=f31e33]: dark
+  - main [ref=f31e34]:
+    - generic [ref=f31e35]:
+      - generic [ref=f31e37]:
+        - generic [ref=f31e38]: WORLD 04 / THE ADVENTURE JOURNAL
+        - heading "Experience & leadership" [level=1] [ref=f31e39]
+        - paragraph [ref=f31e40]: My roles, contributions, and results across university, school organizations, and community projects.
+      - generic [ref=f31e41]:
+        - heading "The story so far" [level=2] [ref=f31e42]
+        - generic [ref=f31e43]: College / senior high / junior high
+      - generic [ref=f31e44]:
+        - generic [ref=f31e45]:
+          - generic [ref=f31e46]: SKY’S FIELD NOTES
+          - generic [ref=f31e47]: Experience & leadership
+        - tablist "Notebook chapters" [ref=f31e48]:
+          - tab "College" [selected] [ref=f31e49] [cursor=pointer]
+          - tab "Senior high" [ref=f31e50] [cursor=pointer]
+          - tab "Junior high" [ref=f31e51] [cursor=pointer]
+        - generic [ref=f31e52]:
+          - button "Previous page" [disabled] [ref=f31e53]: ← Previous page
+          - generic [ref=f31e54]: Page 1 / 3 - College
+          - button "Next page" [ref=f31e55] [cursor=pointer]: Next page →
+        - tabpanel "College" [ref=f31e56]:
+          - generic [ref=f31e57]:
+            - generic [ref=f31e58]: chapter 01
+            - generic [ref=f31e59]:
+              - heading "College" [level=2] [ref=f31e60]
+              - generic [ref=f31e61]: De La Salle University · 4 work roles · 4 organizations · 3 Dean’s List honors
+            - generic [ref=f31e62]: 2024 — Present
+          - generic [ref=f31e63]:
+            - paragraph [ref=f31e64]: De La Salle University — BS Computer Science, Major in Network & Information Security · Manila, PH
+            - generic [ref=f31e65]:
+              - generic [ref=f31e66]:
+                - generic [ref=f31e67]:
+                  - heading "At a glance" [level=3] [ref=f31e68]
+                  - list [ref=f31e72]:
+                    - listitem [ref=f31e73]:
+                      - generic [ref=f31e74]: "3"
+                      - generic [ref=f31e75]: Dean's List honors
+                    - listitem [ref=f31e76]:
+                      - generic [ref=f31e77]: "4"
+                      - generic [ref=f31e78]: work roles
+                    - listitem [ref=f31e79]:
+                      - generic [ref=f31e80]: "4"
+                      - generic [ref=f31e81]: organizations
+                    - listitem [ref=f31e82]:
+                      - generic [ref=f31e83]: CC + VAPT
+                      - generic [ref=f31e84]: Cybersecurity credentials
+                - heading "Organizations & Work" [level=3] [ref=f31e85]
+                - generic [ref=f31e88]:
+                  - article [ref=f31e89]:
+                    - generic [ref=f31e90]:
+                      - text: Sep 2026 – Present
+                      - heading "Information Security Organization" [level=4] [ref=f31e91]
+                      - paragraph [ref=f31e92]: President
+                      - text: School organization
+                    - generic [ref=f31e93]:
+                      - heading "What I contributed" [level=5] [ref=f31e94]
+                      - list [ref=f31e95]:
+                        - listitem [ref=f31e96]:
+                          - strong [ref=f31e97]: Lead five departments
+                          - text: ", coordinating 30+ officers and 100+ members to drive cybersecurity initiatives and organizational growth."
+                        - listitem [ref=f31e98]: Initiated collaboration with ISC2 and other cybersecurity professionals to expand learning and professional opportunities.
+                        - listitem [ref=f31e99]: Spearhead CyberQuests, CyberPath, Open Projects and NIS to Know, alongside technical workshops and student-friendly security activities.
+                  - article [ref=f31e100]:
+                    - generic [ref=f31e101]:
+                      - text: Nov – Dec 2026
+                      - heading "TechBiz Security" [level=4] [ref=f31e102]
+                      - paragraph [ref=f31e103]: SOC Analyst & Ethical Hacking Intern
+                      - text: Remote
+                    - generic [ref=f31e104]:
+                      - heading "What I contributed" [level=5] [ref=f31e105]
+                      - list [ref=f31e106]:
+                        - listitem [ref=f31e107]:
+                          - strong [ref=f31e108]: Six-week intensive training program
+                          - text: (Cohort B-504) covering Security Operations Center analysis and ethical hacking.
+                        - listitem [ref=f31e109]: Guided labs and mentor-reviewed assessments in security monitoring, vulnerability identification and offensive security techniques.
+                  - article [ref=f31e110]:
+                    - generic [ref=f31e111]:
+                      - text: Sep – Dec 2026
+                      - heading "AHEAD Tutorial and Review Center" [level=4] [ref=f31e112]
+                      - paragraph [ref=f31e113]: IT & Web Maintenance Intern
+                      - text: Remote
+                    - generic [ref=f31e114]:
+                      - heading "What I contributed" [level=5] [ref=f31e115]
+                      - list [ref=f31e116]:
+                        - listitem [ref=f31e117]:
+                          - strong [ref=f31e118]: Own day-to-day upkeep and quality assurance
+                          - text: of review.ahead.edu.ph, the public-facing site prospective reviewees use to explore programs, schedules and enrollment.
+                        - listitem [ref=f31e119]: Led the UI design of schedule timetables for a six-page program overhaul in Figma, and pitched a footer redesign to streamline site navigation.
+                  - article [ref=f31e120]:
+                    - generic [ref=f31e121]:
+                      - text: Oct – Nov 2026
+                      - heading "The Good Trade PH" [level=4] [ref=f31e122]
+                      - paragraph [ref=f31e123]: Web Developer
+                      - text: Remote
+                    - generic [ref=f31e124]:
+                      - heading "What I contributed" [level=5] [ref=f31e125]
+                      - list [ref=f31e126]:
+                        - listitem [ref=f31e127]:
+                          - strong [ref=f31e128]: Automated the end-to-end merchant application pipeline
+                          - text: ", removing repetitive manual work by syncing data across Google Forms, Sheets, Gmail and Drive with Google Apps Script."
+                  - article [ref=f31e129]:
+                    - generic [ref=f31e130]:
+                      - text: Sep 2026 – Present
+                      - heading "DataAnnotation" [level=4] [ref=f31e131]
+                      - paragraph [ref=f31e132]: Analyst / AI Trainer
+                      - text: Remote
+                    - generic [ref=f31e133]:
+                      - heading "What I contributed" [level=5] [ref=f31e134]
+                      - list [ref=f31e135]:
+                        - listitem [ref=f31e136]:
+                          - strong [ref=f31e137]: Evaluate LLM-generated Python code
+                          - text: against correctness and quality standards, providing detailed feedback used to train AI models.
+                  - article [ref=f31e138]:
+                    - generic [ref=f31e139]:
+                      - text: Oct 2026 – Present
+                      - heading "Computer Studies Government" [level=4] [ref=f31e140]
+                      - paragraph [ref=f31e141]: Web Developer
+                      - text: Student government
+                    - generic [ref=f31e142]:
+                      - heading "What I contributed" [level=5] [ref=f31e143]
+                      - list [ref=f31e144]:
+                        - listitem [ref=f31e145]:
+                          - strong [ref=f31e146]: Lead end-to-end web development
+                          - text: for the College of Computer Studies, developing and maintaining student-facing platforms used by over 3,000 students.
+                        - listitem [ref=f31e147]: Handle both frontend and backend development, ensuring functionality, usability and reliability.
+                  - article [ref=f31e148]:
+                    - generic [ref=f31e149]:
+                      - text: Sep 2026 – Present
+                      - heading "DLSU Archers Consulting Group" [level=4] [ref=f31e150]
+                      - paragraph [ref=f31e151]: Assistant Manager, Culture & Internal Development
+                      - text: School organization
+                    - generic [ref=f31e152]:
+                      - heading "What I contributed" [level=5] [ref=f31e153]
+                      - list [ref=f31e154]:
+                        - listitem [ref=f31e155]: Plan culture-building and engagement initiatives that strengthen team relationships across the organization.
+                  - article [ref=f31e156]:
+                    - generic [ref=f31e157]:
+                      - text: Jan – Jul 2026
+                      - heading "HackerCup 2026" [level=4] [ref=f31e158]
+                      - paragraph [ref=f31e159]: Corporate Relations Asst. Team Lead
+                      - text: La Salle Computer Society
+                    - generic [ref=f31e160]:
+                      - heading "What I contributed" [level=5] [ref=f31e161]
+                      - list [ref=f31e162]:
+                        - listitem [ref=f31e163]:
+                          - strong [ref=f31e164]: Secured corporate sponsorships and industry partnerships
+                          - text: for DLSU's flagship hackathon.
+                        - listitem [ref=f31e165]: Coordinated corporate relations, marketing and technical teams to deliver a hackathon for participants across Manila.
+                  - article [ref=f31e166]:
+                    - generic [ref=f31e167]:
+                      - text: Sep 2025 – Sep 2026
+                      - heading "Information Security Organization" [level=4] [ref=f31e168]
+                      - paragraph [ref=f31e169]: Organization Development Officer
+                      - text: School organization
+                    - generic [ref=f31e170]:
+                      - heading "What I contributed" [level=5] [ref=f31e171]
+                      - list [ref=f31e172]:
+                        - listitem [ref=f31e173]: Developed culture-building and team-bonding activities to strengthen officer engagement and internal relationships.
+                  - article [ref=f31e174]:
+                    - generic [ref=f31e175]:
+                      - text: Sep 2025 – Aug 2026
+                      - heading "La Salle Computer Society" [level=4] [ref=f31e176]
+                      - paragraph [ref=f31e177]: Junior Officer
+                      - text: School organization
+                    - generic [ref=f31e178]:
+                      - heading "What I contributed" [level=5] [ref=f31e179]
+                      - list [ref=f31e180]:
+                        - listitem [ref=f31e181]:
+                          - strong [ref=f31e182]: Completed the 40th LSCS Junior Officer Training Program.
+                        - listitem [ref=f31e183]: Contributed to officer-led organizational projects and participated in technical trainings and workshops.
+                - heading "Academics" [level=3] [ref=f31e184]
+                - generic [ref=f31e187]:
+                  - generic [ref=f31e188]:
+                    - generic [ref=f31e192]: First Dean's Lister — AY 2025–2026, T1 & T2
+                    - generic [ref=f31e193]: DLSU
+                  - generic [ref=f31e194]:
+                    - generic [ref=f31e198]: Second Dean's Lister — AY 2024–2025, T1
+                    - generic [ref=f31e199]: DLSU
+              - complementary [ref=f31e200]:
+                - heading "Skills used in this chapter" [level=4] [ref=f31e201]
+                - generic [ref=f31e205]:
+                  - generic [ref=f31e206]: Offensive Security
+                  - generic [ref=f31e207]: VAPT
+                  - generic [ref=f31e208]: Python
+                  - generic [ref=f31e209]: C++ / Java
+                  - generic [ref=f31e210]: Full-stack Web
+                  - generic [ref=f31e211]: Secure SDLC
+                  - generic [ref=f31e212]: Networking · TCP/IP
+                  - generic [ref=f31e213]: Corporate Relations
+                  - generic [ref=f31e214]: Git / GitHub
+        - generic [ref=f31e215]:
+          - button "Previous page" [disabled] [ref=f31e216]: ← Previous page
+          - generic [ref=f31e217]: Page 1 / 3 - College
+          - button "Next page" [ref=f31e218] [cursor=pointer]: Next page →
+    - generic [ref=f31e219]:
+      - generic [ref=f31e221]:
+        - text: BACK TO PARADO WORLD
+        - heading "A portfolio you can wander through." [level=2] [ref=f31e222]
+        - paragraph [ref=f31e223]: Meet Sky and preview every stop before opening a page.
+      - button "Explore the world" [ref=f31e224] [cursor=pointer]
+    - generic [ref=f31e225]:
+      - generic [ref=f31e226]: "$ session #031 · 2026 Sky Hannah Parado"
+      - generic [ref=f31e227]:
+        - link "github" [ref=f31e228] [cursor=pointer]:
+          - /url: https://github.com/skyparado
+        - link "linkedin" [ref=f31e229] [cursor=pointer]:
+          - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+        - link "mail" [ref=f31e230] [cursor=pointer]:
+          - /url: mailto:sky.parado@gmail.com
+  - generic:
+    - generic [aria-hidden]:
+      - generic: +
+      - generic: +
+    - navigation "Find Sky online" [ref=f31e231]:
+      - generic [ref=f31e232]: a little corner of my internet
+      - generic [ref=f31e233]:
+        - link "Facebook (opens in a new tab)" [ref=f31e234] [cursor=pointer]:
+          - /url: https://www.facebook.com/skyhannah.parado.875/
+          - generic [ref=f31e238]: Facebook
+        - link "GitHub (opens in a new tab)" [ref=f31e239] [cursor=pointer]:
+          - /url: https://github.com/skyparado
+          - generic [ref=f31e243]: GitHub
+        - link "Instagram (opens in a new tab)" [ref=f31e244] [cursor=pointer]:
+          - /url: https://www.instagram.com/sky.parado/
+          - generic [ref=f31e250]: Instagram
+        - link "LinkedIn (opens in a new tab)" [ref=f31e251] [cursor=pointer]:
+          - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+          - generic [ref=f31e256]: LinkedIn
+        - link "Gmail" [ref=f31e257] [cursor=pointer]:
+          - /url: mailto:sky.parado@gmail.com
+  - button "Chat with Pixel Sky, the site guide" [ref=f31e264] [cursor=pointer]

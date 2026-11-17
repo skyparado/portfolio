@@ -1,0 +1,108 @@
+- generic [active] [ref=f35e1]:
+  - link "Skip to content" [ref=f35e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=f35e3]:
+    - generic [ref=f35e4]:
+      - link "SKY PARADO A LITTLE WORLD BY SKY" [ref=f35e5] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f35e9]:
+          - text: SKY PARADO
+          - generic [ref=f35e10]: A LITTLE WORLD BY SKY
+      - generic [ref=f35e11]:
+        - link "home" [ref=f35e12] [cursor=pointer]:
+          - /url: index.html
+        - link "projects" [ref=f35e15] [cursor=pointer]:
+          - /url: projects.html
+        - link "trophies" [ref=f35e18] [cursor=pointer]:
+          - /url: certs.html
+        - link "journal" [ref=f35e21] [cursor=pointer]:
+          - /url: experience.html
+        - link "mail" [ref=f35e24] [cursor=pointer]:
+          - /url: contact.html
+        - link "skills" [ref=f35e27] [cursor=pointer]:
+          - /url: skills.html
+      - button "Toggle theme" [ref=f35e30] [cursor=pointer]:
+        - generic [ref=f35e33]: dark
+  - main [ref=f35e34]:
+    - generic [ref=f35e35]:
+      - generic [ref=f35e37]:
+        - generic [ref=f35e38]: WORLD 05 / THE POST OFFICE
+        - heading "Send a little hello." [level=1] [ref=f35e39]
+        - paragraph [ref=f35e40]: A project, an opportunity, or a good idea? There is always room for a new adventure.
+      - generic [ref=f35e41]:
+        - generic [ref=f35e43]: POST OFFICE OPEN
+        - generic [ref=f35e44]: letters, ideas & new adventures
+      - generic [ref=f35e45]:
+        - generic [ref=f35e46]:
+          - generic [ref=f35e47]:
+            - generic [aria-hidden] [ref=f35e48]: ✦
+            - generic [ref=f35e49]: NEW LETTER
+            - generic [ref=f35e51]: POSTAGE
+          - generic [ref=f35e55]:
+            - generic [ref=f35e57]:
+              - text: "TO: SKY PARADO"
+              - heading "A new side quest?" [level=2] [ref=f35e58]
+              - paragraph [ref=f35e59]: Tell me what you have in mind.
+            - generic [ref=f35e64]:
+              - generic [ref=f35e65]: + your name
+              - textbox "+ your name" [ref=f35e66]:
+                - /placeholder: your name
+            - generic [ref=f35e67]:
+              - generic [ref=f35e68]: + your email
+              - textbox "+ your email" [ref=f35e69]:
+                - /placeholder: you@domain.com
+            - generic [ref=f35e70]:
+              - generic [ref=f35e71]: + your letter
+              - textbox "+ your letter" [ref=f35e72]:
+                - /placeholder: A project, an idea, or just a hello...
+            - button "Prepare letter" [ref=f35e73] [cursor=pointer]
+            - status [ref=f35e76]: Opens your email app. Send your letter from there.
+        - generic [ref=f35e77]:
+          - heading "CHOOSE A DESTINATION" [level=2] [ref=f35e78]
+          - link [ref=f35e79] [cursor=pointer]:
+            - /url: https://github.com/skyparado
+            - generic [ref=f35e125]: githubgithub.com/skyparado
+          - link [ref=f35e129] [cursor=pointer]:
+            - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+            - generic [ref=f35e163]: linkedinin/sky-hannah-parado
+          - link [ref=f35e167] [cursor=pointer]:
+            - /url: mailto:sky.parado@gmail.com
+            - generic [ref=f35e203]: emailsky.parado@gmail.com
+          - generic [ref=f35e207]: home baseMalate, Manila 1000
+    - generic [ref=f35e230]:
+      - generic [ref=f35e232]:
+        - text: BACK TO PARADO WORLD
+        - heading "A portfolio you can wander through." [level=2] [ref=f35e233]
+        - paragraph [ref=f35e234]: Meet Sky and preview every stop before opening a page.
+      - button "Explore the world" [ref=f35e235] [cursor=pointer]
+    - generic [ref=f35e236]:
+      - generic [ref=f35e237]: "$ session #035 · 2026 Sky Hannah Parado"
+      - generic [ref=f35e238]:
+        - link "github" [ref=f35e239] [cursor=pointer]:
+          - /url: https://github.com/skyparado
+        - link "linkedin" [ref=f35e240] [cursor=pointer]:
+          - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+        - link "mail" [ref=f35e241] [cursor=pointer]:
+          - /url: mailto:sky.parado@gmail.com
+  - generic:
+    - generic [aria-hidden]:
+      - generic: +
+      - generic: +
+    - navigation "Find Sky online" [ref=f35e242]:
+      - generic [ref=f35e243]: a little corner of my internet
+      - generic [ref=f35e244]:
+        - link "Facebook (opens in a new tab)" [ref=f35e245] [cursor=pointer]:
+          - /url: https://www.facebook.com/skyhannah.parado.875/
+          - generic [ref=f35e249]: Facebook
+        - link "GitHub (opens in a new tab)" [ref=f35e250] [cursor=pointer]:
+          - /url: https://github.com/skyparado
+          - generic [ref=f35e254]: GitHub
+        - link "Instagram (opens in a new tab)" [ref=f35e255] [cursor=pointer]:
+          - /url: https://www.instagram.com/sky.parado/
+          - generic [ref=f35e261]: Instagram
+        - link "LinkedIn (opens in a new tab)" [ref=f35e262] [cursor=pointer]:
+          - /url: https://linkedin.com/in/sky-hannah-parado-3a9218256
+          - generic [ref=f35e267]: LinkedIn
+        - link "Gmail" [ref=f35e268] [cursor=pointer]:
+          - /url: mailto:sky.parado@gmail.com
+  - button "Chat with Pixel Sky, the site guide" [ref=f35e275] [cursor=pointer]

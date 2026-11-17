@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:theoith.ink)",
+      "WebFetch(domain:www.jamesmagpantay.com)",
+      "WebFetch(domain:www.raigon.dev)"
+    ]
+  }
+}

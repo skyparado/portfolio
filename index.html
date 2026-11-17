@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sky Parado // parado.os</title>
-<meta name="description" content="Cybersecurity & Computer Science student — interactive terminal portfolio.">
+<meta name="description" content="Sky Hannah Parado — Computer Science student at De La Salle University majoring in Network &amp; Information Security. CTF champion, builder of web apps and security tools.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -12,9 +12,12 @@
 <link rel="stylesheet" href="css/quest.css">
 <link rel="stylesheet" href="css/rpg.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/trophies.css">
+<link rel="stylesheet" href="css/one.css?v=10">
+<link rel="stylesheet" href="css/guide.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 </head>
-<body class="rpg-site">
+<body class="rpg-site one-page" data-page="one">
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- ===== boot overlay ===== -->
@@ -24,83 +27,238 @@
   <p class="boot-skip">click anywhere or press <b>ESC</b> to skip</p>
 </div></div>
 
-<!-- ===== nav ===== -->
+<!-- ===== nav: one page, so every link is a section ===== -->
 <nav class="nav"><div class="nav-inner">
-  <a class="brand" href="index.html">
+  <a class="brand" href="#top">
     <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 4h6v3h6V4h6v9h-3v3h-3v3H9v-3H6v-3H3z"/></svg></span>
     <span class="nm">SKY PARADO<small>A LITTLE WORLD BY SKY</small></span>
   </a>
-  <div class="nav-links">
-    <a href="index.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 10h3V7h3V4h3V1h2v3h3v3h3v3h3v3h-3v9h-6v-6h-4v6H5v-9H2z"/></svg>home<span class="key">1</span></a>
-    <a href="projects.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 6h20v15H2zM8 2h8v3h-3V4h-2v1H8zM5 9v3h14V9z"/></svg>projects<span class="key">2</span></a>
-    <a href="certs.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h12v3h4v9h-5v3h-3v3h4v3H6v-3h4v-3H7v-3H2V5h4zM4 7v5h2V7zM18 7v5h2V7z"/></svg>trophies<span class="key">3</span></a>
-    <a href="experience.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h18v20H3zM7 6v2h10V6zM7 11v2h10v-2zM7 16v2h7v-2z"/></svg>journal<span class="key">4</span></a>
-    <a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v15H2zM5 8v9h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg>mail<span class="key">5</span></a>
-    <a href="skills.html"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M10 11H4V5h6v3h2v5h2V8h6v6h-6v4h4v4H6v-4h4z"/></svg>skills<span class="key">6</span></a>
+  <div class="nav-links one-nav">
+    <a href="#character"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 10h3V7h3V4h3V1h2v3h3v3h3v3h3v3h-3v9h-6v-6h-4v6H5v-9H2z"/></svg>about</a>
+    <a href="experience.html" data-sec="#experience"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h18v20H3zM7 6v2h10V6zM7 11v2h10v-2zM7 16v2h7v-2z"/></svg>journal</a>
+    <a href="projects.html" data-sec="#projects"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 6h20v15H2zM8 2h8v3h-3V4h-2v1H8zM5 9v3h14V9z"/></svg>projects</a>
+    <a href="skills.html" data-sec="#skills"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M10 11H4V5h6v3h2v5h2V8h6v6h-6v4h4v4H6v-4h4z"/></svg>skills</a>
+    <a href="certs.html" data-sec="#trophies"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h12v3h4v9h-5v3h-3v3h4v3H6v-3h4v-3H7v-3H2V5h4zM4 7v5h2V7zM18 7v5h2V7z"/></svg>trophies</a>
+    <a href="contact.html" data-sec="#contact"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v15H2zM5 8v9h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg>mail</a>
   </div>
   <button class="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg><span class="tl">light</span></button>
+  <div class="one-progress" aria-hidden="true"><i></i></div>
 </div></nav>
 
 <main id="main-content" class="wrap hud-frame">
 
-  <section class="home-summary" id="character" aria-labelledby="home-title">
-    <div class="home-profile-photo"><img src="picture_sky.png" alt="Sky Hannah Parado" width="240" height="280"><span>PLAYER 01 / SKY</span></div>
-    <div class="home-profile-copy">
-    <div class="eyebrow">A LITTLE ABOUT ME</div>
-    <h1 id="home-title">Hi, I'm <span>Sky Hannah Parado.</span></h1>
-    <p class="home-intro">Computer Science student at <strong>De La Salle University</strong>, majoring in Network &amp; Information Security. I build web applications, explore cybersecurity, and compete in capture-the-flag challenges.</p>
-    <p class="home-focus">Cybersecurity <span aria-hidden="true">&middot;</span> Software development <span aria-hidden="true">&middot;</span> Community leadership</p>
-    <dl class="home-profile-facts">
-      <div><dt>Degree</dt><dd>BS Computer Science</dd></div>
-      <div><dt>Major</dt><dd>Network &amp; Information Security</dd></div>
-      <div><dt>University</dt><dd>De La Salle University</dd></div>
-      <div><dt>Status</dt><dd class="profile-available">Available for work</dd></div>
-    </dl>
+  <!-- ===== 00 · character card: portrait + inventory. Words appear in the dialog box on hover ===== -->
+  <section class="cc" id="character" aria-labelledby="home-title">
+    <div class="cc-left">
+      <figure class="cc-photo" aria-label="Sky Hannah Parado &middot; Computer Science student at De La Salle University &middot; President of the Information Security Organization &middot; builds web apps, breaks them safely, plays CTFs">
+        <span class="cc-no">No.001</span>
+        <img src="picture_sky.png" alt="Sky Hannah Parado" width="240" height="280">
+      </figure>
+      <div class="cc-name">
+        <h1 id="home-title">SKY <span>P.</span></h1>
+        <button class="cc-sfx" type="button" aria-pressed="true" aria-label="Sound effects &middot; click to mute or unmute">&#9834;</button>
+      </div>
+      <dl class="cc-stats">
+        <div><dt>PROJECTS</dt><dd>10</dd></div>
+        <div><dt>CERTS</dt><dd>25</dd></div>
+        <div><dt>CTFS</dt><dd>5</dd></div>
+        <div><dt>DEAN'S LIST</dt><dd>&times;3</dd></div>
+      </dl>
+    </div>
+    <div class="cc-body">
+      <div class="trophy-case-top"><span>SKY'S INVENTORY</span><span class="trophy-case-count">12 / ITEMS</span></div>
+      <div class="inv">
+        <a href="projects.html" aria-label="Web &amp; apps &times;3 &middot; CITO, CampusCart, History of Data Storage &middot; see them in the workshop"><b>&times;3</b><i data-item="web"></i></a>
+        <a href="projects.html" aria-label="AI &times;3 &middot; CatBot, PINOYBOT, Sokoban Solver &middot; see them in the workshop"><b>&times;3</b><i data-item="ai"></i></a>
+        <a href="projects.html" aria-label="Networking &times;2 &middot; ping, traceroute and VoIP by hand &middot; see them in the workshop"><b>&times;2</b><i data-item="net"></i></a>
+        <a href="projects.html" aria-label="Security &times;2 &middot; AI Web App Scanner, CampusCart hardening &middot; see them in the workshop"><b>&times;2</b><i data-item="sec"></i></a>
+        <a href="projects.html" aria-label="Systems &times;1 &middot; 8-way cache simulator &middot; see them in the workshop"><b>&times;1</b><i data-item="sys"></i></a>
+        <a href="#proj-fuzzer" aria-label="38 findings &middot; AI Web App Scanner &middot; zero false positives"><b>38</b><i data-item="bug"></i></a>
+        <a href="#experience" aria-label="Dean's List &times;3 &middot; First Dean's Lister twice, Second once"><b>&times;3</b><i data-item="star"></i></a>
+        <a href="#trophies" aria-label="Trophies &times;5 &middot; DLSU CTF champion, ISO CTF 2nd place, top 8% at CSCTF, top 12% at PINK+ CTF"><b>&times;5</b><i data-item="trophy"></i></a>
+        <a href="#experience" aria-label="Journal &middot; four work roles and four organizations at De La Salle University"><i data-item="journal"></i></a>
+        <a href="#skills" aria-label="Tool rack &middot; Python, Java, C++, JavaScript, Burp Suite, Nmap, Apps Script&hellip;"><i data-item="code"></i></a>
+        <a href="#contact" aria-label="Post office &middot; available for work &middot; send a letter"><i data-item="mail"></i></a>
+        <a href="https://github.com/skyparado" target="_blank" rel="noopener" aria-label="GitHub &middot; github.com/skyparado"><span>GH</span></a>
+      </div>
+      <p class="cc-say" id="ccSay" aria-hidden="true">&#9656; point at an item to inspect it</p>
     </div>
   </section>
 
-  <section class="home-highlights" aria-labelledby="highlights-title">
-    <div class="section-title"><h2 id="highlights-title">Key achievements</h2><a href="certs.html">Visit the trophy case &#8599;</a></div>
-    <div class="home-wins">
-      <a class="home-win" href="certs.html#trophy-0"><span class="win-value">Champion</span><h3>DLSU CTF 2026</h3><p>Won with Team Prompt Patrol.</p></a>
-      <a class="home-win" href="certs.html#trophy-1"><span class="win-value">2nd place</span><h3>ISO CTF 2026</h3><p>Uncharted Knowledge competition.</p></a>
-      <a class="home-win" href="certs.html#trophy-2"><span class="win-value">152 / 682</span><h3>K17 CTF 2026</h3><p>Team SlayTheFlagII &middot; 2,700 points.</p></a>
-      <a class="home-win" href="experience.html#college"><span class="win-value">3 honors</span><h3>Dean's List at DLSU</h3><p>First Dean's Lister twice; Second Dean's Lister once.</p></a>
-      <a class="home-win" href="certs.html"><span class="win-value">CC + VAPT</span><h3>Cybersecurity credentials</h3><p>Passed the ISC2 CC exam; Junior VAPT Practitioner.</p></a>
-      <a class="home-win" href="projects.html#proj-fuzzer"><span class="win-value">38 findings</span><h3>AI Web App Scanner</h3><p>7 vulnerability classes; zero false positives on a hardened control.</p></a>
+  <!-- ===== 01 · experience ===== -->
+  <section class="one-sec" id="experience" aria-labelledby="exp-title">
+    <div class="section-title"><h2 id="exp-title">Experience</h2><span class="one-cmd">$ cat journal.log</span></div>
+
+    <div class="one-tabs" role="tablist" aria-label="Chapters">
+      <button role="tab" id="tab-work" aria-controls="panel-work" aria-selected="true">Work</button>
+      <button role="tab" id="tab-college" aria-controls="panel-college" aria-selected="false" tabindex="-1">College</button>
+      <button role="tab" id="tab-shs" aria-controls="panel-shs" aria-selected="false" tabindex="-1">Senior high</button>
+      <button role="tab" id="tab-jhs" aria-controls="panel-jhs" aria-selected="false" tabindex="-1">Junior high</button>
     </div>
-    <p class="home-more">Beyond the highlights: <a href="projects.html">browse my projects</a> or <a href="experience.html">read my experience</a>.</p>
+
+    <div class="one-frame" role="tabpanel" id="panel-work" aria-labelledby="tab-work">
+      <div class="one-school">
+        <div><h3>Work experience</h3><p>Internships, contract and freelance work &middot; Remote</p></div>
+        <span class="one-when">2026 &mdash; Present</span>
+      </div>
+      <ol class="one-timeline">
+        <li class="is-now"><i data-item="sec" aria-hidden="true"></i><span class="one-when">Nov &mdash; Dec 2026</span><div><h4>SOC Analyst &amp; Ethical Hacking Intern<span>TechBiz Security</span></h4><ul><li>Six-week intensive program (Cohort B-504) covering Security Operations Center analysis and ethical hacking.</li><li>Guided labs and mentor-reviewed assessments in security monitoring, vulnerability identification and offensive security.</li></ul></div></li>
+        <li class="is-now"><i data-item="web" aria-hidden="true"></i><span class="one-when">Sep &mdash; Dec 2026</span><div><h4>IT &amp; Web Maintenance Intern<span>AHEAD Tutorial and Review Center</span></h4><ul><li>Own the day-to-day upkeep and quality assurance of review.ahead.edu.ph, the site prospective reviewees use to explore programs, schedules and enrollment.</li><li>Led the UI design of schedule timetables for a six-page program overhaul in Figma, and pitched a footer redesign to streamline navigation.</li></ul></div></li>
+        <li><i data-item="cart" aria-hidden="true"></i><span class="one-when">Oct &mdash; Nov 2026</span><div><h4>Web Developer<span>The Good Trade PH</span></h4><ul><li>Automated the end-to-end merchant application pipeline by syncing data across Google Forms, Sheets, Gmail and Drive with Google Apps Script.</li></ul></div></li>
+        <li class="is-now"><i data-item="ai" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>Analyst / AI Trainer<span>DataAnnotation</span></h4><ul><li>Evaluate LLM-generated Python code against correctness and quality standards, with detailed feedback used to train AI models.</li></ul></div></li>
+      </ol>
+    </div>
+
+    <div class="one-frame" role="tabpanel" id="panel-college" aria-labelledby="tab-college" hidden>
+      <div class="one-school">
+        <div><h3>De La Salle University</h3><p>BS Computer Science, Major in Network &amp; Information Security &middot; Manila</p></div>
+        <span class="one-when">2024 — Present</span>
+      </div>
+      <ol class="one-timeline">
+        <li class="is-now"><i data-item="flag" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>President<span>Information Security Organization</span></h4><ul><li>Lead five departments, coordinating 30+ officers and 100+ members.</li><li>Initiated collaboration with ISC2 and other cybersecurity professionals to expand learning and career opportunities.</li><li>Spearhead CyberQuests, CyberPath, Open Projects and NIS to Know, alongside technical workshops.</li></ul></div></li>
+        <li class="is-now"><i data-item="code" aria-hidden="true"></i><span class="one-when">Oct 2026 &mdash; Now</span><div><h4>Web Developer<span>Computer Studies Government</span></h4><ul><li>Lead end-to-end web development for the College of Computer Studies, on student-facing platforms used by over 3,000 students.</li><li>Handle both frontend and backend development.</li></ul></div></li>
+        <li class="is-now"><i data-item="chat" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>Assistant Manager, Culture &amp; Internal Development<span>DLSU Archers Consulting Group</span></h4><ul><li>Plan culture-building and engagement initiatives that strengthen team relationships across the organization.</li></ul></div></li>
+        <li><i data-item="trophy" aria-hidden="true"></i><span class="one-when">Jan &mdash; Jul 2026</span><div><h4>Corporate Relations Assistant Team Lead<span>HackerCup 2026</span></h4><ul><li>Secured corporate sponsorships and industry partnerships for DLSU's flagship hackathon.</li><li>Coordinated corporate relations, marketing and technical teams.</li></ul></div></li>
+        <li><i data-item="sec" aria-hidden="true"></i><span class="one-when">Sep 2025 &mdash; Sep 2026</span><div><h4>Organization Development Officer<span>Information Security Organization</span></h4><ul><li>Developed culture-building and team-bonding activities to strengthen officer engagement.</li></ul></div></li>
+        <li><i data-item="sys" aria-hidden="true"></i><span class="one-when">Sep 2025 &mdash; Aug 2026</span><div><h4>Junior Officer<span>La Salle Computer Society</span></h4><ul><li>Completed the 40th LSCS Junior Officer Training Program.</li><li>Contributed to officer-led projects and took part in technical trainings and workshops.</li></ul></div></li>
+        <li><i data-item="star" aria-hidden="true"></i><span class="one-when">2024 &mdash; 2026</span><div><h4>Dean's List<span>DLSU</span></h4><ul><li>First Dean's Lister, AY 2025&ndash;2026 (Terms 1 &amp; 2).</li><li>Second Dean's Lister, AY 2024&ndash;2025 (Term 1).</li></ul></div></li>
+      </ol>
+    </div>
+
+    <div class="one-frame" role="tabpanel" id="panel-shs" aria-labelledby="tab-shs" hidden>
+      <div class="one-school">
+        <div><h3>Sacred Heart School – Ateneo de Cebu</h3><p>STEM Strand &middot; Top 10% of graduating cohort (GPA 96.40) &middot; Gold Honors (G11), Silver Honors (G12)</p></div>
+        <span class="one-when">Grades 11 — 12</span>
+      </div>
+      <ol class="one-timeline">
+        <li><i data-item="flag" aria-hidden="true"></i><span class="one-when">G11 — G12</span><div><h4>Vice President<span>CIDA</span></h4><ul><li>Organized five inter-school debate competitions of 200+ participants each, generating about PHP 100,000 per competition.</li><li>Supported fundraising and outreach that raised PHP 50,000 in donations.</li><li>Directed logistics, registration, adjudication, and finance.</li></ul></div></li>
+        <li><i data-item="flag" aria-hidden="true"></i><span class="one-when">G10 — G12</span><div><h4>Marketing Director<span>Interact Metro Mandaue</span></h4><ul><li>Led graphics work and assigned video and photography tasks.</li><li>Headed Lottery for a Cause and fundraisers for the Marawi Siege.</li></ul></div></li>
+        <li><i data-item="journal" aria-hidden="true"></i><span class="one-when">Grade 12</span><div><h4>Organization Board<span>Ignatian Servant Leaders Council</span></h4><ul><li>Created school projects and organized initiatives on behalf of the student body.</li></ul></div></li>
+        <li><i data-item="crate" aria-hidden="true"></i><span class="one-when">2024</span><div><h4>Work Immersion Intern<span>Uratex</span></h4><ul><li>80-hour immersion in sales operations and inventory management; reconciled stock records.</li></ul></div></li>
+      </ol>
+    </div>
+
+    <div class="one-frame" role="tabpanel" id="panel-jhs" aria-labelledby="tab-jhs" hidden>
+      <div class="one-school">
+        <div><h3>Junior High School</h3><p>Debate, publications, finance &amp; school service &middot; Cebu</p></div>
+        <span class="one-when">Grades 7 — 10</span>
+      </div>
+      <ol class="one-timeline">
+        <li><i data-item="chat" aria-hidden="true"></i><span class="one-when">G7 — G8</span><div><h4>Treasurer &amp; Head Trainer<span>Hijas Debate Society</span></h4><ul><li>Managed school funds and trained the batch's debaters.</li></ul></div></li>
+        <li><i data-item="mail" aria-hidden="true"></i><span class="one-when">G7 — G8</span><div><h4>Treasurer<span>Cebu Debate Society</span></h4><ul><li>Managed the funds used to run tournaments.</li></ul></div></li>
+        <li><i data-item="trophy" aria-hidden="true"></i><span class="one-when">2018 — 2021</span><div><h4>Competitive debater</h4><ul><li>7 tournaments, including a PWSDC 2021 quarter-final and Ateneo Debate Camp 2021.</li></ul></div></li>
+      </ol>
+    </div>
+
+    <a class="one-more" href="experience.html"><b>VIEW MORE</b><span>the full adventure journal &rarr;</span></a>
   </section>
 
-  <section class="resume-overview" aria-labelledby="resume-title">
-    <div class="section-title"><h2 id="resume-title">Skills &amp; experience</h2><a href="skills.html">Explore all skills &#8599;</a></div>
-    <div class="resume-columns">
-      <div class="resume-panel">
-        <h3>Project experience</h3>
-        <p class="resume-note">Bars show the number of listed projects in each area, on a 0&ndash;3 scale.</p>
-        <ul class="resume-bars">
-          <li><div><span>Web development</span><span>3 projects</span></div><meter min="0" max="3" value="3" aria-label="Web development: 3 projects">3 of 3</meter><p>CITO, CampusCart, Data Storage website</p></li>
-          <li><div><span>AI &amp; problem solving</span><span>3 projects</span></div><meter min="0" max="3" value="3" aria-label="AI and problem solving: 3 projects">3 of 3</meter><p>Q-Learning, PINOYBOT, Sokoban Solver</p></li>
-          <li><div><span>Networking</span><span>2 projects</span></div><meter min="0" max="3" value="2" aria-label="Networking: 2 projects">2 of 3</meter><p>Network Programming Utilities, ICMP Traceroute</p></li>
-          <li><div><span>Application security</span><span>1 project</span></div><meter min="0" max="3" value="1" aria-label="Application security: 1 project">1 of 3</meter><p>AI Web App Scanner</p></li>
-          <li><div><span>Computer systems</span><span>1 project</span></div><meter min="0" max="3" value="1" aria-label="Computer systems: 1 project">1 of 3</meter><p>8-Way Cache Simulator</p></li>
-        </ul>
-        <a class="resume-link" href="projects.html">See the projects behind the bars &#8599;</a>
+  <!-- ===== 02 · projects ===== -->
+  <section class="one-sec" id="projects" aria-labelledby="proj-title">
+    <div class="section-title"><h2 id="proj-title">Projects</h2><span class="one-cmd">4 of 10 pinned</span></div>
+
+    <div class="one-proj-grid one-board">
+      <article class="one-proj is-feat" data-cat="security" id="proj-fuzzer">
+        <div class="one-pic" aria-hidden="true"><i data-item="bug"></i></div>
+        <div class="one-proj-top"><span>Security</span><time>2026</time></div>
+        <h3>AI Web App Scanner</h3>
+        <div class="one-desc">
+        <p>Audits web apps built with LLMs for common security weaknesses, combining several detection approaches.</p>
+        <p class="one-win">38 findings across 7 vulnerability classes &middot; zero false positives on a hardened control</p>
+        <ul class="one-tags"><li>Python</li><li>LLM</li><li>OWASP Top 10</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/InvestigatoryScanner" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" data-cat="web" id="proj-cito">
+        <div class="one-pic" aria-hidden="true"><i data-item="doc"></i></div>
+        <div class="one-proj-top"><span>Web &amp; apps</span><time>2026</time></div>
+        <h3>CITO Citation Tool</h3>
+        <div class="one-desc">
+        <p>Find supporting or opposing research without leaving your Google document. Highlight text to look for credible, citable sources.</p>
+        <p class="one-win">Built the first version: scoped OAuth permissions &amp; secure token storage</p>
+        <ul class="one-tags"><li>Apps Script</li><li>TypeScript</li><li>API</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/CITO-Citation-Tool" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" data-cat="web security" id="proj-campuscart">
+        <div class="one-pic" aria-hidden="true"><i data-item="cart"></i></div>
+        <div class="one-proj-top"><span>Web &amp; apps</span><time>2026</time></div>
+        <h3>CampusCart</h3>
+        <div class="one-desc">
+        <p>A campus marketplace built with a five-person team. I led the frontend and strengthened the backend.</p>
+        <p class="one-win">Secure auth, sanitized inputs, parameterized SQL, threat modelling from design to release</p>
+        <ul class="one-tags"><li>JavaScript</li><li>SQL</li><li>Secure SDLC</li></ul>
+        </div>
+        <span class="one-link is-muted">Repository not linked yet</span>
+      </article>
+      <article class="one-proj is-feat" data-cat="network" id="proj-netutils">
+        <div class="one-pic" aria-hidden="true"><i data-item="net"></i></div>
+        <div class="one-proj-top"><span>Networking</span><time>2025 — 2026</time></div>
+        <h3>Network Programming Utilities</h3>
+        <div class="one-desc">
+        <p>Custom ping, traceroute and a VoIP simulator exploring how networks communicate, down to raw ICMP sockets.</p>
+        <p class="one-win">Implemented TCP/IP and ICMP protocol behaviour by hand</p>
+        <ul class="one-tags"><li>Python</li><li>Java</li><li>Sockets</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/Custom_Ping_Utility_Using_ICMP" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+    </div>
+
+    <a class="one-more" href="projects.html"><b>VIEW MORE</b><span>all 10 projects in the workshop &rarr;</span></a>
+  </section>
+
+  <!-- ===== 03 · skills ===== -->
+  <section class="one-sec" id="skills" aria-labelledby="skills-title">
+    <div class="section-title"><h2 id="skills-title">Skills</h2><span class="one-cmd">38 nodes &middot; 5 branches</span></div>
+    <div class="tree">
+      <div class="tree-top"><span>SKY'S SKILL TREE</span><span class="tree-count">5 BRANCHES &middot; HOVER TO GROW</span></div>
+      <div class="tree-core"><i data-item="star" aria-hidden="true"></i><b>SKY</b><span>LV 38</span></div>
+      <div class="tree-branches">
+        <section class="tree-br" aria-label="Security" data-hint="9 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="sec" aria-hidden="true"></i><span>Security</span><small>9</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">VAPT</button></li><li><button type="button" class="tree-node" aria-pressed="false">Pen testing</button></li><li><button type="button" class="tree-node" aria-pressed="false">OWASP Top 10</button></li><li><button type="button" class="tree-node" aria-pressed="false">Burp Suite</button></li><li><button type="button" class="tree-node" aria-pressed="false">Nmap</button></li><li><button type="button" class="tree-node" aria-pressed="false">CVSS v3.1</button></li><li><button type="button" class="tree-node" aria-pressed="false">API security</button></li><li><button type="button" class="tree-node" aria-pressed="false">Secure SDLC</button></li><li><button type="button" class="tree-node" aria-pressed="false">Secure coding</button></li></ul></section>
+        <section class="tree-br" aria-label="Languages" data-hint="7 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="code" aria-hidden="true"></i><span>Languages</span><small>7</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Python</button></li><li><button type="button" class="tree-node" aria-pressed="false">Java</button></li><li><button type="button" class="tree-node" aria-pressed="false">C++</button></li><li><button type="button" class="tree-node" aria-pressed="false">JavaScript</button></li><li><button type="button" class="tree-node" aria-pressed="false">TypeScript</button></li><li><button type="button" class="tree-node" aria-pressed="false">SQL</button></li><li><button type="button" class="tree-node" aria-pressed="false">HTML &amp; CSS</button></li></ul></section>
+        <section class="tree-br" aria-label="AI &amp; automation" data-hint="6 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="ai" aria-hidden="true"></i><span>AI &amp; automation</span><small>6</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">LLM integration</button></li><li><button type="button" class="tree-node" aria-pressed="false">Prompt engineering</button></li><li><button type="button" class="tree-node" aria-pressed="false">AI security testing</button></li><li><button type="button" class="tree-node" aria-pressed="false">Apps Script</button></li><li><button type="button" class="tree-node" aria-pressed="false">Workflow automation</button></li><li><button type="button" class="tree-node" aria-pressed="false">API integration</button></li></ul></section>
+        <section class="tree-br" aria-label="Dev &amp; tools" data-hint="7 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="web" aria-hidden="true"></i><span>Dev &amp; tools</span><small>7</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Full-stack web</button></li><li><button type="button" class="tree-node" aria-pressed="false">REST APIs</button></li><li><button type="button" class="tree-node" aria-pressed="false">Git / GitHub</button></li><li><button type="button" class="tree-node" aria-pressed="false">Figma</button></li><li><button type="button" class="tree-node" aria-pressed="false">WordPress</button></li><li><button type="button" class="tree-node" aria-pressed="false">Google Workspace</button></li><li><button type="button" class="tree-node" aria-pressed="false">TCP/IP &amp; sockets</button></li></ul></section>
+        <section class="tree-br" aria-label="Leadership" data-hint="9 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="flag" aria-hidden="true"></i><span>Leadership</span><small>9</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Team leadership</button></li><li><button type="button" class="tree-node" aria-pressed="false">Project management</button></li><li><button type="button" class="tree-node" aria-pressed="false">Stakeholders</button></li><li><button type="button" class="tree-node" aria-pressed="false">Corporate relations</button></li><li><button type="button" class="tree-node" aria-pressed="false">Event management</button></li><li><button type="button" class="tree-node" aria-pressed="false">Tech docs</button></li><li><button type="button" class="tree-node" aria-pressed="false">QA</button></li><li><button type="button" class="tree-node" aria-pressed="false">Debate</button></li><li><button type="button" class="tree-node" aria-pressed="false">Public speaking</button></li></ul></section>
       </div>
-      <div class="resume-panel">
-        <h3>Technical toolkit</h3>
-        <dl class="resume-toolkit">
-          <div><dt>Languages</dt><dd>Python, Java, C++, JavaScript, TypeScript, SQL, HTML &amp; CSS</dd></div>
-          <div><dt>Security</dt><dd>VAPT, OWASP Top 10, Burp Suite, Nmap, CVSS v3.1, secure SDLC</dd></div>
-          <div><dt>Development &amp; networking</dt><dd>Git / GitHub, REST APIs, Apps Script, TCP/IP, ICMP, sockets</dd></div>
-        </dl>
-        <h3 class="resume-experience-title">Leadership &amp; teamwork</h3>
-        <ul class="resume-roles">
-          <li><strong>Corporate Relations Assistant Team Lead</strong><span>HackerCup 2026</span><p>Secured sponsorships and partnerships; coordinated marketing and technical committees.</p></li>
-          <li><strong>Junior Officer &middot; Technology Division</strong><span>La Salle Computer Society</span><p>Completed the 40th Junior Officer Training Program and cleared into the Technology Division.</p></li>
+      <p class="tree-bar" id="treeBar" role="status">hover a branch to see its skills</p>
+    </div>
+    <a class="one-more" href="skills.html"><b>VIEW MORE</b><span>wander the skill garden &rarr;</span></a>
+  </section>
+
+  <!-- ===== 04 · trophies ===== -->
+  <section class="one-sec" id="trophies" aria-labelledby="trophy-title">
+    <div class="section-title"><h2 id="trophy-title">Certifications &amp; trophies</h2><span class="one-cmd">$ cat trophies.log</span></div>
+    <div class="trophy-case">
+      <div class="trophy-case-top"><span>SKY'S TROPHY CABINET</span><span class="trophy-case-count">05 / COLLECTED</span></div>
+      <div class="trophy-gallery" role="group" aria-label="Achievement trophies"><button class="trophy-slot" type="button" id="trophy-0" aria-controls="trophy-info-0" aria-pressed="true"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#bb864f" d="M20 17H8v24h7v6h13v-7H16V24h4zM60 17h12v24h-7v6H52v-7h12V24h-4z"/><path fill="#edc778" d="M20 9h40v10h-4v27h-7v7H31v-7h-7V19h-4zM36 51h8v15h-8z"/><path fill="#ffe9af" d="M27 15h26v5H27zM28 22h5v18h-5z"/><path fill="#bf8d62" d="M26 65h28v6H26z"/><path fill="#82677c" d="M20 71h40v7H20z"/></svg></span><span class="trophy-plaque"><strong>DLSU CTF</strong><span>Champion</span></span></button><button class="trophy-slot" type="button" id="trophy-1" aria-controls="trophy-info-1" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#9a829d" d="M20 19H9v23h6v6h14v-6H16V25h4zM60 19h11v23h-6v6H51v-6h13V25h-4z"/><path fill="#c9bfdc" d="M20 12h40v11h-4v23h-7v8H31v-8h-7V23h-4zM36 52h8v13h-8z"/><path fill="#f0e9f8" d="M27 17h26v5H27zM28 25h5v13h-5z"/><path fill="#e7a8c6" d="M28 64h24v7H28z"/><path fill="#82677c" d="M22 71h36v7H22z"/></svg></span><span class="trophy-plaque"><strong>ISO CTF</strong><span>2nd place</span></span></button><button class="trophy-slot" type="button" id="trophy-2" aria-controls="trophy-info-2" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#799fc1" d="M20 7h13l13 28-13 7zM60 7H47L34 35l13 7z"/><path fill="#a9d8db" d="M29 32h22v6h9v27h-9v8H29v-8h-9V38h9z"/><path fill="#648da1" d="M31 39h18v6h5v15h-5v6H31v-6h-5V45h5z"/><path fill="#e7efcc" d="M37 43h6v8h8v6h-8v8h-6v-8h-8v-6h8z"/></svg></span><span class="trophy-plaque"><strong>K17 CTF</strong><span>152 / 682</span></span></button><button class="trophy-slot" type="button" id="trophy-3" aria-controls="trophy-info-3" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#9b729c" d="M12 12h56v39h-7v10h-8v8H27v-8h-8V51h-7z"/><path fill="#e7a8c6" d="M19 19h42v29h-7v10h-8v7H34v-7h-8V48h-7z"/><path fill="#fff0dc" d="M25 36h7v7h8V29h7v-7h7v14h-7v14H32v-7h-7z"/><path fill="#82677c" d="M27 72h26v6H27z"/></svg></span><span class="trophy-plaque"><strong>VAPT</strong><span>Practitioner</span></span></button><button class="trophy-slot" type="button" id="trophy-4" aria-controls="trophy-info-4" aria-pressed="false"><span class="trophy-object"><svg viewBox="0 0 80 84" shape-rendering="crispEdges" aria-hidden="true"><path fill="#719795" d="M26 12h28v7h7v23H19V19h7z"/><path fill="#292d42" d="M30 21h20v21H30z"/><path fill="#a9d4bd" d="M13 37h54v36H13z"/><path fill="#d5edd0" d="M19 42h42v5H19z"/><path fill="#587c77" d="M34 50h12v9h-3v8h-6v-8h-3z"/></svg></span><span class="trophy-plaque"><strong>ISC2 CC</strong><span>Exam passed</span></span></button></div>
+      <div class="trophy-case-help">Hover to inspect &middot; tap or use Tab and arrow keys to choose</div>
+      <div class="trophy-details"><article class="trophy-info" id="trophy-info-0" aria-labelledby="trophy-title-0"><div class="trophy-info-meta"><span>legendary</span><span>2026</span></div><h3 id="trophy-title-0">Champion — DLSU Capture The Flag 2026</h3><p>Team <b style="color:var(--fg)">Prompt Patrol</b> (5 members), Department of Computer Technology, De La Salle University.</p></article><article class="trophy-info" id="trophy-info-1" aria-labelledby="trophy-title-1"><div class="trophy-info-meta"><span>2nd place</span><span>2026</span></div><h3 id="trophy-title-1">2nd Place &mdash; ISO CTF 2026</h3><p>Uncharted Knowledge, hosted by the Information Security Organization. Awarded to Sky Hannah Parado.</p></article><article class="trophy-info" id="trophy-info-2" aria-labelledby="trophy-title-2"><div class="trophy-info-meta"><span>top 23%</span><span>2026</span></div><h3 id="trophy-title-2">152 / 682 &mdash; K17 CTF 2026</h3><p>Team <b>SlayTheFlagII</b> placed 152nd out of 682 with <b>2,700 points</b>.</p></article><article class="trophy-info" id="trophy-info-3" aria-labelledby="trophy-title-3"><div class="trophy-info-meta"><span>epic</span><span>Aug 2026</span></div><h3 id="trophy-title-3">Junior VAPT Practitioner</h3><p>NSSECU2 Advanced &amp; Offensive Security, DLSU. Recon, enumeration, validation, controlled exploitation, priv-esc, CVSS v3.1 scoring &amp; technical reporting.</p></article><article class="trophy-info" id="trophy-info-4" aria-labelledby="trophy-title-4"><div class="trophy-info-meta"><span>rare</span><span>2026</span></div><h3 id="trophy-title-4">ISC2 Certified in Cybersecurity (CC)</h3><p>Passed the ISC2 CC certification exam — foundational security principles, access control, network &amp; operations security.</p></article></div>
+      <p class="trophy-announcement" role="status" aria-live="polite"></p>
+    </div>
+    <a class="one-more" href="certs.html"><b>VIEW MORE</b><span>trophy room &middot; all 25 certificates &rarr;</span></a>
+  </section>
+
+  <!-- ===== 05 · contact ===== -->
+  <section class="one-sec" id="contact" aria-labelledby="contact-title">
+    <div class="section-title"><h2 id="contact-title">Send a little hello</h2><span class="one-cmd">$ ./post-office.sh</span></div>
+    <div class="one-contact">
+      <div>
+        <p class="one-lead">A project, an opportunity, or a good idea? There is always room for a new adventure. Email is the fastest way to reach me.</p>
+        <ul class="one-frame one-list one-links">
+          <li><span class="one-when">email</span><a href="mailto:sky.parado@gmail.com">sky.parado@gmail.com</a></li>
+          <li><span class="one-when">github</span><a href="https://github.com/skyparado" target="_blank" rel="noopener">github.com/skyparado</a></li>
+          <li><span class="one-when">linkedin</span><a href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">in/sky-hannah-parado</a></li>
+          <li><span class="one-when">home base</span><span>Malate, Manila</span></li>
         </ul>
-        <a class="resume-link" href="experience.html">Read my full experience &#8599;</a>
       </div>
+      <form class="one-frame one-form" id="contactForm" novalidate>
+        <span class="eyebrow">NEW LETTER · TO: SKY PARADO</span>
+        <label>your name<input name="name" autocomplete="name" required></label>
+        <label>your email<input name="email" type="email" autocomplete="email" required></label>
+        <label>your letter<textarea name="message" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Prepare letter &rarr;</button>
+        <p class="one-note" id="formNote">Opens your email app. Send your letter from there.</p>
+      </form>
     </div>
   </section>
 
@@ -118,5 +276,9 @@
 
 <script src="js/quest.js"></script>
 <script src="js/main.js"></script>
+<script src="js/trophies.js"></script>
+<script src="js/items.js"></script>
+<script src="js/one.js"></script>
+<script src="js/guide.js?v=8"></script>
 </body>
 </html>

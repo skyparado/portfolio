@@ -1,0 +1,44 @@
+/* The post office: a ruled-paper letter with a postage meter, and destination
+   cards that match the quest cards on the home page. Load after rpg.css. */
+
+/* ---------- the letter ---------- */
+.pixel-post .term{--wood:#977384;--wood-dark:#614c65;border:5px solid var(--wood);box-shadow:inset 0 0 0 3px var(--wood-dark)}
+[data-theme="light"] .pixel-post .term{--wood:#b98f9f;--wood-dark:#916f85}
+.pixel-post .term-bar{font:500 18px/1.3 var(--pixel-font);border-bottom:3px solid var(--wood-dark)}
+.pixel-post .term-body{background-image:repeating-linear-gradient(180deg,transparent 0 31px,color-mix(in srgb,var(--accent) 10%,transparent) 31px 32px)}
+.pixel-post .field label{font:700 10px/1.6 "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.pixel-post .field input,.pixel-post .field textarea{border:2px solid var(--line-2);border-radius:0;background:var(--panel);transition:border-color .15s steps(2,end),box-shadow .15s steps(2,end)}
+.pixel-post .field input:focus,.pixel-post .field textarea:focus{outline:none;border-color:var(--accent);box-shadow:4px 4px 0 var(--bg-2)}
+
+/* the stamp: tilts on hover, thunks down when the letter is sent */
+.pixel-post .post-stamp{transform:rotate(4deg);transition:transform .15s steps(2,end)}
+.pixel-post .post-letter-head:hover .post-stamp{transform:rotate(-6deg) translateY(-3px)}
+.pixel-post .term.is-ready .post-stamp{color:var(--amber)}
+.pixel-post .term.is-sent .post-stamp{animation:post-thunk .6s steps(5,end)}
+@keyframes post-thunk{0%{transform:scale(2.2) rotate(-18deg);opacity:.2}60%{transform:scale(.9) rotate(4deg);opacity:1}100%{transform:rotate(4deg)}}
+
+/* postage meter: one square per filled field */
+.post-meter{display:inline-flex;align-items:center;gap:5px;font:700 10px/1 "JetBrains Mono",monospace;letter-spacing:.1em;color:var(--fg-dim)}
+.post-meter span{margin-right:4px}
+.post-meter i{width:14px;height:14px;border-radius:0;border:2px solid var(--line-2);background:var(--bg-2);transition:background .15s steps(2,end),transform .15s steps(2,end)}
+.post-meter i.on{background:var(--amber);border-color:var(--amber);transform:translateY(-2px)}
+.pixel-post .term.is-ready .btn{border-color:var(--amber);animation:post-ready 1s steps(2,end) infinite}
+@keyframes post-ready{50%{transform:translateY(-2px)}}
+
+/* ---------- destinations ---------- */
+.post-menu-title{font:500 20px/1.3 var(--pixel-font);letter-spacing:0;color:var(--fg)}
+.pixel-post .chan{align-items:center;background:var(--bg-2);box-shadow:none}
+.pixel-post .chan .ic{width:56px;height:56px;padding:7px;border:2px solid var(--line-2);display:grid;place-items:center;flex:none}
+.pixel-post .chan .ic [data-item]{display:block;width:100%;transition:transform .15s steps(3,end)}
+.pixel-post .chan .ic [data-item]>svg{display:block;width:100%;height:auto}
+.pixel-post .chan .k{font:700 10px/1.6 "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+.pixel-post .chan .v{font:600 16px/1.5 "IBM Plex Sans",sans-serif;color:var(--fg)}
+.pixel-post .chan .arrow{transition:transform .15s steps(2,end)}
+.rpg-site .pixel-post a.chan:hover{transform:translateX(6px);background:var(--panel);border-color:var(--channel,var(--accent))}
+.pixel-post a.chan:hover .ic [data-item]{transform:translateY(-4px) rotate(-6deg)}
+.pixel-post a.chan:hover .arrow{transform:translate(3px,-3px)}
+
+@media (prefers-reduced-motion:reduce){
+  .pixel-post .post-stamp,.pixel-post .chan,.pixel-post .chan *,.post-meter i{transition:none!important;animation:none!important}
+  .pixel-post .term.is-ready .btn,.pixel-post .term.is-sent .post-stamp{animation:none}
+}

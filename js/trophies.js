@@ -1,7 +1,7 @@
 ﻿(() => {
   'use strict';
-  const cabinet = document.querySelector('.trophy-case');
-  if (!cabinet) return;
+  /* every cabinet on the page works alone (home has two: tool rack + trophies) */
+  document.querySelectorAll('.trophy-case').forEach(cabinet => {
   const trophies = [...cabinet.querySelectorAll('.trophy-slot')];
   const panels = [...cabinet.querySelectorAll('.trophy-info')];
   let selected = -1;
@@ -32,4 +32,5 @@
   });
   cabinet.classList.add('is-interactive');
   inspect(0);
+  });
 })();

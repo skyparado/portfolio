@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/quest.css">
 <link rel="stylesheet" href="css/rpg.css">
+<link rel="stylesheet" href="css/post.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 <!--
   ============================================================
@@ -19,6 +20,7 @@
     header-github  /  header-linkedin
   ============================================================
 -->
+<link rel="stylesheet" href="css/guide.css?v=4">
 </head>
 <body class="rpg-site">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -47,7 +49,7 @@
     <div class="uplink">
       <!-- terminal form -->
       <form class="term" id="contactForm" novalidate>
-        <div class="term-bar"><span aria-hidden="true">&#10022;</span><span class="t">NEW LETTER</span><span class="post-slot">01 / MAIL</span></div>
+        <div class="term-bar"><span aria-hidden="true">&#10022;</span><span class="t">NEW LETTER</span><span class="post-slot post-meter" id="postMeter" aria-hidden="true"><span>POSTAGE</span><i></i><i></i><i></i></span></div>
         <div class="term-body">
           <div class="post-letter-head"><div><span class="post-to">TO: SKY PARADO</span><h2>A new side quest?</h2><p class="ln">Tell me what you have in mind.</p></div><svg class="post-stamp" viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 7h24v18H4z"/><path fill="var(--panel)" d="M7 10h18v12H7z"/><path fill="currentColor" d="M7 10h3v3h3v3h6v-3h3v-3h3v6h-3v3h-3v3h-6v-3h-3v-3H7z"/></svg></div>
           <div class="field">
@@ -70,27 +72,22 @@
       <!-- channels -->
       <div class="channels"><h2 class="post-menu-title">CHOOSE A DESTINATION</h2>
         <a class="chan" id="header-github" data-gh href="https://github.com/skyparado" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M4 3h5v3h6V3h5v13h-4v5h-4v-6H8v6H4v-7H2V7h2z"/></svg></span>
+          <span class="ic"><i data-item="code" aria-hidden="true"></i></span>
           <span><span class="k">github</span><br><span class="v">github.com/skyparado</span></span>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
         <a class="chan" id="header-linkedin" data-gh href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 3h4v4H3zM3 9h4v12H3zM10 9h4v2h3V9h4v12h-4v-7h-3v7h-4z"/></svg></span>
+          <span class="ic"><i data-item="chat" aria-hidden="true"></i></span>
           <span><span class="k">linkedin</span><br><span class="v">in/sky-hannah-parado</span></span>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
         <a class="chan" href="mailto:sky.parado@gmail.com">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M2 5h20v14H2zM5 8v8h14V8h-3v3h-3v3h-2v-3H8V8z"/></svg></span>
+          <span class="ic"><i data-item="mail" aria-hidden="true"></i></span>
           <span><span class="k">email</span><br><span class="v">sky.parado@gmail.com</span></span>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
-        <a class="chan" href="tel:+639762447493">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M3 2h6v6H6v4h3v3h4v3h3v-3h6v6H12v-3H8v-3H5v-3H3z"/></svg></span>
-          <span><span class="k">phone</span><br><span class="v">+63 976 244 7493</span></span>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-        </a>
         <div class="chan" style="cursor:default">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h10v3h3v10h-3v3h-3v4h-4v-4H7v-3H4V5h3zM9 7v6h6V7z"/></svg></span>
+          <span class="ic"><i data-item="flag" aria-hidden="true"></i></span>
           <span><span class="k">home base</span><br><span class="v">Malate, Manila 1000</span></span>
         </div>
       </div>
@@ -109,5 +106,8 @@
 
 <script src="js/main.js"></script>
 <script src="js/quest.js"></script>
+<script src="js/items.js"></script>
+<script src="js/post.js"></script>
+<script src="js/guide.js?v=8"></script>
 </body>
 </html>
