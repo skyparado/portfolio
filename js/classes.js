@@ -29,15 +29,7 @@
     opener = document.activeElement;
     gate.hidden = false;
     document.documentElement.style.overflow = 'hidden';
-    var start = gate.querySelector('.cls-card.is-current') || cards[0];
-    start.focus(); say(start);
-  }
-  // the text box speaks for whichever Sky is pointed at or focused
-  var sayName = gate.querySelector('.cls-say-name'), sayLine = gate.querySelector('.cls-say-line');
-  function say(card) {
-    cards.forEach(function (c) { c.classList.toggle('is-aim', c === card); });
-    sayName.textContent = card.querySelector('.cls-name').textContent;
-    sayLine.textContent = card.dataset.line;
+    (gate.querySelector('.cls-card.is-current') || cards[0]).focus();
   }
   function close() {
     if (!valid(load())) return; // nothing chosen yet: the gate stays until a class is picked
@@ -47,9 +39,7 @@
   }
 
   cards.forEach(function (c, i) {
-    c.addEventListener('mouseenter', function () { say(c); });
-    c.addEventListener('focus', function () { say(c); });
-    c.addEventListener('keydown', function (e) { // arrow keys walk between Skys
+    c.addEventListener('keydown', function (e) { // arrow keys move between classes
       var j = { ArrowRight: i + 1, ArrowLeft: i - 1 }[e.key];
       if (j !== undefined) { e.preventDefault(); cards[(j + cards.length) % cards.length].focus(); }
     });

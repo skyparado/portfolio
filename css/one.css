@@ -322,69 +322,31 @@ html{scroll-padding-top:104px}
 [data-cls="web"]{--c:var(--cyan)}
 [data-cls="ai"]{--c:var(--amber)}
 
-/* the gate: a full-screen "new game" character select over a pastel pixel sky */
-.cls-gate{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:28px 16px 120px;overflow-y:auto;
-  --sky-a:#ffd9e8;--sky-b:#e3d4ff;--sky-c:#c9e6ff;--cloud:#fffaf3;--twinkle:#fff6c9;
-  background:linear-gradient(180deg,var(--sky-c) 0%,var(--sky-b) 48%,var(--sky-a) 100%)}
-:root[data-theme="dark"] .cls-gate{--sky-a:#5b3f6e;--sky-b:#2f2c55;--sky-c:#1b1d36;--cloud:#4a4778;--twinkle:#ffe9a8}
+/* the gate: square class cards over a soft blur of the page behind */
+.cls-gate{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:28px 16px;overflow-y:auto;
+  background:color-mix(in srgb,var(--bg) 62%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1)}
 .cls-gate[hidden]{display:none}
-.cls-scene{position:fixed;inset:0;pointer-events:none;overflow:hidden}
-.cls-hills{position:absolute;left:0;bottom:0;width:100%;height:46vh;object-fit:cover;object-position:bottom;image-rendering:pixelated;opacity:.85}
-:root:not([data-theme="dark"]) .cls-hills{opacity:.2}
-.cls-cloud{position:absolute;width:150px;fill:var(--cloud);opacity:.9;animation:clsDrift 46s steps(46,end) infinite}
-.cls-cloud:nth-child(1){top:9%;left:-160px}
-.cls-cloud:nth-child(2){top:22%;left:-160px;width:96px;animation-duration:64s;animation-delay:-30s}
-.cls-cloud:nth-child(3){top:5%;left:-160px;width:120px;animation-duration:56s;animation-delay:-12s}
-@keyframes clsDrift{to{transform:translateX(calc(100vw + 320px))}}
-.cls-twinkle{position:absolute;width:4px;height:4px;background:var(--twinkle);
-  box-shadow:4px 0 0 var(--twinkle),-4px 0 0 var(--twinkle),0 4px 0 var(--twinkle),0 -4px 0 var(--twinkle);animation:clsTwinkle 1.6s steps(2,end) infinite}
-.cls-twinkle:nth-of-type(1){top:14%;left:12%}.cls-twinkle:nth-of-type(2){top:30%;left:86%;animation-delay:-.4s}
-.cls-twinkle:nth-of-type(3){top:8%;left:64%;animation-delay:-.8s}.cls-twinkle:nth-of-type(4){top:44%;left:6%;animation-delay:-1.2s}
-.cls-twinkle:nth-of-type(5){top:18%;left:38%;animation-delay:-.2s}.cls-twinkle:nth-of-type(6){top:52%;left:93%;animation-delay:-1s}
-.cls-twinkle:nth-of-type(7){top:36%;left:24%;animation-delay:-.6s}.cls-twinkle:nth-of-type(8){top:6%;left:90%;animation-delay:-1.4s}
-.cls-gate-box{position:relative;width:min(1040px,100%);text-align:center;animation:clsIn .4s steps(4,end) both}
-.cls-gate h2{margin:0;font:500 clamp(26px,4.6vw,48px)/1.15 var(--pixel-font);color:var(--fg);text-shadow:3px 3px 0 var(--panel)}
-.cls-gate-sub{margin:10px auto 22px;font-size:15px;line-height:1.6;color:var(--fg)}
-
-/* the select screen: four Skys standing on one strip of grass, RPG style */
-.cls-stage-row{position:relative;padding-top:34px}
-.cls-picker{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:end}
-.cls-card{--c:var(--accent);position:relative;display:grid;justify-items:center;gap:0;padding:0 4px;background:none;border:0;color:var(--fg);cursor:pointer;
-  -webkit-tap-highlight-color:transparent}
+.cls-gate-box{width:min(1000px,100%);text-align:center;animation:clsIn .35s steps(4,end) both}
+.cls-gate h2{margin:0;font:500 clamp(28px,4.4vw,46px)/1.15 var(--pixel-font);color:var(--accent)}
+.cls-gate-sub{margin:10px auto 30px;font-size:15px;line-height:1.6;color:var(--fg-dim)}
+.cls-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.cls-card{--c:var(--accent);position:relative;aspect-ratio:1;display:grid;justify-items:center;align-content:center;gap:8px;padding:16px 14px;cursor:pointer;text-align:center;
+  background:var(--panel);border:2px solid var(--line-2);border-radius:0;color:var(--fg);box-shadow:5px 5px 0 color-mix(in srgb,var(--fg) 10%,transparent);
+  transition:transform .15s steps(2,end),border-color .15s steps(2,end),box-shadow .15s steps(2,end)}
 .cls-card[data-cls="security"]{--c:var(--purple)}.cls-card[data-cls="web"]{--c:var(--cyan)}.cls-card[data-cls="ai"]{--c:var(--amber)}
-.cls-card:focus{outline:none}
-.cls-hero{width:min(172px,100%);height:auto;aspect-ratio:28/32;transition:transform .12s steps(2,end)}
-.cls-cursor{position:absolute;top:-30px;left:50%;margin-left:-8px;font-size:16px;line-height:1;color:var(--c);visibility:hidden;text-shadow:2px 2px 0 var(--panel)}
-.cls-card.is-aim .cls-cursor{visibility:visible;animation:clsBob .6s steps(2,end) infinite}
-.cls-card.is-aim .cls-hero{transform:translateY(-6px)}
-.cls-card:not(.is-aim) .cls-hero{filter:saturate(.7) brightness(.95)}
-.cls-card:focus-visible .cls-name{outline:3px solid var(--c);outline-offset:3px}
-/* wooden nameplate under each character */
-.cls-name{position:relative;z-index:1;margin-top:14px;padding:5px 10px 6px;background:#c79a6b;border:2px solid #7e5a3e;box-shadow:inset 0 -3px 0 #a77d55,inset 0 2px 0 #e1bb8d;
-  color:#3b2a20;font:500 15px/1.15 var(--pixel-font);white-space:nowrap}
-.cls-card.is-aim .cls-name{background:#e1bb8d}
-.cls-last{min-height:18px;margin-top:5px;font:600 11px/1.4 "JetBrains Mono",monospace;color:var(--fg);visibility:hidden}
-.cls-card.is-current .cls-last{visibility:visible}
-/* the grass strip they stand on (sits behind the feet, above the nameplates) */
-.cls-ground{position:absolute;left:-4%;right:-4%;bottom:44px;height:58px;background:#8fc78f;
-  box-shadow:inset 0 6px 0 #b4e2a6,inset 0 -18px 0 #b08560,inset 0 -22px 0 #8a6748}
-:root[data-theme="dark"] .cls-ground{background:#4f7f5b;box-shadow:inset 0 6px 0 #6fa577,inset 0 -18px 0 #6b4e3b,inset 0 -22px 0 #533b2d}
-.cls-ground::before{content:"";position:absolute;inset:6px 0 auto;height:4px;
-  background:repeating-linear-gradient(90deg,transparent 0 22px,#d9f2c8 22px 26px,transparent 26px 50px,#f4b8d0 50px 54px,transparent 54px 80px)}
-/* classic RPG text box */
-.cls-say{position:relative;max-width:640px;margin:26px auto 0;padding:14px 18px 16px;text-align:left;background:var(--panel);border:3px solid var(--fg);
-  box-shadow:inset 0 0 0 3px var(--panel),inset 0 0 0 5px var(--line-2),5px 5px 0 color-mix(in srgb,var(--fg) 25%,transparent)}
-.cls-say-name{display:inline-block;margin-bottom:6px;padding:1px 8px;background:var(--fg);color:var(--panel);font:500 14px/1.4 var(--pixel-font)}
-.cls-say-line{margin:0;min-height:3.2em;font:15px/1.6 "IBM Plex Sans",sans-serif;color:var(--fg)}
-.cls-say-hint{position:absolute;right:14px;bottom:8px;font:600 11px/1 "JetBrains Mono",monospace;color:var(--fg-dim);animation:clsTwinkle 1s steps(2,end) infinite}
-
+.cls-card:hover,.cls-card:focus-visible{transform:translateY(-6px);border-color:var(--c);box-shadow:5px 5px 0 var(--c);outline:none}
+.cls-card:hover .cls-sprite,.cls-card:focus-visible .cls-sprite{animation:clsBob .8s steps(2,end) infinite}
+.cls-card.is-current::after{content:"\2605 LAST PICK";position:absolute;top:-11px;right:10px;padding:2px 7px;background:var(--c);color:var(--panel);font:700 10px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em}
+.cls-card .cls-sprite{width:92px;height:92px;margin-bottom:6px;background:color-mix(in srgb,var(--c) 14%,var(--bg-2));border:2px solid color-mix(in srgb,var(--c) 45%,var(--line-2))}
+.cls-card .cls-sprite [data-item]{width:62px}
 .cls-sprite{display:grid;place-items:center;flex:none;width:76px;height:76px;margin-bottom:4px;background:var(--bg-2);border:2px solid var(--line-2)}
 .cls-sprite [data-item]{display:block;width:54px}
 .cls-sprite [data-item]>svg{display:block;width:100%;height:auto}
-.cls-sprite .cls-hero{width:56px}
+.cls-name{font:500 20px/1.2 var(--pixel-font);color:var(--fg-dim)}
+.cls-card:hover .cls-name,.cls-card:focus-visible .cls-name{color:var(--c)}
+.cls-quip{max-width:22ch;font-size:13px;line-height:1.5;color:var(--fg-dim)}
 @keyframes clsBob{50%{transform:translateY(-5px)}}
 @keyframes clsIn{from{opacity:0;transform:translateY(10px)}}
-@keyframes clsTwinkle{50%{opacity:.2}}
 
 /* nav button that reopens the gate */
 .cls-switch{display:inline-flex;align-items:center;gap:7px;min-height:44px;margin-left:auto;margin-right:8px;padding:8px 11px;border:2px solid var(--line);border-radius:0;background:var(--panel);color:var(--fg);font:600 12px/1 "JetBrains Mono",monospace;white-space:nowrap;cursor:pointer}
@@ -419,16 +381,19 @@ html{scroll-padding-top:104px}
 .cls-quest span{display:grid;gap:2px;padding:0 4px}
 .cls-quest b{font:500 17px/1.2 var(--pixel-font)}
 .cls-quest small{font:11px/1.5 "JetBrains Mono",monospace;color:var(--fg-dim)}
+@media (max-width:760px){.cls-picker{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
 @media (max-width:560px){
-  .cls-gate{place-items:start center;padding:22px 10px 40px}
-  .cls-name{padding:4px 5px 5px;font-size:11px;white-space:normal;line-height:1.1}
-  .cls-ground{bottom:52px;height:44px}
-  .cls-cursor{top:-26px}
-  .cls-last{font-size:9px}
-  .cls-say{margin-top:18px;padding:12px 14px 26px}
+  .cls-gate{padding:20px 12px}
+  .cls-gate-sub{margin-bottom:20px}
+  .cls-card{padding:12px 8px;gap:6px}
+  .cls-card .cls-sprite{width:64px;height:64px;margin-bottom:2px}
+  .cls-card .cls-sprite [data-item]{width:42px}
+  .cls-name{font-size:16px}
+  .cls-quip{font-size:11.5px}
   .cls-quests{grid-template-columns:1fr}
   .cls-sheet{padding:18px 16px 20px}
   .cls-switch .tl{display:none}
 }
 }
-@media (prefers-reduced-motion:reduce){.cls-card,.cls-card *,.cls-sheet,.cls-sheet *,.cls-quest,.cls-gate-box,.cls-cloud,.cls-twinkle{animation:none!important;transition:none!important}}
+}
+@media (prefers-reduced-motion:reduce){.cls-card,.cls-card *,.cls-sheet,.cls-sheet *,.cls-quest,.cls-gate-box{animation:none!important;transition:none!important}}
