@@ -334,7 +334,8 @@ html{scroll-padding-top:104px}
   background:var(--panel);border:2px solid var(--line-2);border-radius:0;color:var(--fg);box-shadow:5px 5px 0 color-mix(in srgb,var(--fg) 10%,transparent);
   transition:transform .15s steps(2,end),border-color .15s steps(2,end),box-shadow .15s steps(2,end)}
 .cls-card[data-cls="security"]{--c:var(--purple)}.cls-card[data-cls="web"]{--c:var(--cyan)}.cls-card[data-cls="ai"]{--c:var(--amber)}
-.cls-card:hover,.cls-card:focus-visible{transform:translateY(-6px);border-color:var(--c);box-shadow:5px 5px 0 var(--c);outline:none}
+.cls-card:hover{transform:translateY(-6px)}
+.cls-card:hover,.cls-card:focus-visible{border-color:var(--c);box-shadow:5px 5px 0 var(--c);outline:none}
 .cls-card:hover .cls-sprite,.cls-card:focus-visible .cls-sprite{animation:clsBob .8s steps(2,end) infinite}
 .cls-card.is-current::after{content:"\2605 LAST PICK";position:absolute;top:-11px;right:10px;padding:2px 7px;background:var(--c);color:var(--panel);font:700 10px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em}
 .cls-card .cls-sprite{width:92px;height:92px;margin-bottom:6px;background:color-mix(in srgb,var(--c) 14%,var(--bg-2));border:2px solid color-mix(in srgb,var(--c) 45%,var(--line-2))}
@@ -344,7 +345,7 @@ html{scroll-padding-top:104px}
 .cls-sprite [data-item]>svg{display:block;width:100%;height:auto}
 .cls-name{font:500 20px/1.2 var(--pixel-font);color:var(--fg-dim)}
 .cls-card:hover .cls-name,.cls-card:focus-visible .cls-name{color:var(--c)}
-.cls-quip{max-width:22ch;font-size:13px;line-height:1.5;color:var(--fg-dim)}
+.cls-quip{max-width:22ch;min-height:3em;font-size:13px;line-height:1.5;color:var(--fg-dim)} /* two lines reserved so every card lines up */
 @keyframes clsBob{50%{transform:translateY(-5px)}}
 @keyframes clsIn{from{opacity:0;transform:translateY(10px)}}
 
