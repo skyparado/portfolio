@@ -96,6 +96,42 @@ html{scroll-padding-top:104px}
 .one-more:hover{transform:rotate(-3deg) translateY(-2px)}
 .one-more:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media (prefers-reduced-motion:reduce){.one-more:hover{transform:none}}
+/* each "more" sign is a prop from its own room */
+/* journal: a spiral notebook page with a bookmark ribbon */
+.one-more.is-journal{padding:16px 30px 14px 44px;color:#3d324b;border:3px solid #7d6a9c;transform:rotate(-1.5deg);
+  background:linear-gradient(90deg,transparent 26px,#f2a0b4 26px 28px,transparent 28px),repeating-linear-gradient(180deg,#fffaf0 0 17px,#c9d8ee 17px 18px);
+  box-shadow:5px 5px 0 var(--bg-2)}
+.one-more.is-journal::after{top:-11px;left:18px;right:18px;width:auto;height:14px;margin:0;background:repeating-linear-gradient(90deg,#8b7fa6 0 6px,transparent 6px 18px)}
+.one-more.is-journal::before{top:100%;left:auto;right:30px;width:16px;height:34px;margin:0;background:#e58fb8;box-shadow:none;clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+.one-more.is-journal:hover{transform:rotate(1deg) translateY(-2px)}
+/* workshop: a blueprint plate with screws, a hazard stripe and hanging chains */
+.one-more.is-workshop{margin-top:58px;color:#e8f3ff;border:4px solid #1f3f60;
+  background:radial-gradient(circle at 9px 9px,#c9d1e6 3px,transparent 3.5px),radial-gradient(circle at calc(100% - 9px) 9px,#c9d1e6 3px,transparent 3.5px),
+    radial-gradient(circle at 9px calc(100% - 9px),#c9d1e6 3px,transparent 3.5px),radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),#c9d1e6 3px,transparent 3.5px),
+    linear-gradient(rgba(255,255,255,.13) 1px,transparent 1px) 0 0/12px 12px,linear-gradient(90deg,rgba(255,255,255,.13) 1px,transparent 1px) 0 0/12px 12px,#2f5d8a;
+  box-shadow:inset 0 0 0 2px #4b7fb0,5px 5px 0 var(--bg-2)}
+.one-more.is-workshop::before{top:-14px;left:-4px;right:-4px;width:auto;height:10px;margin:0;background:repeating-linear-gradient(45deg,#f5c84c 0 8px,#2b2b33 8px 16px);box-shadow:none}
+.one-more.is-workshop::after{top:auto;bottom:calc(100% + 14px);left:22%;right:22%;width:auto;height:30px;margin:0;background:none;border-left:3px dotted #8a8fa8;border-right:3px dotted #8a8fa8}
+.one-more.is-workshop:hover{transform:rotate(2deg)}
+/* skill garden: a painted garden sign with flowers on top, staked in a grassy mound */
+.one-more.is-garden{color:#21452b;border:4px solid #4f7f5b;background:repeating-linear-gradient(180deg,#a8dba4 0 14px,#90c98d 14px 16px);
+  box-shadow:inset 0 3px 0 #c9f0c0,inset 0 -3px 0 #78b076,5px 5px 0 var(--bg-2)}
+.one-more.is-garden::before{background:#9a7352;box-shadow:inset 4px 0 #b48a63}
+.one-more.is-garden::after{top:calc(100% + 30px);width:96px;height:12px;margin-left:-48px;background:#8a6748;box-shadow:inset 0 4px 0 #6fa577}
+.one-more.is-garden b::before,.one-more.is-garden span::before{content:"";position:absolute;top:-16px;left:18px;width:6px;height:6px;background:#ffe2a3;
+  box-shadow:-6px 0 #f4b8d0,6px 0 #f4b8d0,0 -6px #f4b8d0,0 6px #5f9467,0 12px #5f9467}
+.one-more.is-garden span::before{left:auto;right:22px;box-shadow:-6px 0 #c7b3ef,6px 0 #c7b3ef,0 -6px #c7b3ef,0 6px #5f9467,0 12px #5f9467}
+.one-more.is-garden:hover{transform:rotate(-3deg) translateY(-2px)}
+/* trophy room: an engraved brass plaque with a medal on a ribbon */
+.one-more.is-trophy{margin-bottom:58px;color:#5a3a10;text-shadow:1px 1px 0 #fbe9b3;border:4px solid #9c6a1f;background:linear-gradient(180deg,#f7dc8a,#dcab55);
+  box-shadow:inset 0 0 0 3px #f7dc8a,inset 0 0 0 5px #b8862f,5px 5px 0 var(--bg-2)}
+.one-more.is-trophy::before{top:100%;width:20px;height:22px;margin-left:-10px;background:linear-gradient(90deg,#c26fa6 50%,#8f6cc9 50%);box-shadow:none}
+.one-more.is-trophy::after{top:calc(100% + 20px);width:24px;height:24px;margin-left:-12px;background:#f5c84c;box-shadow:inset 0 0 0 3px #d9a64f;
+  clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%)}
+.one-more.is-trophy:hover{transform:translateY(-3px)}
+.one-more.is-trophy:hover::after{animation:moreSwing .5s steps(3,end) infinite alternate}
+@keyframes moreSwing{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}
+@media (prefers-reduced-motion:reduce){.one-more.is-journal,.one-more.is-journal:hover,.one-more.is-workshop:hover,.one-more.is-garden:hover,.one-more.is-trophy:hover{transform:none}.one-more.is-trophy:hover::after{animation:none}}
 
 /* ---------- experience ---------- */
 .one-tabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
