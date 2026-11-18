@@ -253,7 +253,7 @@
       c.addEventListener('click', function () { ask(l); });
       chips.appendChild(c);
     });
-    chips.scrollLeft = 0;
+    chips.scrollTop = 0;
   }
 
   function push(m) { state.log.push(m); save(); renderMsg(m); }

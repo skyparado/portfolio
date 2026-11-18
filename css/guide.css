@@ -131,8 +131,8 @@
 .g-typing i:nth-child(2){animation-delay:.2s}.g-typing i:nth-child(3){animation-delay:.4s}
 @keyframes gDot{0%,100%{opacity:.25}50%{opacity:1}}
 
-.guide-chips{display:flex;gap:6px;padding:8px 14px 10px;overflow-x:auto;scrollbar-width:none;flex-shrink:0}
-.guide-chips::-webkit-scrollbar{display:none}
+/* chips wrap and scroll vertically: a hidden sideways scroller could not be reached with a mouse wheel */
+.guide-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 10px;max-height:118px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;flex-shrink:0}
 .guide .guide-chip{
   flex-shrink:0;min-height:32px;padding:0 12px;cursor:pointer;
   border:2px solid var(--g-line);border-radius:0;background:transparent;
