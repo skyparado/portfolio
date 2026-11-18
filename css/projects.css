@@ -21,6 +21,10 @@
 .work-card-small .work-banner{height:110px;margin-bottom:18px}
 .work-card-small .work-banner [data-item]{width:64px}
 .work-card-small .work-banner::after{bottom:14px;width:76px;margin-left:-38px}
+/* real output screenshot under the banner, full-bleed like the banner */
+.work-banner:has(+.work-shot){margin-bottom:0}
+.work-shot{display:block;width:calc(100% + 2*var(--pad));max-width:none;height:auto;aspect-ratio:16/10;margin:0 calc(-1*var(--pad)) 22px;object-fit:contain;background:#0d1117;border-bottom:3px solid var(--line-2)}
+.work-card-small .work-shot{margin-bottom:18px}
 @media(max-width:600px){.work-card,.work-card-small{--pad:20px}}
 @media(prefers-reduced-motion:reduce){.work-banner [data-item]{transition:none}.work-card:hover .work-banner [data-item]{transform:none}}
 .work-card[data-category="security"]{--project-color:var(--amber)}
