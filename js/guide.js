@@ -98,9 +98,12 @@
       reply: "The résumé isn't posted on the site. Send Sky a quick email and it'll come right back to you.",
       actions: [{ label: 'Request résumé', href: 'mailto:' + EMAIL + '?subject=R%C3%A9sum%C3%A9%20request' }], next: ['Experience', 'Skills'] },
 
-    { id: 'site', keywords: ['this site', 'website', 'this page', 'pages', 'navigate', 'trophy room', 'skill garden', 'journal', 'workshop', 'parado world', 'map', 'explore'],
+    { id: 'site', keywords: ['this site', 'website', 'this page', 'pages', 'navigate', 'trophy room', 'skill garden', 'journal', 'workshop', 'explore'],
       reply: "This page is the quick tour. For more: the Workshop has every project, the Trophy Room has all 25 certificates, the Journal covers the full story from junior high on, and the Skill Garden is an interactive toolkit.",
-      actions: [{ label: 'Trophy room', href: 'certs.html' }, { label: 'Journal', href: 'experience.html' }, { label: 'Skill garden', href: 'skills.html' }], next: ['Projects', 'Hire Sky'] }
+      actions: [{ label: 'Trophy room', href: 'certs.html' }, { label: 'Journal', href: 'experience.html' }, { label: 'Skill garden', href: 'skills.html' }], next: ['Projects', 'Hire Sky'] },
+    { id: 'secret', keywords: ['secret', 'easter egg', 'hidden', 'parado world', 'map', 'game', 'konami', 'cheat'],
+      reply: "Psst... there's a little world hidden on this site. Old-school gamers know the code (think up, up, down, down...). Or tap my heart logo on the home page a few times. 🤫",
+      next: ['Projects', 'Who is Sky?'] }
   ];
   /* chip labels that aren't a topic's own chip */
   var ALIAS = { 'Other projects': 'projects' };

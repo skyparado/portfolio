@@ -1,9 +1,9 @@
-/* Parado World: homepage adventure and shared section previews. */
+/* Parado World: a secret pixel map. Hidden on every page; opened with the Konami code
+   (up up down down left right left right B A) or by tapping the logo five times. */
 (() => {
   'use strict';
   const main = document.querySelector('main');
   if (!main) return;
-  const home = /(?:^|\/)index\.html$|\/$/.test(location.pathname);
   const places = [
     {name:'Cozy cottage',category:'About me',x:3,y:3,color:'#efb6d2',title:'Hi, I’m Sky.',text:'A Computer Science student at De La Salle University, majoring in Network and Information Security. I build software, explore application security, and bring a little curiosity to everything I do.',url:'index.html#profile',cards:['DLSU · Computer Science','Network & Information Security','Security + software + curiosity']},
     {name:'Build lab',category:'Projects',x:12,y:3,color:'#75def2',title:'A desk full of experiments.',text:'From CampusCart and a Google Docs add-on to networking utilities and security tools: explore the things I’ve built and the problems they solve.',url:'projects.html',cards:['CampusCart · full-stack','cito-docs-addon · Google Workspace','Networking utilities · TCP/IP','AI web-app fuzzer · security']},
@@ -15,15 +15,11 @@
   const storageKey = 'parado.adventure.v2';
   let collected = new Set();
   try {const saved=JSON.parse(localStorage.getItem(storageKey)||'[]');if(Array.isArray(saved))collected=new Set(saved.filter(i=>Number.isInteger(i)&&i>=0&&i<places.length));}catch{}
-  const banner=document.createElement('section');
-  banner.className='quest-banner';
-  banner.innerHTML='<span class="quest-mini" aria-hidden="true"></span><div><span class="quest-kicker">BACK TO PARADO WORLD</span><h2>A portfolio you can wander through.</h2><p>Meet Sky and preview every stop before opening a page.</p></div><button type="button" class="quest-button quest-launch" aria-haspopup="dialog">Explore the world</button>';
-  if(!home){const footer=main.querySelector('.footer');if(footer)footer.before(banner);else main.append(banner);}
-  const world=document.createElement(home?'section':'dialog');
-  world.className='quest-dialog'+(home?' quest-home':'');
+  const world=document.createElement('dialog');
+  world.className='quest-dialog';
   world.setAttribute('aria-labelledby','quest-title');
   world.innerHTML=`
-    <header class="quest-header"><div><span class="quest-kicker">SKY PARADO / A LITTLE WORLD OF MY OWN</span><h2 id="quest-title">Choose your adventure.</h2><p class="quest-intro">Security student. Software builder. Curious human.<br>Pick a place — I’ll show you around.</p></div><div class="quest-header-actions">${home?'<a class="quest-button" href="#character">Back to summary &uarr;</a>':'<button type="button" class="quest-button" data-close>Back to page ×</button>'}<button type="button" class="quest-motion"></button></div></header>
+    <header class="quest-header"><div><span class="quest-kicker">&#10022; SECRET UNLOCKED &middot; SKY PARADO</span><h2 id="quest-title">You found my little world.</h2><p class="quest-intro">Security student. Software builder. Curious human.<br>Pick a place — I’ll show you around.</p></div><div class="quest-header-actions"><button type="button" class="quest-button" data-close>Back to page ×</button><button type="button" class="quest-motion"></button></div></header>
     <div class="quest-hud"><span>✦ PLAY AS SKY</span><span data-score></span></div>
     <progress class="quest-progress" max="6" value="0" aria-label="Places discovered"></progress>
     <div class="quest-layout"><div class="quest-world-column">
@@ -33,11 +29,7 @@
       <p class="quest-near" data-near role="status"></p>
     </div><aside class="quest-journal"><span class="quest-kicker" data-category>YOUR LITTLE TOUR GUIDE</span><canvas class="quest-scene" width="240" height="100" aria-hidden="true"></canvas><div class="quest-summary" aria-live="polite"><h3 data-title>Hi! I’m pixel Sky.</h3><p data-story>Welcome to my corner of the internet. Choose a destination to get a quick introduction before diving into the full section.</p></div><div class="quest-preview-card"><span data-card>Six places. One curious explorer.</span><button type="button" data-next aria-label="Next preview card" hidden>Next →</button></div><a class="quest-button" data-link hidden></a><div class="quest-destinations" aria-label="Choose a section"></div><p data-reward role="status"></p><button type="button" class="quest-reset">Restart discoveries</button></aside></div>
     <footer class="quest-footer">Take your time. Stay curious. <span data-save>Discoveries saved on this device.</span></footer>`;
-  if(home){
-    const footer=main.querySelector('.footer');
-    if(footer)footer.before(world);else main.append(world);
-    document.querySelector('#boot')?.remove();
-  }else document.body.append(world);
+  document.body.append(world);
   const $=s=>world.querySelector(s);
   const canvas=$('.quest-world-canvas'),ctx=canvas.getContext('2d');
   const scene=$('.quest-scene'),sc=scene.getContext('2d');
@@ -46,7 +38,7 @@
   let player={x:7,y:7},facing=1;
   try{paused=localStorage.getItem('parado.pixel-motion')==='off';}catch{}
   const enabled=()=>!paused&&!motionMedia.matches;
-  const active=()=>home||world.open;
+  const active=()=>world.open;
   const motion=$('.quest-motion');
   function syncMotion(){
     clearInterval(timer);timer=null;
@@ -117,16 +109,33 @@
   });
   window.addEventListener('keydown',e=>{
     if(!active()||e.key==='Tab'||e.key==='Escape')return;
-    if(home&&!world.contains(document.activeElement))return;
     if(e.ctrlKey||e.metaKey||e.altKey)return;
     const dirs={arrowup:[0,-1],w:[0,-1],arrowdown:[0,1],s:[0,1],arrowleft:[-1,0],a:[-1,0],arrowright:[1,0],d:[1,0]};
     const d=dirs[e.key.toLowerCase()];
     if(d||e.key.toLowerCase()==='e'){e.preventDefault();e.stopImmediatePropagation();if(d){if(!e.repeat||performance.now()-lastMove>95){move(...d);lastMove=performance.now();}}else explore();}
   },true);
-  if(!home){
-    banner.querySelector('button').addEventListener('click',()=>{world.showModal();document.body.classList.add('quest-playing');canvas.focus();syncMotion();});
-    $('[data-close]').addEventListener('click',()=>world.close());
-    world.addEventListener('close',()=>{clearInterval(timer);timer=null;document.body.classList.remove('quest-playing');banner.querySelector('button').focus();});
+  const SECRET='parado.secret-found';
+  function openWorld(){
+    if(world.open)return;
+    world.showModal();document.body.classList.add('quest-playing');canvas.focus();syncMotion();
+    try{localStorage.setItem(SECRET,'1');}catch{}
+    showDoor();
+  }
+  $('[data-close]').addEventListener('click',()=>world.close());
+  world.addEventListener('close',()=>{clearInterval(timer);timer=null;document.body.classList.remove('quest-playing');});
+  // secret 1: the Konami code, anywhere on the site
+  const code=['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];let typed=0;
+  window.addEventListener('keydown',e=>{if(world.open)return;const k=e.key.toLowerCase();typed=k===code[typed]?typed+1:(k===code[0]?1:0);if(typed===code.length){typed=0;openWorld();}});
+  // secret 2: tap the pixel heart logo five times in quick succession (works on phones)
+  const logo=document.querySelector('.brand .logo');let taps=[];
+  const logoStays=logo&&(logo.closest('a')?.getAttribute('href')||'').startsWith('#'); // only where tapping doesn't navigate away
+  if(logoStays)logo.addEventListener('click',e=>{const now=Date.now();taps=taps.filter(t=>now-t<1500).concat(now);if(taps.length>=5){e.preventDefault();taps=[];openWorld();}});
+  // once found, a tiny door in the footer lets the visitor come back
+  function showDoor(){
+    if(document.querySelector('.secret-door'))return;
+    const spot=document.querySelector('.garden-caption');if(!spot)return; // the pixel garden bar at the bottom of every page
+    const door=document.createElement('button');door.type='button';door.className='secret-door';door.textContent='\u2726 secret world';
+    door.addEventListener('click',openWorld);spot.after(door);
   }
   $('.quest-reset').addEventListener('click',()=>{
     collected.clear();selected=-1;card=0;player={x:7,y:7};
@@ -302,5 +311,6 @@
 
   new MutationObserver(()=>drawScene()).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   refresh();move(0,0);syncMotion();
+  try{if(localStorage.getItem(SECRET)==='1')showDoor();}catch{} // after the garden bar exists
 })();
 

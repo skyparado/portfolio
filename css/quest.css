@@ -247,3 +247,6 @@ html:has(.sky-walkway){scroll-padding-bottom:calc(146px + env(safe-area-inset-bo
 .pixel-post div.chan:hover{transform:none;box-shadow:none}
 .pixel-post a.chan:focus-visible{outline:2px dashed var(--accent);outline-offset:4px}
 @media(max-width:480px){.pixel-post .term-body{padding:18px}.pixel-post .post-status{flex-wrap:wrap;gap:10px}.pixel-post .post-status .out{margin-left:0;width:100%}.pixel-post .chan{padding:13px}.post-stamp{width:48px;height:54px}.post-letter-head h2{font-size:18px}}
+/* footer door to the secret world, shown only after it has been found */
+.secret-door{display:block;margin:3px auto 0;padding:0;border:0;background:none;cursor:pointer;font:600 10px/1.4 "JetBrains Mono",monospace;color:var(--amber);text-decoration:underline dotted;text-underline-offset:3px}
+.secret-door:hover,.secret-door:focus-visible{color:var(--accent)}
