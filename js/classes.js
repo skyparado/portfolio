@@ -1,28 +1,59 @@
-/* Choose your class: tabs that swap the career-path sheet, remembered per visitor. */
+/* Choose your class. The first visit opens a full-screen picker; the pick is saved
+   and becomes this visitor's home view until they change it from the nav button. */
 (function () {
   'use strict';
-  var tabs = [].slice.call(document.querySelectorAll('.cls-picker [role="tab"]'));
-  if (!tabs.length) return;
-  function pick(tab, focus) {
-    tabs.forEach(function (t) {
-      var on = t === tab;
-      t.setAttribute('aria-selected', on);
-      t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-    });
-    if (focus) tab.focus();
-    try { localStorage.setItem('sky.class', tab.dataset.cls); } catch (e) {}
+  var KEY = 'sky.class';
+  var gate = document.getElementById('clsGate');
+  if (!gate) return;
+  var cards = [].slice.call(gate.querySelectorAll('.cls-card'));
+  var sheets = [].slice.call(document.querySelectorAll('.cls-sheet'));
+  var navName = document.getElementById('clsNavName');
+  var opener = null;
+
+  function load() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function save(k) { try { localStorage.setItem(KEY, k); } catch (e) {} }
+  function valid(k) { return cards.some(function (c) { return c.dataset.cls === k; }); }
+
+  function apply(k) {
+    var name = 'class';
+    sheets.forEach(function (s) { var on = s.dataset.cls === k; s.hidden = !on; if (on) name = s.dataset.name; });
+    cards.forEach(function (c) { c.classList.toggle('is-current', c.dataset.cls === k); });
+    if (navName) navName.textContent = name;
+    var icon = document.querySelector('.cls-switch [data-item]'), sprite = document.querySelector('.cls-sheet:not([hidden]) .cls-sprite svg');
+    if (icon && sprite) icon.innerHTML = sprite.outerHTML; // nav shows the chosen class's sprite
+    document.body.dataset.cls = k;
   }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { pick(t); });
-    t.addEventListener('keydown', function (e) {
-      var j = { ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
-      if (j === undefined) return;
-      e.preventDefault(); pick(tabs[(j + tabs.length) % tabs.length], true);
+
+  function open() {
+    opener = document.activeElement;
+    gate.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    (gate.querySelector('.cls-card.is-current') || cards[0]).focus();
+  }
+  function close() {
+    if (!valid(load())) return; // nothing chosen yet: the gate stays until a class is picked
+    gate.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (opener && opener.focus) opener.focus();
+  }
+
+  cards.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var first = !valid(load());
+      save(c.dataset.cls); apply(c.dataset.cls); close();
+      if (!first) document.getElementById('classes').scrollIntoView({ block: 'start' });
     });
   });
-  var saved = null;
-  try { saved = localStorage.getItem('sky.class'); } catch (e) {}
-  var start = tabs.filter(function (t) { return t.dataset.cls === saved; })[0];
-  if (start) pick(start);
+  [].forEach.call(document.querySelectorAll('[data-cls-open]'), function (b) { b.addEventListener('click', open); });
+  gate.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var i = cards.indexOf(document.activeElement); // keep focus inside the dialog
+    if (e.shiftKey && i <= 0) { e.preventDefault(); cards[cards.length - 1].focus(); }
+    else if (!e.shiftKey && i === cards.length - 1) { e.preventDefault(); cards[0].focus(); }
+  });
+
+  var saved = load();
+  apply(valid(saved) ? saved : 'all');
+  if (!valid(saved)) open();
 })();
