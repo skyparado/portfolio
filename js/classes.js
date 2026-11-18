@@ -1,5 +1,5 @@
-/* Choose your class. The first visit opens a full-screen picker; the pick is saved
-   and becomes this visitor's home view until they change it from the nav button. */
+/* Choose your class. Every load of the home page opens a full-screen picker (the last pick is
+   marked); the pick is saved and shapes the home view until changed from the nav button. */
 (function () {
   'use strict';
   var KEY = 'sky.class';
@@ -17,7 +17,8 @@
   function apply(k) {
     var name = 'class';
     sheets.forEach(function (s) { var on = s.dataset.cls === k; s.hidden = !on; if (on) name = s.dataset.name; });
-    cards.forEach(function (c) { c.classList.toggle('is-current', c.dataset.cls === k); });
+    var picked = valid(load()); // first-time visitors have no "last pick" to show
+    cards.forEach(function (c) { c.classList.toggle('is-current', picked && c.dataset.cls === k); });
     if (navName) navName.textContent = name;
     var icon = document.querySelector('.cls-switch [data-item]'), sprite = document.querySelector('.cls-sheet:not([hidden]) .cls-sprite svg');
     if (icon && sprite) icon.innerHTML = sprite.outerHTML; // nav shows the chosen class's sprite
@@ -55,5 +56,5 @@
 
   var saved = load();
   apply(valid(saved) ? saved : 'all');
-  if (!valid(saved)) open();
+  open(); // the class select is the loader: it greets every page load, last pick pre-marked
 })();
