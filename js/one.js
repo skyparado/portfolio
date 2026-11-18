@@ -147,7 +147,7 @@
 
   /* ---------- stepped reveal on scroll ---------- */
   if (!REDUCED && 'IntersectionObserver' in window) {
-    var targets = $$('.one-sec .section-title, .one-tabs, .one-frame, .one-board, .tree, .one-sec .trophy-case, .one-more');
+    var targets = $$('.one-sec .section-title, .cls-picker, .one-tabs, .one-frame, .one-board, .tree, .one-sec .trophy-case, .one-more');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -6% 0px' });

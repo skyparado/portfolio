@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/trophies.css">
 <link rel="stylesheet" href="css/post.css">
-<link rel="stylesheet" href="css/one.css?v=11">
+<link rel="stylesheet" href="css/one.css?v=12">
 <link rel="stylesheet" href="css/guide.css?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 </head>
@@ -60,7 +60,7 @@
         <button class="cc-sfx" type="button" aria-pressed="true" aria-label="Sound effects &middot; click to mute or unmute">&#9834;</button>
       </div>
       <dl class="cc-stats">
-        <div><dt>PROJECTS</dt><dd>10</dd></div>
+        <div><dt>PROJECTS</dt><dd>24</dd></div>
         <div><dt>CERTS</dt><dd>25</dd></div>
         <div><dt>CTFS</dt><dd>5</dd></div>
         <div><dt>DEAN'S LIST</dt><dd>&times;3</dd></div>
@@ -84,6 +84,14 @@
       </div>
       <p class="cc-say" id="ccSay" aria-hidden="true">&#9656; point at an item to inspect it</p>
     </div>
+  </section>
+
+  <!-- ===== 00½ · choose your class: one view per career path ===== -->
+  <section class="one-sec cls" id="classes" aria-labelledby="cls-title">
+    <div class="section-title"><h2 id="cls-title">Choose your class</h2><span class="one-cmd">same Sky, three builds</span></div>
+    <div class="cls-picker" role="tablist" aria-label="Career paths"><button class="cls-card" role="tab" id="cls-tab-security" aria-controls="cls-security" aria-selected="true" data-cls="security"><span class="cls-sprite"><i data-item="sec" aria-hidden="true"></i></span><span class="cls-name">Security Knight</span><span class="cls-quip">Breaks things safely, so nobody else can.</span></button><button class="cls-card" role="tab" id="cls-tab-web" aria-controls="cls-web" aria-selected="false" tabindex="-1" data-cls="web"><span class="cls-sprite"><i data-item="web" aria-hidden="true"></i></span><span class="cls-name">Web Builder</span><span class="cls-quip">Builds it, ships it, keeps it running.</span></button><button class="cls-card" role="tab" id="cls-tab-ai" aria-controls="cls-ai" aria-selected="false" tabindex="-1" data-cls="ai"><span class="cls-sprite"><i data-item="ai" aria-hidden="true"></i></span><span class="cls-name">AI Tamer</span><span class="cls-quip">Teaches models, then checks their homework.</span></button></div>
+    <div class="cls-sheet" role="tabpanel" id="cls-security" aria-labelledby="cls-tab-security" data-cls="security"><div class="cls-sheet-top"><p>Offense, defense and secure code. President of DLSU's Information Security Organization and a CTF champion.</p><a class="btn cls-cv" href="assets/cv/ParadoSky_CV_Security.pdf" download>&#11015; Download Security CV</a></div><h3 class="cls-h">BADGES</h3><ul class="cls-badges"><li>ISC2 CC &middot; exam passed</li><li>Junior VAPT Practitioner</li><li>CTF Champion 2026</li><li>CSCTF 2026 &middot; top 8%</li></ul><h3 class="cls-h">SIGNATURE QUESTS</h3><div class="cls-quests"><a class="cls-quest" href="https://github.com/skyparado/InvestigatoryScanner" target="_blank" rel="noopener"><img src="assets/projects/bluetrace.webp" alt="BlueTrace incident report" width="960" height="614" loading="lazy"><span><b>BlueTrace</b><small>log forensics &middot; 8 detectors</small></span></a><a class="cls-quest" href="https://github.com/skyparado/AY2526T3-CCDEVAP-HO4-Team1-Parado" target="_blank" rel="noopener"><img src="assets/projects/campuscart.webp" alt="CampusCart dashboard" width="960" height="439" loading="lazy"><span><b>CampusCart</b><small>secure auth &middot; parameterized SQL</small></span></a><a class="cls-quest" href="https://github.com/skyparado/Custom_Ping_Utility_Using_ICMP" target="_blank" rel="noopener"><img src="assets/projects/ping.webp" alt="Ping utility output" width="960" height="558" loading="lazy"><span><b>ICMP Ping</b><small>raw sockets, by hand</small></span></a></div></div><div class="cls-sheet" role="tabpanel" id="cls-web" aria-labelledby="cls-tab-web" data-cls="web" hidden><div class="cls-sheet-top"><p>Full-stack apps, add-ons and automations, with security built in from the start.</p><a class="btn cls-cv" href="assets/cv/ParadoSky_CV_WebDev.pdf" download>&#11015; Download Web Dev CV</a></div><h3 class="cls-h">BADGES</h3><ul class="cls-badges"><li>Maintains review.ahead.edu.ph</li><li>Automated The Good Trade PH pipeline</li><li>Clinic EMR deployed with CI</li><li>Designs UI in Figma</li></ul><h3 class="cls-h">SIGNATURE QUESTS</h3><div class="cls-quests"><a class="cls-quest" href="https://github.com/skyparado/CSSWENG" target="_blank" rel="noopener"><img src="assets/projects/clinic.webp" alt="Clinic system dashboard" width="960" height="570" loading="lazy"><span><b>Clinic EMR</b><small>TypeScript &middot; Prisma &middot; Postgres</small></span></a><a class="cls-quest" href="https://github.com/skyparado/CITO-Citation-Tool" target="_blank" rel="noopener"><img src="assets/projects/cito.webp" alt="Cito sidebar" width="480" height="300" loading="lazy"><span><b>CITO</b><small>Google Docs add-on &middot; OAuth</small></span></a><a class="cls-quest" href="https://github.com/skyparado/GradesForecast" target="_blank" rel="noopener"><img src="assets/projects/grades.webp" alt="DL Planner term view" width="960" height="570" loading="lazy"><span><b>DL Planner</b><small>GWA tracker &middot; Supabase</small></span></a></div></div><div class="cls-sheet" role="tabpanel" id="cls-ai" aria-labelledby="cls-tab-ai" data-cls="ai" hidden><div class="cls-sheet-top"><p>LLM evaluation, NLP, reinforcement learning and search, plus automations that save real hours.</p><a class="btn cls-cv" href="assets/cv/ParadoSky_CV_AI.pdf" download>&#11015; Download AI CV</a></div><h3 class="cls-h">BADGES</h3><ul class="cls-badges"><li>Trains LLMs at DataAnnotation</li><li>APCTT score 0.694 &rarr; 0.781</li><li>PinoyBot &middot; 95.7% accuracy</li><li>Huawei Innovators Camp</li></ul><h3 class="cls-h">SIGNATURE QUESTS</h3><div class="cls-quests"><a class="cls-quest" href="https://github.com/skyparado/APCTT-Hackathon-2026" target="_blank" rel="noopener"><img src="assets/projects/apctt.webp" alt="APCTT evaluation log" width="960" height="510" loading="lazy"><span><b>APCTT Hackathon</b><small>readiness ratings from evidence</small></span></a><a class="cls-quest" href="https://github.com/skyparado/PINOYBOT_LanguageClassiefierBot" target="_blank" rel="noopener"><img src="assets/projects/pinoy.webp" alt="PinoyBot test output" width="960" height="600" loading="lazy"><span><b>PinoyBot</b><small>Filipino/English tagger</small></span></a><a class="cls-quest" href="https://github.com/skyparado/QLearning_Machine" target="_blank" rel="noopener"><img src="assets/projects/qlearning.webp" alt="CatBot chasing a cat" width="512" height="320" loading="lazy"><span><b>CatBot</b><small>Q-learning cat catcher</small></span></a></div></div>
+    <p class="cls-foot">Want everything at once? <a href="assets/cv/ParadoSky_CV.pdf" download>Download the full CV</a>.</p>
   </section>
 
   <!-- ===== 01 · experience ===== -->
@@ -311,6 +319,7 @@
 <script src="js/items.js"></script>
 <script src="js/one.js"></script>
 <script src="js/post.js"></script>
+<script src="js/classes.js"></script>
 <script src="js/guide.js?v=9"></script>
 </body>
 </html>
