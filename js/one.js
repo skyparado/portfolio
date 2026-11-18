@@ -21,7 +21,7 @@
     var max = h.scrollHeight - h.clientHeight;
     if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, h.scrollTop / max) : 0) + ')';
     var line = window.innerHeight * 0.35, current = sections[0];
-    sections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) current = s; });
+    sections.forEach(function (s) { if (s.offsetParent && s.getBoundingClientRect().top <= line) current = s; }); // sections hidden by the chosen class don't count
     var last = sections[sections.length - 1];
     if (last && last.getBoundingClientRect().top < window.innerHeight * 0.6) current = last;
     links.forEach(function (a) {

@@ -190,7 +190,7 @@ html{scroll-padding-top:104px}
 .tree-core span{padding:1px 6px;background:var(--amber);color:var(--fg);font:700 11px/1.6 "JetBrains Mono",monospace}
 .tree-core::after{content:"";position:absolute;left:50%;top:100%;width:4px;height:24px;margin-left:-2px;background:var(--line-2)}
 /* the branches: a crossbar, then a trunk per category */
-.tree-branches{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 12px;margin-top:27px;padding:0 14px 6px}
+.tree-branches{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0 12px;margin-top:27px;padding:0 14px 6px}
 .tree-branches::before{content:"";position:absolute;top:0;left:10%;right:10%;height:4px;background:var(--line-2)}
 .tree-br{--k:var(--accent);position:relative;display:flex;flex-direction:column;align-items:center;padding-top:22px}
 .tree-br:nth-child(1){--k:var(--amber)}
@@ -231,7 +231,7 @@ html{scroll-padding-top:104px}
 @keyframes tree-drop{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
 @media (prefers-reduced-motion:reduce){.tree-br ul{animation:none!important}}
 @media (max-width:900px){
-  .tree-branches{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 12px}
+  .tree-branches{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 12px}
   .tree-branches::before{display:none}
 }
 @media (max-width:520px){.tree-branches{grid-template-columns:1fr}}
@@ -434,3 +434,9 @@ html{scroll-padding-top:104px}
 }
 }
 @media (prefers-reduced-motion:reduce){.cls-card,.cls-card *,.cls-sheet,.cls-sheet *,.cls-quest,.cls-gate-box{animation:none!important;transition:none!important}}
+
+/* the chosen class decides what the home page shows: anything tagged data-show="…" outside it is hidden */
+body[data-cls="security"] [data-show]:not([data-show~="security"]),
+body[data-cls="web"] [data-show]:not([data-show~="web"]),
+body[data-cls="ai"] [data-show]:not([data-show~="ai"]),
+body[data-cls="all"] [data-show]:not([data-show~="all"]){display:none!important}

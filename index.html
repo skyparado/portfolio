@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/trophies.css">
 <link rel="stylesheet" href="css/post.css">
-<link rel="stylesheet" href="css/one.css?v=22">
+<link rel="stylesheet" href="css/one.css?v=23">
 <link rel="stylesheet" href="css/guide.css?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 </head>
@@ -103,8 +103,8 @@
     <div class="one-tabs" role="tablist" aria-label="Chapters">
       <button role="tab" id="tab-work" aria-controls="panel-work" aria-selected="true">Work</button>
       <button role="tab" id="tab-college" aria-controls="panel-college" aria-selected="false" tabindex="-1">College</button>
-      <button role="tab" id="tab-shs" aria-controls="panel-shs" aria-selected="false" tabindex="-1">Senior high</button>
-      <button role="tab" id="tab-jhs" aria-controls="panel-jhs" aria-selected="false" tabindex="-1">Junior high</button>
+      <button role="tab" data-show="all" id="tab-shs" aria-controls="panel-shs" aria-selected="false" tabindex="-1">Senior high</button>
+      <button role="tab" data-show="all" id="tab-jhs" aria-controls="panel-jhs" aria-selected="false" tabindex="-1">Junior high</button>
     </div>
 
     <div class="one-frame" role="tabpanel" id="panel-work" aria-labelledby="tab-work">
@@ -113,10 +113,10 @@
         <span class="one-when">2026 &mdash; Present</span>
       </div>
       <ol class="one-timeline">
-        <li class="is-now"><i data-item="sec" aria-hidden="true"></i><span class="one-when">Nov &mdash; Dec 2026</span><div><h4>SOC Analyst &amp; Ethical Hacking Intern<span>TechBiz Security</span></h4><ul><li>Six-week intensive program (Cohort B-504) covering Security Operations Center analysis and ethical hacking.</li><li>Guided labs and mentor-reviewed assessments in security monitoring, vulnerability identification and offensive security.</li></ul></div></li>
-        <li class="is-now"><i data-item="web" aria-hidden="true"></i><span class="one-when">Sep &mdash; Dec 2026</span><div><h4>IT &amp; Web Maintenance Intern<span>AHEAD Tutorial and Review Center</span></h4><ul><li>Own the day-to-day upkeep and quality assurance of review.ahead.edu.ph, the site prospective reviewees use to explore programs, schedules and enrollment.</li><li>Led the UI design of schedule timetables for a six-page program overhaul in Figma, and pitched a footer redesign to streamline navigation.</li></ul></div></li>
-        <li><i data-item="cart" aria-hidden="true"></i><span class="one-when">Oct &mdash; Nov 2026</span><div><h4>Web Developer<span>The Good Trade PH</span></h4><ul><li>Automated the end-to-end merchant application pipeline by syncing data across Google Forms, Sheets, Gmail and Drive with Google Apps Script.</li></ul></div></li>
-        <li class="is-now"><i data-item="ai" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>Analyst / AI Trainer<span>DataAnnotation</span></h4><ul><li>Evaluate LLM-generated Python code against correctness and quality standards, with detailed feedback used to train AI models.</li></ul></div></li>
+        <li data-show="all security" class="is-now"><i data-item="sec" aria-hidden="true"></i><span class="one-when">Nov &mdash; Dec 2026</span><div><h4>SOC Analyst &amp; Ethical Hacking Intern<span>TechBiz Security</span></h4><ul><li>Six-week intensive program (Cohort B-504) covering Security Operations Center analysis and ethical hacking.</li><li>Guided labs and mentor-reviewed assessments in security monitoring, vulnerability identification and offensive security.</li></ul></div></li>
+        <li data-show="all web" class="is-now"><i data-item="web" aria-hidden="true"></i><span class="one-when">Sep &mdash; Dec 2026</span><div><h4>IT &amp; Web Maintenance Intern<span>AHEAD Tutorial and Review Center</span></h4><ul><li>Own the day-to-day upkeep and quality assurance of review.ahead.edu.ph, the site prospective reviewees use to explore programs, schedules and enrollment.</li><li>Led the UI design of schedule timetables for a six-page program overhaul in Figma, and pitched a footer redesign to streamline navigation.</li></ul></div></li>
+        <li data-show="all web ai"><i data-item="cart" aria-hidden="true"></i><span class="one-when">Oct &mdash; Nov 2026</span><div><h4>Web Developer<span>The Good Trade PH</span></h4><ul><li>Automated the end-to-end merchant application pipeline by syncing data across Google Forms, Sheets, Gmail and Drive with Google Apps Script.</li></ul></div></li>
+        <li data-show="all ai" class="is-now"><i data-item="ai" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>Analyst / AI Trainer<span>DataAnnotation</span></h4><ul><li>Evaluate LLM-generated Python code against correctness and quality standards, with detailed feedback used to train AI models.</li></ul></div></li>
       </ol>
     </div>
 
@@ -126,12 +126,12 @@
         <span class="one-when">2024 — Present</span>
       </div>
       <ol class="one-timeline">
-        <li class="is-now"><i data-item="flag" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>President<span>Information Security Organization</span></h4><ul><li>Lead five departments, coordinating 30+ officers and 100+ members.</li><li>Initiated collaboration with ISC2 and other cybersecurity professionals to expand learning and career opportunities.</li><li>Spearhead CyberQuests, CyberPath, Open Projects and NIS to Know, alongside technical workshops.</li></ul></div></li>
-        <li class="is-now"><i data-item="code" aria-hidden="true"></i><span class="one-when">Oct 2026 &mdash; Now</span><div><h4>Web Developer<span>Computer Studies Government</span></h4><ul><li>Lead end-to-end web development for the College of Computer Studies, on student-facing platforms used by over 3,000 students.</li><li>Handle both frontend and backend development.</li></ul></div></li>
-        <li class="is-now"><i data-item="chat" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>Assistant Manager, Culture &amp; Internal Development<span>DLSU Archers Consulting Group</span></h4><ul><li>Plan culture-building and engagement initiatives that strengthen team relationships across the organization.</li></ul></div></li>
-        <li><i data-item="trophy" aria-hidden="true"></i><span class="one-when">Jan &mdash; Jul 2026</span><div><h4>Corporate Relations Assistant Team Lead<span>HackerCup 2026</span></h4><ul><li>Secured corporate sponsorships and industry partnerships for DLSU's flagship hackathon.</li><li>Coordinated corporate relations, marketing and technical teams.</li></ul></div></li>
-        <li><i data-item="sec" aria-hidden="true"></i><span class="one-when">Sep 2025 &mdash; Sep 2026</span><div><h4>Organization Development Officer<span>Information Security Organization</span></h4><ul><li>Developed culture-building and team-bonding activities to strengthen officer engagement.</li></ul></div></li>
-        <li><i data-item="sys" aria-hidden="true"></i><span class="one-when">Sep 2025 &mdash; Aug 2026</span><div><h4>Junior Officer<span>La Salle Computer Society</span></h4><ul><li>Completed the 40th LSCS Junior Officer Training Program.</li><li>Contributed to officer-led projects and took part in technical trainings and workshops.</li></ul></div></li>
+        <li data-show="all security" class="is-now"><i data-item="flag" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>President<span>Information Security Organization</span></h4><ul><li>Lead five departments, coordinating 30+ officers and 100+ members.</li><li>Initiated collaboration with ISC2 and other cybersecurity professionals to expand learning and career opportunities.</li><li>Spearhead CyberQuests, CyberPath, Open Projects and NIS to Know, alongside technical workshops.</li></ul></div></li>
+        <li data-show="all web" class="is-now"><i data-item="code" aria-hidden="true"></i><span class="one-when">Oct 2026 &mdash; Now</span><div><h4>Web Developer<span>Computer Studies Government</span></h4><ul><li>Lead end-to-end web development for the College of Computer Studies, on student-facing platforms used by over 3,000 students.</li><li>Handle both frontend and backend development.</li></ul></div></li>
+        <li data-show="all" class="is-now"><i data-item="chat" aria-hidden="true"></i><span class="one-when">Sep 2026 &mdash; Now</span><div><h4>Assistant Manager, Culture &amp; Internal Development<span>DLSU Archers Consulting Group</span></h4><ul><li>Plan culture-building and engagement initiatives that strengthen team relationships across the organization.</li></ul></div></li>
+        <li data-show="all"><i data-item="trophy" aria-hidden="true"></i><span class="one-when">Jan &mdash; Jul 2026</span><div><h4>Corporate Relations Assistant Team Lead<span>HackerCup 2026</span></h4><ul><li>Secured corporate sponsorships and industry partnerships for DLSU's flagship hackathon.</li><li>Coordinated corporate relations, marketing and technical teams.</li></ul></div></li>
+        <li data-show="all security"><i data-item="sec" aria-hidden="true"></i><span class="one-when">Sep 2025 &mdash; Sep 2026</span><div><h4>Organization Development Officer<span>Information Security Organization</span></h4><ul><li>Developed culture-building and team-bonding activities to strengthen officer engagement.</li></ul></div></li>
+        <li data-show="all"><i data-item="sys" aria-hidden="true"></i><span class="one-when">Sep 2025 &mdash; Aug 2026</span><div><h4>Junior Officer<span>La Salle Computer Society</span></h4><ul><li>Completed the 40th LSCS Junior Officer Training Program.</li><li>Contributed to officer-led projects and took part in technical trainings and workshops.</li></ul></div></li>
         <li><i data-item="star" aria-hidden="true"></i><span class="one-when">2024 &mdash; 2026</span><div><h4>Dean's List<span>DLSU</span></h4><ul><li>First Dean's Lister, AY 2025&ndash;2026 (Terms 1 &amp; 2).</li><li>Second Dean's Lister, AY 2024&ndash;2025 (Term 1).</li></ul></div></li>
       </ol>
     </div>
@@ -169,7 +169,7 @@
     <div class="section-title"><h2 id="proj-title">Projects</h2><span class="one-cmd">4 of 24 pinned</span></div>
 
     <div class="one-proj-grid one-board">
-      <article class="one-proj is-feat" data-cat="security" id="proj-fuzzer">
+      <article class="one-proj is-feat" data-cat="security" id="proj-fuzzer" data-show="all security">
         <div class="one-pic"><img src="assets/projects/bluetrace.webp" alt="Incident report generated by the scanner" width="960" height="614" loading="lazy"><i class="one-sticker" data-item="bug" aria-hidden="true"></i></div>
         <div class="one-proj-top"><span>Security</span><time>2026</time></div>
         <h3>AI Web App Scanner</h3>
@@ -180,7 +180,7 @@
         </div>
         <a class="one-link" href="https://github.com/skyparado/InvestigatoryScanner" target="_blank" rel="noopener">View repository &#8599;</a>
       </article>
-      <article class="one-proj is-feat" data-cat="web" id="proj-cito">
+      <article class="one-proj is-feat" data-cat="web" id="proj-cito" data-show="all web">
         <div class="one-pic"><img src="assets/projects/cito.webp" alt="Cito sidebar in Google Docs" width="480" height="300" loading="lazy"><i class="one-sticker" data-item="doc" aria-hidden="true"></i></div>
         <div class="one-proj-top"><span>Web &amp; apps</span><time>2026</time></div>
         <h3>CITO Citation Tool</h3>
@@ -191,7 +191,7 @@
         </div>
         <a class="one-link" href="https://github.com/skyparado/CITO-Citation-Tool" target="_blank" rel="noopener">View repository &#8599;</a>
       </article>
-      <article class="one-proj is-feat" data-cat="web security" id="proj-campuscart">
+      <article class="one-proj is-feat" data-cat="web security" id="proj-campuscart" data-show="all security web">
         <div class="one-pic"><img src="assets/projects/campuscart.webp" alt="CampusCart overview dashboard" width="960" height="439" loading="lazy"><i class="one-sticker" data-item="cart" aria-hidden="true"></i></div>
         <div class="one-proj-top"><span>Web &amp; apps</span><time>2026</time></div>
         <h3>CampusCart</h3>
@@ -202,7 +202,7 @@
         </div>
         <a class="one-link" href="https://github.com/skyparado/AY2526T3-CCDEVAP-HO4-Team1-Parado" target="_blank" rel="noopener">View repository &#8599;</a>
       </article>
-      <article class="one-proj is-feat" data-cat="network" id="proj-netutils">
+      <article class="one-proj is-feat" data-cat="network" id="proj-netutils" data-show="all security">
         <div class="one-pic"><img src="assets/projects/ping.webp" alt="Custom ping utility output in a terminal" width="960" height="558" loading="lazy"><i class="one-sticker" data-item="net" aria-hidden="true"></i></div>
         <div class="one-proj-top"><span>Networking</span><time>2025 — 2026</time></div>
         <h3>Network Programming Utilities</h3>
@@ -212,6 +212,83 @@
         <ul class="one-tags"><li>Python</li><li>Java</li><li>Sockets</li></ul>
         </div>
         <a class="one-link" href="https://github.com/skyparado/Custom_Ping_Utility_Using_ICMP" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-voip" data-show="security">
+        <div class="one-pic"><img src="assets/projects/voip.webp" alt="VoIP caller terminal showing the SIP handshake and RTP streaming" width="960" height="600" loading="lazy"><i class="one-sticker" data-item="route" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>Networking</span><time>2026</time></div>
+        <h3>VoIP Client</h3>
+        <div class="one-desc">
+        <p>A peer-to-peer VoIP client with SIP call setup and teardown, and RTP/RTCP audio streaming.</p>
+        <p class="one-win">Built with only the Java standard library</p>
+        <ul class="one-tags"><li>Java</li><li>SIP</li><li>RTP</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/Voice-Over-IP-Simulator" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-clinic" data-show="web">
+        <div class="one-pic"><img src="assets/projects/clinic.webp" alt="Clinic system dashboard" width="960" height="570" loading="lazy"><i class="one-sticker" data-item="doc" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>Web &amp; apps</span><time>2026</time></div>
+        <h3>Clinic Management System</h3>
+        <div class="one-desc">
+        <p>A full-stack EMR for a multi-clinic practice, built by a team of five.</p>
+        <p class="one-win">Set up the monorepo; built clinics, appointments and documents; CI with Playwright; deployed on Render</p>
+        <ul class="one-tags"><li>TypeScript</li><li>Prisma</li><li>PostgreSQL</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/CSSWENG" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-dlplanner" data-show="web">
+        <div class="one-pic"><img src="assets/projects/grades.webp" alt="DL Planner term view with projected and goal GWA" width="960" height="570" loading="lazy"><i class="one-sticker" data-item="trophy" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>Web &amp; apps</span><time>2026</time></div>
+        <h3>DL Planner</h3>
+        <div class="one-desc">
+        <p>A framework-free grade tracker that projects your GWA and ranks which courses to focus on.</p>
+        <p class="one-win">Simulates scores against Dean's List targets</p>
+        <ul class="one-tags"><li>JavaScript</li><li>Supabase</li><li>Canvas</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/GradesForecast" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-apctt" data-show="ai">
+        <div class="one-pic"><img src="assets/projects/apctt.webp" alt="APCTT evaluation log" width="960" height="510" loading="lazy"><i class="one-sticker" data-item="star" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>AI</span><time>2026</time></div>
+        <h3>APCTT Hackathon</h3>
+        <div class="one-desc">
+        <p>A module that rates a technical report's readiness level (TRL) and quotes the evidence for it.</p>
+        <p class="one-win">Criteria score 0.694 &rarr; 0.781 on 99 USGS reports</p>
+        <ul class="one-tags"><li>Python</li><li>NLP</li><li>Evaluation</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/APCTT-Hackathon-2026" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-pinoybot" data-show="ai">
+        <div class="one-pic"><img src="assets/projects/pinoy.webp" alt="PinoyBot test output with per-token tags" width="960" height="600" loading="lazy"><i class="one-sticker" data-item="chat" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>AI</span><time>2026</time></div>
+        <h3>PinoyBot</h3>
+        <div class="one-desc">
+        <p>Tags each word in Filipino social-media text as Filipino, English, code-switched or other.</p>
+        <p class="one-win">95.7% token accuracy on the held-out test set</p>
+        <ul class="one-tags"><li>Python</li><li>scikit-learn</li><li>NLP</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/PINOYBOT_LanguageClassiefierBot" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-catbot" data-show="ai">
+        <div class="one-pic"><img src="assets/projects/qlearning.webp" alt="CatBot closing in on a cat" width="512" height="320" loading="lazy"><i class="one-sticker" data-item="ai" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>AI</span><time>2026</time></div>
+        <h3>CatBot</h3>
+        <div class="one-desc">
+        <p>A Q-learning agent that learns to catch cats with different movement styles on an 8&times;8 grid.</p>
+        <p class="one-win">Reward shaping, &epsilon;-greedy exploration and a greedy-loop repair pass</p>
+        <ul class="one-tags"><li>Python</li><li>Q-learning</li><li>NumPy</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/QLearning_Machine" target="_blank" rel="noopener">View repository &#8599;</a>
+      </article>
+      <article class="one-proj is-feat" id="proj-sokoban" data-show="ai">
+        <div class="one-pic"><img src="assets/projects/sokoban.webp" alt="Sokoban board solved by the A* agent" width="800" height="404" loading="lazy"><i class="one-sticker" data-item="crate" aria-hidden="true"></i></div>
+        <div class="one-proj-top"><span>AI</span><time>2026</time></div>
+        <h3>Sokoban Solver</h3>
+        <div class="one-desc">
+        <p>An A* search agent that solves Sokoban puzzles within a 15-second limit.</p>
+        <p class="one-win">Prunes with reachability BFS, dead squares and freeze-deadlock detection</p>
+        <ul class="one-tags"><li>Java</li><li>A* search</li></ul>
+        </div>
+        <a class="one-link" href="https://github.com/skyparado/Sokoban_Solver" target="_blank" rel="noopener">View repository &#8599;</a>
       </article>
     </div>
 
@@ -225,11 +302,11 @@
       <div class="tree-top"><span>SKY'S SKILL TREE</span><span class="tree-count">5 BRANCHES &middot; HOVER TO GROW</span></div>
       <div class="tree-core"><i data-item="star" aria-hidden="true"></i><b>SKY</b><span>LV 38</span></div>
       <div class="tree-branches">
-        <section class="tree-br" aria-label="Security" data-hint="9 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="sec" aria-hidden="true"></i><span>Security</span><small>9</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">VAPT</button></li><li><button type="button" class="tree-node" aria-pressed="false">Pen testing</button></li><li><button type="button" class="tree-node" aria-pressed="false">OWASP Top 10</button></li><li><button type="button" class="tree-node" aria-pressed="false">Burp Suite</button></li><li><button type="button" class="tree-node" aria-pressed="false">Nmap</button></li><li><button type="button" class="tree-node" aria-pressed="false">CVSS v3.1</button></li><li><button type="button" class="tree-node" aria-pressed="false">API security</button></li><li><button type="button" class="tree-node" aria-pressed="false">Secure SDLC</button></li><li><button type="button" class="tree-node" aria-pressed="false">Secure coding</button></li></ul></section>
+        <section class="tree-br" data-show="all security web" aria-label="Security" data-hint="9 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="sec" aria-hidden="true"></i><span>Security</span><small>9</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">VAPT</button></li><li><button type="button" class="tree-node" aria-pressed="false">Pen testing</button></li><li><button type="button" class="tree-node" aria-pressed="false">OWASP Top 10</button></li><li><button type="button" class="tree-node" aria-pressed="false">Burp Suite</button></li><li><button type="button" class="tree-node" aria-pressed="false">Nmap</button></li><li><button type="button" class="tree-node" aria-pressed="false">CVSS v3.1</button></li><li><button type="button" class="tree-node" aria-pressed="false">API security</button></li><li><button type="button" class="tree-node" aria-pressed="false">Secure SDLC</button></li><li><button type="button" class="tree-node" aria-pressed="false">Secure coding</button></li></ul></section>
         <section class="tree-br" aria-label="Languages" data-hint="7 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="code" aria-hidden="true"></i><span>Languages</span><small>7</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Python</button></li><li><button type="button" class="tree-node" aria-pressed="false">Java</button></li><li><button type="button" class="tree-node" aria-pressed="false">C++</button></li><li><button type="button" class="tree-node" aria-pressed="false">JavaScript</button></li><li><button type="button" class="tree-node" aria-pressed="false">TypeScript</button></li><li><button type="button" class="tree-node" aria-pressed="false">SQL</button></li><li><button type="button" class="tree-node" aria-pressed="false">HTML &amp; CSS</button></li></ul></section>
-        <section class="tree-br" aria-label="AI &amp; automation" data-hint="6 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="ai" aria-hidden="true"></i><span>AI &amp; automation</span><small>6</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">LLM integration</button></li><li><button type="button" class="tree-node" aria-pressed="false">Prompt engineering</button></li><li><button type="button" class="tree-node" aria-pressed="false">AI security testing</button></li><li><button type="button" class="tree-node" aria-pressed="false">Apps Script</button></li><li><button type="button" class="tree-node" aria-pressed="false">Workflow automation</button></li><li><button type="button" class="tree-node" aria-pressed="false">API integration</button></li></ul></section>
+        <section class="tree-br" data-show="all ai" aria-label="AI &amp; automation" data-hint="6 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="ai" aria-hidden="true"></i><span>AI &amp; automation</span><small>6</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">LLM integration</button></li><li><button type="button" class="tree-node" aria-pressed="false">Prompt engineering</button></li><li><button type="button" class="tree-node" aria-pressed="false">AI security testing</button></li><li><button type="button" class="tree-node" aria-pressed="false">Apps Script</button></li><li><button type="button" class="tree-node" aria-pressed="false">Workflow automation</button></li><li><button type="button" class="tree-node" aria-pressed="false">API integration</button></li></ul></section>
         <section class="tree-br" aria-label="Dev &amp; tools" data-hint="7 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="web" aria-hidden="true"></i><span>Dev &amp; tools</span><small>7</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Full-stack web</button></li><li><button type="button" class="tree-node" aria-pressed="false">REST APIs</button></li><li><button type="button" class="tree-node" aria-pressed="false">Git / GitHub</button></li><li><button type="button" class="tree-node" aria-pressed="false">Figma</button></li><li><button type="button" class="tree-node" aria-pressed="false">WordPress</button></li><li><button type="button" class="tree-node" aria-pressed="false">Google Workspace</button></li><li><button type="button" class="tree-node" aria-pressed="false">TCP/IP &amp; sockets</button></li></ul></section>
-        <section class="tree-br" aria-label="Leadership" data-hint="9 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="flag" aria-hidden="true"></i><span>Leadership</span><small>9</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Team leadership</button></li><li><button type="button" class="tree-node" aria-pressed="false">Project management</button></li><li><button type="button" class="tree-node" aria-pressed="false">Stakeholders</button></li><li><button type="button" class="tree-node" aria-pressed="false">Corporate relations</button></li><li><button type="button" class="tree-node" aria-pressed="false">Event management</button></li><li><button type="button" class="tree-node" aria-pressed="false">Tech docs</button></li><li><button type="button" class="tree-node" aria-pressed="false">QA</button></li><li><button type="button" class="tree-node" aria-pressed="false">Debate</button></li><li><button type="button" class="tree-node" aria-pressed="false">Public speaking</button></li></ul></section>
+        <section class="tree-br" data-show="all security" aria-label="Leadership" data-hint="9 SKILLS"><h3 class="tree-root" tabindex="0"><i data-item="flag" aria-hidden="true"></i><span>Leadership</span><small>9</small></h3><ul><li><button type="button" class="tree-node" aria-pressed="false">Team leadership</button></li><li><button type="button" class="tree-node" aria-pressed="false">Project management</button></li><li><button type="button" class="tree-node" aria-pressed="false">Stakeholders</button></li><li><button type="button" class="tree-node" aria-pressed="false">Corporate relations</button></li><li><button type="button" class="tree-node" aria-pressed="false">Event management</button></li><li><button type="button" class="tree-node" aria-pressed="false">Tech docs</button></li><li><button type="button" class="tree-node" aria-pressed="false">QA</button></li><li><button type="button" class="tree-node" aria-pressed="false">Debate</button></li><li><button type="button" class="tree-node" aria-pressed="false">Public speaking</button></li></ul></section>
       </div>
       <p class="tree-bar" id="treeBar" role="status">hover a branch to see its skills</p>
     </div>
@@ -237,7 +314,7 @@
   </section>
 
   <!-- ===== 04 · trophies ===== -->
-  <section class="one-sec" id="trophies" aria-labelledby="trophy-title">
+  <section class="one-sec" data-show="all security" id="trophies" aria-labelledby="trophy-title">
     <div class="section-title"><h2 id="trophy-title">Certifications &amp; trophies</h2><span class="one-cmd">$ cat trophies.log</span></div>
     <div class="trophy-case">
       <div class="trophy-case-top"><span>SKY'S TROPHY CABINET</span><span class="trophy-case-count">05 / COLLECTED</span></div>
@@ -321,7 +398,7 @@
 <script src="js/items.js"></script>
 <script src="js/one.js"></script>
 <script src="js/post.js"></script>
-<script src="js/classes.js?v=7"></script>
+<script src="js/classes.js?v=8"></script>
 <script src="js/guide.js?v=9"></script>
 </body>
 </html>

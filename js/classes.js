@@ -23,6 +23,15 @@
     var icon = document.querySelector('.cls-switch [data-item]'), sprite = document.querySelector('.cls-sheet:not([hidden]) .cls-sprite svg');
     if (icon && sprite) icon.innerHTML = sprite.outerHTML; // nav shows the chosen class's sprite
     document.body.dataset.cls = k;
+    // if the open experience chapter was just hidden, fall back to Work
+    var tab = document.querySelector('.one-tabs [role="tab"][aria-selected="true"]');
+    if (tab && !tab.offsetParent) document.getElementById('tab-work').click();
+    // skill tree counts follow what is visible
+    var br = [].filter.call(document.querySelectorAll('.tree-br'), function (b) { return b.offsetParent; });
+    var nodes = br.reduce(function (n, b) { return n + b.querySelectorAll('li').length; }, 0);
+    var cmd = document.querySelector('#skills .one-cmd'), count = document.querySelector('.tree-count');
+    if (cmd) cmd.textContent = nodes + ' nodes \u00b7 ' + br.length + ' branches';
+    if (count) count.textContent = br.length + ' BRANCHES \u00b7 HOVER TO GROW';
   }
 
   function open() {
