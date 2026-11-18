@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="css/rpg.css">
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/trophies.css">
+<link rel="stylesheet" href="css/post.css">
 <link rel="stylesheet" href="css/one.css?v=10">
 <link rel="stylesheet" href="css/guide.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
@@ -241,24 +242,54 @@
   <!-- ===== 05 · contact ===== -->
   <section class="one-sec" id="contact" aria-labelledby="contact-title">
     <div class="section-title"><h2 id="contact-title">Send a little hello</h2><span class="one-cmd">$ ./post-office.sh</span></div>
-    <div class="one-contact">
-      <div>
-        <p class="one-lead">A project, an opportunity, or a good idea? There is always room for a new adventure. Email is the fastest way to reach me.</p>
-        <ul class="one-frame one-list one-links">
-          <li><span class="one-when">email</span><a href="mailto:sky.parado@gmail.com">sky.parado@gmail.com</a></li>
-          <li><span class="one-when">github</span><a href="https://github.com/skyparado" target="_blank" rel="noopener">github.com/skyparado</a></li>
-          <li><span class="one-when">linkedin</span><a href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">in/sky-hannah-parado</a></li>
-          <li><span class="one-when">home base</span><span>Malate, Manila</span></li>
-        </ul>
-      </div>
-      <form class="one-frame one-form" id="contactForm" novalidate>
-        <span class="eyebrow">NEW LETTER · TO: SKY PARADO</span>
-        <label>your name<input name="name" autocomplete="name" required></label>
-        <label>your email<input name="email" type="email" autocomplete="email" required></label>
-        <label>your letter<textarea name="message" rows="5" required></textarea></label>
-        <button class="btn" type="submit">Prepare letter &rarr;</button>
-        <p class="one-note" id="formNote">Opens your email app. Send your letter from there.</p>
+    <div class="pixel-post">
+    <div class="sec-head mono post-status"><span class="post-status-light" aria-hidden="true"></span><span>POST OFFICE OPEN</span><span class="out">letters, ideas &amp; new adventures</span></div>
+    <div class="uplink">
+      <!-- terminal form -->
+      <form class="term" id="contactForm" novalidate>
+        <div class="term-bar"><span aria-hidden="true">&#10022;</span><span class="t">NEW LETTER</span><span class="post-slot post-meter" id="postMeter" aria-hidden="true"><span>POSTAGE</span><i></i><i></i><i></i></span></div>
+        <div class="term-body">
+          <div class="post-letter-head"><div><span class="post-to">TO: SKY PARADO</span><h2>A new side quest?</h2><p class="ln">Tell me what you have in mind.</p></div><svg class="post-stamp" viewBox="0 0 32 32" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 7h24v18H4z"/><path fill="var(--panel)" d="M7 10h18v12H7z"/><path fill="currentColor" d="M7 10h3v3h3v3h6v-3h3v-3h3v6h-3v3h-3v3h-6v-3h-3v-3H7z"/></svg></div>
+          <div class="field">
+            <label for="c-name">your name</label>
+            <input id="c-name" name="name" type="text" autocomplete="name" required placeholder="your name">
+          </div>
+          <div class="field">
+            <label for="c-email">your email</label>
+            <input id="c-email" name="email" type="email" autocomplete="email" placeholder="you@domain.com" required>
+          </div>
+          <div class="field">
+            <label for="c-msg">your letter</label>
+            <textarea id="c-msg" name="message" placeholder="A project, an idea, or just a hello..." required></textarea>
+          </div>
+          <button class="btn" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>Prepare letter</button>
+          <p class="form-note mono one-note" id="formNote" role="status">Opens your email app. Send your letter from there.</p>
+        </div>
       </form>
+
+      <!-- channels -->
+      <div class="channels"><h2 class="post-menu-title">CHOOSE A DESTINATION</h2>
+        <a class="chan" id="header-github" data-gh href="https://github.com/skyparado" target="_blank" rel="noopener">
+          <span class="ic"><i data-item="code" aria-hidden="true"></i></span>
+          <span><span class="k">github</span><br><span class="v">github.com/skyparado</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="chan" id="header-linkedin" data-gh href="https://linkedin.com/in/sky-hannah-parado-3a9218256" target="_blank" rel="noopener">
+          <span class="ic"><i data-item="chat" aria-hidden="true"></i></span>
+          <span><span class="k">linkedin</span><br><span class="v">in/sky-hannah-parado</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="chan" href="mailto:sky.parado@gmail.com">
+          <span class="ic"><i data-item="mail" aria-hidden="true"></i></span>
+          <span><span class="k">email</span><br><span class="v">sky.parado@gmail.com</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+        <div class="chan" style="cursor:default">
+          <span class="ic"><i data-item="flag" aria-hidden="true"></i></span>
+          <span><span class="k">home base</span><br><span class="v">Malate, Manila</span></span>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -279,6 +310,7 @@
 <script src="js/trophies.js"></script>
 <script src="js/items.js"></script>
 <script src="js/one.js"></script>
+<script src="js/post.js"></script>
 <script src="js/guide.js?v=8"></script>
 </body>
 </html>

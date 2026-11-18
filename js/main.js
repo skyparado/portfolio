@@ -252,7 +252,7 @@
 
   /* ---------- CONTACT TERMINAL (fake send + mailto fallback) ---------- */
   const form = $('#contactForm');
-  if (form) {
+  if (form && !form.closest('.one-sec')) { // the home page's copy of this form is handled by one.js
     form.addEventListener('submit', e => {
       e.preventDefault();
       const name = $('#c-name', form).value.trim() || 'operator';
