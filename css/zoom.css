@@ -1,0 +1,28 @@
+/* Zoom-in details (js/zoom.js): a card lifted to the centre over a blurred page. */
+html.zoom-open{overflow:hidden}
+.zoom{position:fixed;inset:0;z-index:2500;display:grid;place-items:center;padding:64px 16px 32px;overflow-y:auto;overscroll-behavior:contain;
+  background:color-mix(in srgb,var(--bg) 50%,transparent);-webkit-backdrop-filter:blur(10px) saturate(1.05);backdrop-filter:blur(10px) saturate(1.05)}
+.zoom-stage{width:min(620px,100%)}
+.zoom-x{position:fixed;top:16px;right:16px;z-index:1;width:46px;height:46px;border:2px solid var(--line-2);border-radius:0;background:var(--panel);color:var(--fg);
+  font:500 26px/1 var(--pixel-font);cursor:pointer;box-shadow:4px 4px 0 var(--bg-2)}
+.zoom-x:hover,.zoom-x:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+
+/* the lifted copy: flat, full size, everything showing */
+.zoom-card{transform:none!important;rotate:none!important;translate:none!important;scale:none!important;animation:none!important;
+  visibility:visible!important;opacity:1!important;margin:0!important;cursor:auto!important;box-shadow:8px 10px 0 color-mix(in srgb,var(--fg) 18%,transparent)!important}
+.zoom-card .one-desc,.zoom-list .zoom-card>div>ul{display:grid!important;gap:10px;position:static!important;margin:6px 0 0!important;padding:0!important;border:0!important;box-shadow:none!important;background:none!important}
+.zoom-list .zoom-card>div>ul li{text-align:left}
+.zoom-card .work-details summary{display:none}
+.zoom-card .work-details[open]>div{padding-top:14px}
+.zoom-list{display:block!important;padding:0!important;margin:0!important}
+.zoom-list>li::before{display:none!important}
+.zoom-list>li{padding:34px 26px 24px!important}
+
+/* in place, details now live in the zoom view instead of popping out underneath */
+.one-desc,.one-timeline>li>div>ul{display:none!important}
+.zoom .zoom-card .one-desc,.zoom .zoom-list .zoom-card>div>ul{display:grid!important}
+:is(.one-proj,.one-timeline>li){cursor:zoom-in}
+.work-card .work-details summary{cursor:zoom-in}
+.zoom-hint{align-self:center;margin-top:2px;padding:2px 8px;border:2px dashed var(--line-2);font:700 10px/1.5 "JetBrains Mono",monospace;letter-spacing:.08em;color:var(--fg-dim);transition:color .15s steps(2,end),border-color .15s steps(2,end)}
+.one-proj .zoom-hint{align-self:flex-start}
+:is(.one-proj,.one-timeline>li):is(:hover,:focus-visible) .zoom-hint{border-color:var(--accent);color:var(--accent)}

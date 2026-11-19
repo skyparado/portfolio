@@ -303,25 +303,13 @@ html{scroll-padding-top:104px}
 .one-note{margin:0;font-size:12px;color:var(--fg-dim)}
 .one-note.is-error{color:var(--red)}
 
-/* ---------- words on hover: descriptions pop out under the card ---------- */
+/* details open in the zoom view (css/zoom.css, js/zoom.js); tags still wiggle on hover */
 @media (hover:hover){
-  .one-proj,.one-timeline>li{position:relative}
-  /* lift the hovered card above its neighbours so the pop-out isn't covered by the next card */
-  .one-proj:hover,.one-proj:focus-within,.one-timeline>li:hover{z-index:5}
-  .one-desc,.one-timeline>li ul{
-    display:none;position:absolute;z-index:5;top:100%;left:-2px;right:-2px;margin:0;padding:14px 22px 18px;
-    background:var(--panel);border:2px solid var(--accent);border-top:2px dashed var(--line-2);box-shadow:5px 5px 0 var(--bg-2)}
-  .one-timeline>li ul{top:calc(100% - 2px);border-top-style:solid}
-  .one-proj:hover>.one-desc,.one-proj:focus-within>.one-desc,.one-timeline>li:hover ul{display:grid;gap:10px}
-  .one-timeline>li{cursor:help}
   .one-tags li{transition:transform .15s steps(2,end),border-color .15s steps(2,end)}
   .one-tags li:hover{transform:translateY(-2px);border-color:var(--accent)}
 }
 
 /* ---------- reveal on scroll (stepped, to match the pixel feel) ---------- */
-.one-js .one-reveal{opacity:0;transform:translateY(12px);transition:opacity .4s steps(4,end),transform .4s steps(4,end)}
-.one-js .one-reveal.is-in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.one-js .one-reveal{opacity:1;transform:none;transition:none}}
 
 /* ---------- responsive ---------- */
 @media (max-width:900px){

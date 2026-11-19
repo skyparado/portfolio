@@ -145,16 +145,6 @@
     location.href = 'mailto:sky.parado@gmail.com?subject=' + encodeURIComponent('A letter from ' + name) + '&body=' + encodeURIComponent(body);
   });
 
-  /* ---------- stepped reveal on scroll ---------- */
-  if (!REDUCED && 'IntersectionObserver' in window) {
-    var targets = $$('.one-sec .section-title, .one-tabs, .one-frame, .one-board, .tree, .one-sec .trophy-case, .one-more');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
-    }, { rootMargin: '0px 0px -6% 0px' });
-    targets.forEach(function (t) {
-      if (t.getBoundingClientRect().top < window.innerHeight) return; /* already visible: no flash */
-      t.classList.add('one-reveal');
-      io.observe(t);
-    });
-  }
+  /* scroll entrances now live in js/motion.js (shared by every page) */
+
 })();

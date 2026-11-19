@@ -7,18 +7,25 @@
   // blocks that pop in; elements already handled by older reveal code (.reveal / .one-reveal) are skipped
   var POP = ['.page-banner', '.section-title', '.one-proj', '.one-timeline > li', '.tree-br', '.trophy-slot', '.one-more',
              '.cls-quest', '.cls-badges li', '.chan', '.term', '.work-card', '.project-browser', '.cert', '.honor-item',
-             '.experience-entry', '.skill-search', '.skill-toolbar', '.skill-garden', '.skill-dialogue'].join(',');
+             '.experience-entry', '.skill-search', '.skill-toolbar', '.skill-garden', '.skill-dialogue',
+             '.one-tabs', '.one-school', '.tree-top', '.tree-core', '.trophy-case-top', '.cls-sheet-top', '.cls-h'].join(',');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
-      var batch = entries.filter(function (e) { return e.isIntersecting; });
-      batch.forEach(function (e, i) {
-        e.target.style.setProperty('--m-d', Math.min(i, 8) * 0.07 + 's'); // stagger blocks that arrive together
-        e.target.classList.add('m-in');
-        io.unobserve(e.target);
+      var i = 0;
+      entries.forEach(function (e) {
+        var el = e.target;
+        if (e.isIntersecting) {
+          el.style.setProperty('--m-d', Math.min(i++, 8) * 0.07 + 's'); // stagger blocks that arrive together
+          el.classList.add('m-in');
+        } else if (!el.closest('.zoom')) {
+          // scrolled fully out of view: reset, so it plays its entrance again next time (from whichever side it comes back)
+          el.classList.remove('m-in');
+          el.classList.toggle('m-above', e.boundingClientRect.top < 0);
+        }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
     [].forEach.call(document.querySelectorAll(POP), function (el) {
-      if (el.closest('.reveal, .one-reveal, .cls-gate, dialog')) return;
+      if (el.closest('.reveal, .cls-gate, dialog')) return;
       el.classList.add('m-pop');
       io.observe(el);
     });
