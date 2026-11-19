@@ -5,25 +5,59 @@
   'use strict';
   var TARGETS = '.one-proj, .one-timeline > li, .work-card';
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var VARS = ['--tape', '--q', '--project-color', '--c', '--tilt'];
   var open = null; // { overlay, card, src }
 
   function title(src) { var h = src.querySelector('h3, h4'); return h ? h.textContent.trim() : 'Details'; }
-
-  function copyOf(src) {
-    var card = src.cloneNode(true);
-    [card].concat([].slice.call(card.querySelectorAll('[id]'))).forEach(function (n) { n.removeAttribute('id'); });
-    card.classList.remove('m-pop', 'm-in', 'm-swap', 'one-reveal', 'is-in');
-    card.classList.add('zoom-card');
-    card.removeAttribute('tabindex'); card.removeAttribute('role');
+  function txt(root, sel) { var n = root.querySelector(sel); return n ? n.textContent.trim() : ''; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function svg(root, sel) { var n = root.querySelector(sel); return n ? n.outerHTML : ''; }
+  function accent(src) { // the card's own colour, whichever variable it uses
     var cs = getComputedStyle(src);
-    VARS.forEach(function (v) { var x = cs.getPropertyValue(v); if (x) card.style.setProperty(v, x.trim()); });
-    var d = card.querySelector('details'); if (d) d.open = true;
-    var hint = card.querySelector('.zoom-hint'); if (hint) hint.remove();
-    if (src.matches('.one-timeline > li')) { // timeline styles hang off the list, so keep one around it
-      var ol = document.createElement('ol'); ol.className = 'one-timeline zoom-list'; ol.appendChild(card); return { node: ol, card: card };
+    return ['--q', '--tape', '--project-color', '--c'].map(function (v) { return cs.getPropertyValue(v).trim(); }).filter(Boolean)[0] || 'var(--accent)';
+  }
+
+  // purpose-built detail cards, filled from whatever card was clicked
+  function build(src) {
+    var card = document.createElement('article');
+    card.className = 'zoom-card zd';
+    card.style.setProperty('--q', accent(src));
+    if (src.matches('.one-timeline > li')) {
+      var h4 = src.querySelector('h4'), org = txt(h4, 'span');
+      var role = h4 ? h4.firstChild.textContent.trim() : '';
+      var chapter = txt(src.closest('.one-frame') || document, '.one-school h3');
+      var bullets = [].map.call(src.querySelectorAll('ul li'), function (li) { return '<li>' + esc(li.textContent.trim()) + '</li>'; }).join('');
+      var now = src.classList.contains('is-now');
+      card.classList.add('zd-entry');
+      card.innerHTML =
+        '<header class="zd-head"><span class="zd-kicker">&#10022; QUEST LOG' + (chapter ? ' &middot; ' + esc(chapter) : '') + '</span></header>' +
+        '<div class="zd-badge">' + svg(src, ':scope > [data-item] svg') + '</div>' +
+        '<div class="zd-body"><h3>' + esc(role) + '</h3>' + (org ? '<p class="zd-org">' + esc(org) + '</p>' : '') +
+        '<div class="zd-chips"><span class="zd-chip zd-when">&#9719; ' + esc(txt(src, '.one-when')) + '</span>' +
+        '<span class="zd-chip ' + (now ? 'zd-now">&#9632; ACTIVE' : 'zd-done">&#10003; CLEARED') + '</span></div>' +
+        (bullets ? '<ul class="zd-list">' + bullets + '</ul>' : '') + '</div>';
+      return card;
     }
-    return { node: card, card: card };
+    // project cards (home board and projects page)
+    var home = src.matches('.one-proj');
+    var img = src.querySelector(home ? '.one-pic img' : '.work-shot');
+    var icon = svg(src, home ? '.one-sticker svg' : '.work-banner [data-item] svg');
+    var link = src.querySelector(home ? '.one-link[href]' : '.project-repo[href]');
+    var tags = [].map.call(src.querySelectorAll(home ? '.one-tags li' : '.work-tags li'), function (t) { return '<li>' + esc(t.textContent.trim()) + '</li>'; }).join('');
+    var desc = home ? txt(src, '.one-desc p:not(.one-win)') : txt(src, '.work-description');
+    var win = txt(src, home ? '.one-win' : '.work-highlight');
+    var more = home ? '' : [].map.call(src.querySelectorAll('.work-details h4'), function (h) {
+      var p = h.nextElementSibling; return '<h4 class="zd-sub">' + esc(h.textContent.trim()) + '</h4>' + (p ? '<p>' + esc(p.textContent.trim()) + '</p>' : '');
+    }).join('');
+    card.classList.add('zd-proj');
+    card.innerHTML =
+      (img ? '<figure class="zd-shot"><img src="' + esc(img.getAttribute('src')) + '" alt="' + esc(img.alt) + '">' + (icon ? '<span class="zd-sticker">' + icon + '</span>' : '') + '</figure>' : '') +
+      '<div class="zd-body"><div class="zd-chips"><span class="zd-chip zd-cat">' + esc(txt(src, home ? '.one-proj-top span' : '.work-card-top > span:not(.work-icon)')) + '</span>' +
+      (txt(src, 'time') ? '<span class="zd-chip zd-when">&#9719; ' + esc(txt(src, 'time')) + '</span>' : '') + '</div>' +
+      '<h3>' + esc(title(src)) + '</h3>' + (desc ? '<p class="zd-lead">' + esc(desc) + '</p>' : '') +
+      (win ? '<p class="zd-win"><span aria-hidden="true">&#9733;</span> ' + esc(win) + '</p>' : '') + more +
+      (tags ? '<ul class="zd-tags">' + tags + '</ul>' : '') +
+      (link ? '<a class="zd-cta" href="' + esc(link.href) + '" target="_blank" rel="noopener">View repository <span aria-hidden="true">&#8599;</span></a>' : '') + '</div>';
+    return card;
   }
 
   function fly(card, from, reverse) {
@@ -42,7 +76,7 @@
     var x = document.createElement('button');
     x.type = 'button'; x.className = 'zoom-x'; x.setAttribute('aria-label', 'Close details'); x.innerHTML = '&times;';
     var stage = document.createElement('div'); stage.className = 'zoom-stage';
-    var c = copyOf(src); stage.appendChild(c.node);
+    var c = { card: build(src) }; stage.appendChild(c.card);
     overlay.append(x, stage);
     document.body.appendChild(overlay);
     document.documentElement.classList.add('zoom-open');
