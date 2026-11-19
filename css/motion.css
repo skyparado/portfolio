@@ -1,48 +1,52 @@
-/* Shared motion for every page: the page arriving and leaving, blocks popping in as they
-   scroll into view, and the class picker's little ceremony. Stepped timing keeps the pixel feel.
-   Uses the `translate` property (not `transform`) so tilted cards and hover effects keep theirs.
-   Everything here is off for visitors who ask for reduced motion. */
+/* Shared motion for every page: the page arriving and leaving, blocks drifting into focus as
+   they scroll into view, and the class picker's little ceremony. Smooth easing with a soft
+   blur-to-sharp focus. Uses the `translate`/`scale` properties (not `transform`) so tilted
+   cards and hover effects keep theirs. Off for visitors who ask for reduced motion. */
+:root{--m-ease:cubic-bezier(.22,1,.36,1);--m-spring:cubic-bezier(.34,1.56,.64,1)}
 @media (prefers-reduced-motion:no-preference){
-  /* arriving: the nav drops in, then the page rises */
-  .nav{animation:mNavIn .45s steps(5,end) both}
-  main{animation:mPageIn .55s steps(6,end) .08s both}
-  main.m-enter{animation:mPageIn2 .55s steps(6,end) both}
-  @keyframes mNavIn{from{opacity:0;translate:0 -18px}}
-  @keyframes mPageIn{from{opacity:0;translate:0 22px}}
-  @keyframes mPageIn2{from{opacity:0;translate:0 22px}}
+  /* arriving: the nav slides down, the page comes into focus from a slight zoom */
+  .nav{animation:mNavIn .6s var(--m-ease) both}
+  main{animation:mPageIn .8s var(--m-ease) .05s both}
+  main.m-enter{animation:mPageIn2 .8s var(--m-ease) both}
+  @keyframes mNavIn{from{opacity:0;translate:0 -24px}}
+  @keyframes mPageIn{from{opacity:0;scale:1.035;filter:blur(10px)}}
+  @keyframes mPageIn2{from{opacity:0;scale:1.035;filter:blur(10px)}}
 
-  /* leaving for another page of the site */
-  html.m-leave .nav,html.m-leave main{opacity:0;translate:0 -10px;transition:opacity .2s steps(3,end),translate .2s steps(3,end)}
+  /* leaving: the page blurs and falls back while the clicked thing zooms forward (motion.js) */
+  html.m-leave .nav,html.m-leave main{opacity:.15;scale:.97;filter:blur(8px);transition:opacity .45s var(--m-ease),scale .45s var(--m-ease),filter .45s var(--m-ease)}
+  .m-ghost{position:fixed!important;z-index:3000;margin:0!important;pointer-events:none;box-sizing:border-box;rotate:none!important;translate:none!important}
 
-  /* blocks pop in, one after another, as they scroll into view (motion.js sets --m-d) */
-  .m-pop{opacity:0;translate:0 56px;scale:.92}
-  .m-pop.m-above{translate:0 -56px}
-  .m-pop.m-in{opacity:1;translate:none;scale:none;
-    transition:opacity .6s steps(6,end) var(--m-d,0s),translate .6s steps(6,end) var(--m-d,0s),scale .6s steps(6,end) var(--m-d,0s)}
+  /* blocks drift up into focus as they scroll into view (motion.js sets --m-d for a stagger) */
+  .m-pop{opacity:0;translate:0 40px;scale:.96;filter:blur(6px)}
+  .m-pop.m-above{translate:0 -40px}
+  .m-pop.m-in{opacity:1;translate:none;scale:none;filter:none;
+    transition:opacity .7s var(--m-ease) var(--m-d,0s),translate .8s var(--m-ease) var(--m-d,0s),scale .8s var(--m-ease) var(--m-d,0s),filter .6s var(--m-ease) var(--m-d,0s)}
 
   /* items that appear when the class changes */
-  .m-swap{animation:mSwap .45s steps(5,end) both}
-  @keyframes mSwap{from{opacity:0;translate:0 14px}}
+  .m-swap{animation:mSwap .6s var(--m-ease) both}
+  @keyframes mSwap{from{opacity:0;translate:0 18px;filter:blur(6px)}}
 
-  /* class picker: cards deal in, the chosen one bounces, then the screen lifts away */
-  .cls-gate:not([hidden]) .cls-gate-box h2{animation:mPop .4s steps(4,end) both}
-  .cls-gate:not([hidden]) .cls-gate-sub{animation:mPop .4s steps(4,end) .08s both}
-  .cls-gate:not([hidden]) .cls-card{animation:mDeal .45s steps(5,end) both}
-  .cls-gate:not([hidden]) .cls-card:nth-child(1){animation-delay:.14s}
-  .cls-gate:not([hidden]) .cls-card:nth-child(2){animation-delay:.22s}
-  .cls-gate:not([hidden]) .cls-card:nth-child(3){animation-delay:.3s}
-  .cls-gate:not([hidden]) .cls-card:nth-child(4){animation-delay:.38s}
-  .cls-gate .cls-card.is-picked{animation:mPick .4s steps(4,end) both}
-  .cls-gate.is-picking .cls-card:not(.is-picked){opacity:.35;transition:opacity .2s steps(2,end)}
-  .cls-gate.is-leaving{animation:mGateOut .3s steps(4,end) both}
-  @keyframes mPop{from{opacity:0;scale:.9}}
-  @keyframes mDeal{from{opacity:0;translate:0 26px;rotate:-4deg}}
-  @keyframes mPick{40%{scale:1.08;rotate:-2deg}70%{scale:.97}}
-  @keyframes mGateOut{to{opacity:0;scale:1.04}}
+  /* class picker: cards float in, the chosen one springs, then the screen dissolves */
+  .cls-gate:not([hidden]) .cls-gate-box h2{animation:mPop .6s var(--m-ease) both}
+  .cls-gate:not([hidden]) .cls-gate-sub{animation:mPop .6s var(--m-ease) .08s both}
+  .cls-gate:not([hidden]) .cls-card{animation:mDeal .7s var(--m-spring) both}
+  .cls-gate:not([hidden]) .cls-card:nth-child(1){animation-delay:.12s}
+  .cls-gate:not([hidden]) .cls-card:nth-child(2){animation-delay:.2s}
+  .cls-gate:not([hidden]) .cls-card:nth-child(3){animation-delay:.28s}
+  .cls-gate:not([hidden]) .cls-card:nth-child(4){animation-delay:.36s}
+  .cls-gate .cls-card.is-picked{animation:mPick .45s var(--m-spring) both}
+  .cls-gate.is-picking .cls-card:not(.is-picked){opacity:.3;filter:blur(2px);scale:.96;transition:opacity .3s var(--m-ease),filter .3s var(--m-ease),scale .3s var(--m-ease)}
+  .cls-gate.is-leaving{animation:mGateOut .35s var(--m-ease) both}
+  @keyframes mPop{from{opacity:0;scale:.92;filter:blur(6px)}}
+  @keyframes mDeal{from{opacity:0;translate:0 36px;scale:.9}}
+  @keyframes mPick{50%{scale:1.1}}
+  @keyframes mGateOut{to{opacity:0;scale:1.06;filter:blur(8px)}}
 
-  /* little presses on buttons */
-  :is(.btn,.quest-button,.cls-change,.cls-switch,.theme-btn,.one-tabs [role="tab"],.project-filters button,.secret-door):active{translate:0 2px}
+  /* gentle hover lift and press on buttons */
+  :is(.btn,.quest-button,.cls-change,.cls-switch,.theme-btn,.one-tabs [role="tab"],.project-filters button,.secret-door){transition:translate .25s var(--m-ease),border-color .2s,color .2s,background-color .2s}
+  :is(.btn,.quest-button,.cls-change,.cls-switch,.theme-btn,.one-tabs [role="tab"],.project-filters button):hover{translate:0 -2px}
+  :is(.btn,.quest-button,.cls-change,.cls-switch,.theme-btn,.one-tabs [role="tab"],.project-filters button,.secret-door):active{translate:0 1px}
 
-  /* the secret world pops open */
-  dialog.quest-dialog[open]{animation:mPop .4s steps(4,end) both}
+  /* the secret world floats open */
+  dialog.quest-dialog[open]{animation:mPop .6s var(--m-ease) both}
 }

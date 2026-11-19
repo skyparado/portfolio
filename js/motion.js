@@ -31,7 +31,28 @@
     });
   }
 
-  // leaving: fade out, then go (same-site page links only; new tabs, hashes, mail and modifier-clicks are left alone)
+  // leaving: the clicked link floats forward and zooms toward you while the page blurs away, then we go.
+  // Same-site page links only; new tabs, downloads, in-page hashes and modifier-clicks are left alone.
+  var STYLE = ['color', 'background', 'font', 'padding', 'border', 'border-radius', 'box-shadow', 'display', 'gap', 'align-items',
+               'justify-content', 'text-align', 'letter-spacing', 'line-height', 'text-transform', 'text-decoration', 'text-shadow'];
+  function ghostOf(a) {
+    var r = a.getBoundingClientRect(), cs = getComputedStyle(a);
+    var g = a.cloneNode(true);
+    [g].concat([].slice.call(g.querySelectorAll('[id]'))).forEach(function (n) { n.removeAttribute('id'); });
+    g.classList.remove('m-pop', 'm-in', 'm-above');
+    [].forEach.call(g.querySelectorAll('.key'), function (k) { k.remove(); }); // nav shortcut badges
+    var svgs = a.querySelectorAll('svg'), copies = g.querySelectorAll('svg');
+    [].forEach.call(svgs, function (s, i) { var c = getComputedStyle(s); copies[i].style.cssText += ';width:' + c.width + ';height:' + c.height + ';flex:none'; });
+    STYLE.forEach(function (k) { g.style.setProperty(k, cs.getPropertyValue(k)); }); // keep its look outside its usual parent
+    g.classList.add('m-ghost');
+    g.setAttribute('aria-hidden', 'true');
+    g.style.left = r.left + 'px'; g.style.top = r.top + 'px'; g.style.width = r.width + 'px'; g.style.height = r.height + 'px';
+    document.body.appendChild(g);
+    var s = Math.max(1.25, Math.min(2.4, innerWidth * 0.5 / r.width, innerHeight * 0.4 / r.height));
+    var dx = innerWidth / 2 - (r.left + r.width / 2), dy = innerHeight / 2 - (r.top + r.height / 2);
+    g.animate([{ transform: 'none' }, { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')' }],
+              { duration: 480, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards' });
+  }
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href]');
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -39,9 +60,13 @@
     var url = new URL(a.href, location.href);
     if (url.origin !== location.origin || !/\.html$|\/$/.test(url.pathname) || (url.pathname === location.pathname && url.hash)) return;
     e.preventDefault();
+    ghostOf(a);
     document.documentElement.classList.add('m-leave');
-    setTimeout(function () { location.href = a.href; }, 200);
+    setTimeout(function () { location.href = a.href; }, 460);
   });
-  // coming back via the browser's back button restores the page from cache, still faded: undo it
-  window.addEventListener('pageshow', function () { document.documentElement.classList.remove('m-leave'); });
+  // coming back with the browser's back button restores the page from cache mid-zoom: undo it
+  window.addEventListener('pageshow', function () {
+    document.documentElement.classList.remove('m-leave');
+    [].forEach.call(document.querySelectorAll('.m-ghost'), function (g) { g.remove(); });
+  });
 })();
