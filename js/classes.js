@@ -31,7 +31,7 @@
     var nodes = br.reduce(function (n, b) { return n + b.querySelectorAll('li').length; }, 0);
     var cmd = document.querySelector('#skills .one-cmd'), count = document.querySelector('.tree-count');
     if (cmd) cmd.textContent = nodes + ' nodes \u00b7 ' + br.length + ' branches';
-    if (count) count.textContent = br.length + ' BRANCHES \u00b7 HOVER TO GROW';
+    if (count) count.textContent = br.length + ' BRANCHES \u00b7 CLICK A BRANCH';
   }
 
   function open() {

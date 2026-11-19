@@ -202,34 +202,37 @@ html{scroll-padding-top:104px}
   border:3px solid var(--fg);box-shadow:0 4px 0 color-mix(in srgb,var(--k) 55%,#000);font:600 16px/1.1 var(--pixel-font)}
 .tree-root [data-item]{flex:none;width:28px;padding:2px;background:var(--panel)}
 .tree-root small{padding:0 5px;background:var(--panel);color:var(--fg);font:700 10px/1.6 "JetBrains Mono",monospace}
-.tree-br ul{position:relative;list-style:none;margin:0;padding:18px 0 4px;display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
-.tree-br ul::before{content:"";position:absolute;top:0;bottom:22px;left:50%;width:4px;margin-left:-2px;background:var(--line-2)}
-.tree-br li{position:relative;z-index:1}
 .tree-node{min-height:34px;padding:5px 12px;cursor:pointer;border-radius:0;background:var(--panel);border:2px solid var(--line-2);color:var(--fg);
   font:700 11px/1.3 "JetBrains Mono",monospace;box-shadow:0 3px 0 var(--line);
   transition:transform .12s steps(2,end),background .12s steps(2,end),border-color .12s steps(2,end)}
 .tree-node:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-/* hovering a branch lights its wiring; hovering a node lights the node */
-.tree-br:hover::before,.tree-br:hover ul::before,.tree-br:focus-within::before,.tree-br:focus-within ul::before{background:var(--k)}
 .tree-node:hover,.tree-node:focus-visible{transform:scale(1.08);border-color:var(--k)}
 /* learned nodes stay lit */
 .tree-node[aria-pressed="true"]{background:var(--k);color:var(--panel);border-color:var(--fg);box-shadow:0 3px 0 color-mix(in srgb,var(--k) 55%,#000)}
 .tree-node[aria-pressed="true"]::after{content:" \2713"}
 .tree-bar{margin:14px 14px 10px;padding:9px 12px;background:var(--panel);border:2px solid var(--line-2);font:700 12px/1.4 "JetBrains Mono",monospace;color:var(--fg-dim);text-align:center}
-/* skills stay hidden until you hover (or tab into) a branch; they drop down over the page */
-@media (hover:hover){
-  .tree-branches{padding-bottom:18px}
-  .tree-br ul{display:none;position:absolute;z-index:6;top:78px;left:-6px;right:-6px;padding:18px 6px 12px;
-    background:var(--panel-2);border:2px solid var(--k);border-top:0;box-shadow:5px 6px 0 rgba(0,0,0,.18)}
-  .tree-br ul::before{bottom:30px}
-  .tree-br:hover ul,.tree-br:focus-within ul{display:flex;animation:tree-drop .3s steps(4,end)}
-  .tree-br:hover .tree-root,.tree-br:focus-within .tree-root{transform:translateY(-3px)}
-  .tree-root{cursor:pointer;transition:transform .12s steps(2,end)}
-  .tree-br::after{content:"\25BE  " attr(data-hint);display:block;margin-top:8px;font:700 9px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em;color:var(--fg-dim)}
-  .tree-br:hover::after,.tree-br:focus-within::after{visibility:hidden}
-}
-@keyframes tree-drop{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
-@media (prefers-reduced-motion:reduce){.tree-br ul{animation:none!important}}
+/* the open branch lifts and wires down to the skill panel */
+.tree-root{cursor:pointer;transition:translate .2s var(--m-ease,ease),box-shadow .2s}
+.tree-root:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.tree-br:hover .tree-root{translate:0 -3px}
+.tree-br.is-open .tree-root{translate:0 -4px;box-shadow:0 8px 0 color-mix(in srgb,var(--k) 55%,#000)}
+.tree-br.is-open::before{background:var(--k)}
+.tree-br::after{content:"\25BE  " attr(data-hint);display:block;margin-top:10px;font:700 9px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em;color:var(--fg-dim)}
+.tree-br.is-open::after{content:"\25B4  OPEN";color:var(--k)}
+.tree-panel{--k:var(--accent);margin:20px 14px 0;padding:16px 18px 20px;background:var(--panel);border:3px solid var(--k);
+  box-shadow:inset 0 0 0 3px var(--panel),inset 0 0 0 5px color-mix(in srgb,var(--k) 30%,transparent),6px 6px 0 color-mix(in srgb,var(--k) 35%,transparent)}
+.tree-panel.is-swap{animation:treeSwap .45s var(--m-ease,ease) both}
+@keyframes treeSwap{from{opacity:0;translate:0 10px}}
+.tree-panel-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:12px;border-bottom:2px dashed color-mix(in srgb,var(--k) 50%,var(--line-2))}
+.tree-panel-icon{display:block;width:34px;padding:3px;background:var(--k)}
+.tree-panel-icon svg{display:block;width:100%;height:auto}
+.tree-panel-head b{font:500 20px/1.2 var(--pixel-font);color:var(--fg)}
+.tree-panel-head small{font:700 10px/1.5 "JetBrains Mono",monospace;letter-spacing:.06em;color:var(--fg-dim)}
+.tree-panel ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.tree-panel ul[hidden]{display:none}
+.tree-panel .tree-node{min-height:38px;padding:7px 14px;font-size:12px}
+.tree-panel .tree-node:hover,.tree-panel .tree-node:focus-visible{transform:translateY(-3px);border-color:var(--k)}
+@media (prefers-reduced-motion:reduce){.tree-panel.is-swap{animation:none}.tree-root{transition:none}}
 @media (max-width:900px){
   .tree-branches{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 12px}
   .tree-branches::before{display:none}

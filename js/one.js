@@ -74,10 +74,49 @@
   /* ---------- skill tree: hover names the path, click marks a node learned ---------- */
   var treeBar = $('#treeBar'), nodes = $$('.tree-node');
   function trace(n, verb) {
-    var br = n.closest('.tree-br'), branch = br ? br.querySelector('.tree-root span').textContent : '';
+    var holder = n.closest('[data-branch]'), branch = holder ? holder.dataset.branch : '';
     var learned = nodes.filter(function (x) { return x.getAttribute('aria-pressed') === 'true'; }).length;
     if (treeBar) treeBar.textContent = 'SKY \u203a ' + branch + ' \u203a ' + n.textContent.replace(' \u2713', '') + (verb ? '  \u00b7  ' + verb : '') + '  \u00b7  ' + learned + ' / ' + nodes.length + ' learned';
   }
+  /* each branch's skills show in one panel under the tree (not a drop-down over the page) */
+  var branches = $$('.tree-br'), panel = null;
+  if (branches.length) {
+    panel = document.createElement('div'); panel.className = 'tree-panel'; panel.id = 'treePanel'; panel.setAttribute('aria-live', 'polite');
+    panel.innerHTML = '<div class="tree-panel-head"><span class="tree-panel-icon"></span><b></b><small></small></div>';
+    branches.forEach(function (br) {
+      var ul = br.querySelector('ul'), name = br.querySelector('.tree-root span').textContent;
+      ul.dataset.branch = name; ul.hidden = true;
+      if (br.dataset.show) ul.dataset.show = br.dataset.show; // follows the chosen class like its branch
+      ul.style.setProperty('--k', getComputedStyle(br).getPropertyValue('--k'));
+      panel.appendChild(ul);
+      var root = br.querySelector('.tree-root');
+      root.setAttribute('role', 'button'); root.setAttribute('aria-controls', 'treePanel');
+      ['click', 'focus'].forEach(function (ev) { root.addEventListener(ev, function () { pickBranch(br); }); }); // not hover: scrolling under a resting mouse would flip it
+      root.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pickBranch(br); } });
+    });
+    $('.tree-branches').after(panel);
+  }
+  function pickBranch(br) {
+    if (!br || br.classList.contains('is-open')) return;
+    branches.forEach(function (b) { b.classList.toggle('is-open', b === br); b.querySelector('.tree-root').setAttribute('aria-expanded', String(b === br)); });
+    var name = br.querySelector('.tree-root span').textContent, count = 0;
+    [].forEach.call(panel.querySelectorAll('ul'), function (ul) { ul.hidden = ul.dataset.branch !== name; if (!ul.hidden) count = ul.querySelectorAll('.tree-node').length; });
+    panel.style.setProperty('--k', getComputedStyle(br).getPropertyValue('--k'));
+    panel.querySelector('.tree-panel-icon').innerHTML = br.querySelector('.tree-root [data-item]').innerHTML;
+    panel.querySelector('b').textContent = name;
+    panel.querySelector('small').textContent = count + ' skills \u00b7 click one to mark it learned';
+    panel.classList.remove('is-swap'); void panel.offsetWidth; panel.classList.add('is-swap');
+  }
+  function firstVisible() { return branches.filter(function (b) { return b.offsetParent; })[0]; }
+  if (panel) {
+    pickBranch(firstVisible());
+    // when the chosen class hides the open branch, open the first one still showing
+    new MutationObserver(function () {
+      var open = branches.filter(function (b) { return b.classList.contains('is-open'); })[0];
+      if (!open || !open.offsetParent) { if (open) open.classList.remove('is-open'); pickBranch(firstVisible()); }
+    }).observe(document.body, { attributes: true, attributeFilter: ['data-cls'] });
+  }
+
   nodes.forEach(function (n) {
     n.addEventListener('mouseenter', function () { trace(n); });
     n.addEventListener('focus', function () { trace(n); });
