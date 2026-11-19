@@ -6,14 +6,17 @@
 @media (prefers-reduced-motion:no-preference){
   /* arriving: the nav slides down, the page comes into focus from a slight zoom */
   .nav{animation:mNavIn .6s var(--m-ease) both}
-  main{animation:mPageIn .8s var(--m-ease) .05s both}
+  main{animation:mPageFade .5s ease-out both}
+  html.m-arrive-zoom main{animation:mPageIn .8s var(--m-ease) both} /* only after a zooming link (motion.js) */
   main.m-enter{animation:mPageIn2 .8s var(--m-ease) both}
   @keyframes mNavIn{from{opacity:0;translate:0 -24px}}
+  @keyframes mPageFade{from{opacity:0}}
   @keyframes mPageIn{from{opacity:0;scale:1.035;filter:blur(10px)}}
   @keyframes mPageIn2{from{opacity:0;scale:1.035;filter:blur(10px)}}
 
   /* leaving: the page blurs and falls back while the clicked thing zooms forward (motion.js) */
   html.m-leave .nav,html.m-leave main{opacity:.15;scale:.97;filter:blur(8px);transition:opacity .45s var(--m-ease),scale .45s var(--m-ease),filter .45s var(--m-ease)}
+  html.m-leave-plain main{opacity:0;transition:opacity .22s ease-out}
   .m-ghost{position:fixed!important;z-index:3000;margin:0!important;pointer-events:none;box-sizing:border-box;rotate:none!important;translate:none!important}
 
   /* blocks drift up into focus as they scroll into view (motion.js sets --m-d for a stagger) */

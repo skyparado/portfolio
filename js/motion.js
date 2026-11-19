@@ -3,6 +3,7 @@
 (function () {
   'use strict';
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  try { if (sessionStorage.getItem('m.arrive-zoom')) { sessionStorage.removeItem('m.arrive-zoom'); document.documentElement.classList.add('m-arrive-zoom'); } } catch (err) {}
 
   // blocks that pop in; elements already handled by older reveal code (.reveal / .one-reveal) are skipped
   var POP = ['.page-banner', '.section-title', '.one-proj', '.one-timeline > li', '.tree-br', '.trophy-slot', '.one-more',
@@ -60,13 +61,19 @@
     var url = new URL(a.href, location.href);
     if (url.origin !== location.origin || !/\.html$|\/$/.test(url.pathname) || (url.pathname === location.pathname && url.hash)) return;
     e.preventDefault();
+    if (a.closest('.nav')) { // top nav: a quick plain fade, no zoom
+      document.documentElement.classList.add('m-leave-plain');
+      setTimeout(function () { location.href = a.href; }, 220);
+      return;
+    }
     ghostOf(a);
+    try { sessionStorage.setItem('m.arrive-zoom', '1'); } catch (err) {} // the next page zooms in to match
     document.documentElement.classList.add('m-leave');
     setTimeout(function () { location.href = a.href; }, 460);
   });
   // coming back with the browser's back button restores the page from cache mid-zoom: undo it
   window.addEventListener('pageshow', function () {
-    document.documentElement.classList.remove('m-leave');
+    document.documentElement.classList.remove('m-leave', 'm-leave-plain');
     [].forEach.call(document.querySelectorAll('.m-ghost'), function (g) { g.remove(); });
   });
 })();
