@@ -40,6 +40,18 @@
     document.documentElement.style.overflow = 'hidden';
     (gate.querySelector('.cls-card.is-current') || cards[0]).focus();
   }
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function enterMain() { // replay the page's arrival once the picker is gone (css/motion.css)
+    var m = document.querySelector('main'); if (!m || calm) return;
+    m.classList.remove('m-enter'); void m.offsetWidth; m.classList.add('m-enter');
+  }
+  function swapIn() { // items the new class reveals animate in
+    if (calm) return;
+    [].forEach.call(document.querySelectorAll('main [data-show], main .cls-sheet'), function (el) {
+      if (!el.offsetParent) return;
+      el.classList.remove('m-swap'); void el.offsetWidth; el.classList.add('m-swap');
+    });
+  }
   function close() {
     if (!valid(load())) return; // nothing chosen yet: the gate stays until a class is picked
     gate.hidden = true;
@@ -53,9 +65,21 @@
       if (j !== undefined) { e.preventDefault(); cards[(j + cards.length) % cards.length].focus(); }
     });
     c.addEventListener('click', function () {
-      var first = !valid(load());
-      save(c.dataset.cls); apply(c.dataset.cls); close();
-      if (!first) document.getElementById('classes').scrollIntoView({ block: 'start' });
+      if (gate.classList.contains('is-picking')) return;
+      var first = !valid(load()), changed = c.dataset.cls !== document.body.dataset.cls;
+      save(c.dataset.cls); apply(c.dataset.cls);
+      if (changed) swapIn();
+      // a little ceremony: the chosen card bounces, the screen lifts away, then the page rises in
+      var wait = calm ? 0 : 380, lift = calm ? 0 : 300;
+      gate.classList.add('is-picking'); c.classList.add('is-picked');
+      setTimeout(function () {
+        gate.classList.add('is-leaving');
+        setTimeout(function () {
+          gate.classList.remove('is-picking', 'is-leaving'); c.classList.remove('is-picked');
+          close(); enterMain();
+          if (!first) document.getElementById('classes').scrollIntoView({ block: 'start' });
+        }, lift);
+      }, wait);
     });
   });
   [].forEach.call(document.querySelectorAll('[data-cls-open]'), function (b) { b.addEventListener('click', open); });
