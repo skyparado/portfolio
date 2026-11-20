@@ -19,6 +19,7 @@ html.zoom-open{overflow:hidden}
 .zd-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
 .zd-chip{padding:3px 9px;border:2px solid var(--line-2);background:var(--bg-2);font:700 11px/1.5 "JetBrains Mono",monospace;letter-spacing:.06em;color:var(--fg)}
 .zd-now{border-color:var(--cyan);color:var(--cyan)}
+.zd-next{border-color:var(--amber);color:var(--amber)}
 .zd-done{border-color:color-mix(in srgb,var(--q) 60%,var(--line-2));color:var(--q)}
 .zd-cat{background:color-mix(in srgb,var(--q) 22%,var(--bg-2));border-color:color-mix(in srgb,var(--q) 55%,var(--line-2))}
 

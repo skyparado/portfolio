@@ -26,14 +26,14 @@
       var role = h4 ? h4.firstChild.textContent.trim() : '';
       var chapter = txt(src.closest('.one-frame') || document, '.one-school h3');
       var bullets = [].map.call(src.querySelectorAll('ul li'), function (li) { return '<li>' + esc(li.textContent.trim()) + '</li>'; }).join('');
-      var now = src.classList.contains('is-now');
+      var now = src.classList.contains('is-now'), next = src.classList.contains('is-next');
       card.classList.add('zd-entry');
       card.innerHTML =
         '<header class="zd-head"><span class="zd-kicker">&#10022; QUEST LOG' + (chapter ? ' &middot; ' + esc(chapter) : '') + '</span></header>' +
         '<div class="zd-badge">' + svg(src, ':scope > [data-item] svg') + '</div>' +
         '<div class="zd-body"><h3>' + esc(role) + '</h3>' + (org ? '<p class="zd-org">' + esc(org) + '</p>' : '') +
         '<div class="zd-chips"><span class="zd-chip zd-when">&#9719; ' + esc(txt(src, '.one-when')) + '</span>' +
-        '<span class="zd-chip ' + (now ? 'zd-now">&#9632; ACTIVE' : 'zd-done">&#10003; CLEARED') + '</span></div>' +
+        '<span class="zd-chip ' + (next ? 'zd-next">&#9654; INCOMING' : now ? 'zd-now">&#9632; ACTIVE' : 'zd-done">&#10003; CLEARED') + '</span></div>' +
         (bullets ? '<ul class="zd-list">' + bullets + '</ul>' : '') + '</div>';
       return card;
     }

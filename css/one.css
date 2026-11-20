@@ -170,6 +170,7 @@ html{scroll-padding-top:104px}
 .one-timeline h4 span{display:block;margin-top:5px;font:500 13px/1.4 "IBM Plex Sans",sans-serif;color:var(--cyan)}
 .one-timeline h4::after{content:"CLEARED";display:table;margin:9px auto 0;padding:0 6px;border:2px solid var(--line-2);font:700 9px/1.7 "JetBrains Mono",monospace;letter-spacing:.08em;color:var(--fg-dim)}
 .one-timeline>li.is-now h4::after{content:"\25A0  ACTIVE";border-color:var(--cyan);color:var(--cyan);animation:one-blink 1.2s steps(2,end) infinite}
+.one-timeline>li.is-next h4::after{content:"\25B6  INCOMING";border-color:var(--amber);color:var(--amber)}
 @keyframes one-blink{50%{opacity:.45}}
 .one-timeline>li:hover{border-color:var(--q);animation:one-swing .8s steps(6,end)}
 @keyframes one-swing{20%{transform:rotate(4deg)}50%{transform:rotate(-3deg)}80%{transform:rotate(1.5deg)}}
