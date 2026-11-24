@@ -76,4 +76,50 @@
     document.documentElement.classList.remove('m-leave', 'm-leave-plain');
     [].forEach.call(document.querySelectorAll('.m-ghost'), function (g) { g.remove(); });
   });
+
+  // ambient pixel motes drifting up behind everything
+  var motes = document.createElement('div');
+  motes.className = 'm-motes';
+  motes.setAttribute('aria-hidden', 'true');
+  for (var m = 0; m < 14; m++) {
+    var dot = document.createElement('i');
+    dot.style.left = Math.random() * 100 + '%';
+    dot.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+    dot.style.animationDuration = 14 + Math.random() * 14 + 's';
+    dot.style.animationDelay = -Math.random() * 28 + 's';
+    motes.appendChild(dot);
+  }
+  document.body.appendChild(motes);
+
+  // every few seconds a random visible icon or sticker does a little wiggle
+  var WIGGLE = '[data-item], .work-icon, .trophy-object, .one-sticker, .cls-sprite, .tag';
+  setInterval(function () {
+    if (document.hidden) return;
+    var seen = [].filter.call(document.querySelectorAll(WIGGLE), function (el) {
+      var r = el.getBoundingClientRect();
+      return r.width && r.bottom > 0 && r.top < innerHeight && !el.closest('dialog:not([open]), [hidden]');
+    });
+    var el = seen[Math.floor(Math.random() * seen.length)];
+    if (!el) return;
+    el.classList.remove('m-wiggle'); void el.offsetWidth; el.classList.add('m-wiggle');
+    el.addEventListener('animationend', function () { el.classList.remove('m-wiggle'); }, { once: true });
+  }, 2200);
+
+  // cursor trail: small pixels pop off the pointer as it moves (mouse only, throttled)
+  if (matchMedia('(pointer: fine)').matches) {
+    var COLORS = ['var(--accent)', 'var(--cyan)', 'var(--amber)', 'var(--purple)'], last = 0;
+    document.addEventListener('pointermove', function (e) {
+      var now = e.timeStamp;
+      if (now - last < 40) return;
+      last = now;
+      var s = document.createElement('i');
+      s.className = 'm-spark';
+      s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+      s.style.background = COLORS[Math.floor(Math.random() * COLORS.length)];
+      s.style.setProperty('--sx', (Math.random() * 24 - 12) + 'px');
+      s.style.setProperty('--sy', (Math.random() * 20 + 6) + 'px');
+      document.body.appendChild(s);
+      s.addEventListener('animationend', function () { s.remove(); });
+    }, { passive: true });
+  }
 })();

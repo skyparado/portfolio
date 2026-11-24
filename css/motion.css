@@ -52,4 +52,28 @@
 
   /* the secret world floats open */
   dialog.quest-dialog[open]{animation:mPop .6s var(--m-ease) both}
+
+  /* ---- hover: cards light up with a pixel shadow, icons hop ---- */
+  :is(.one-proj,.work-card,.cert,.trophy-slot,.chan,.cls-quest,.experience-entry,.honor-item,.term,.home-win){transition:box-shadow .2s var(--m-ease),border-color .2s}
+  :is(.one-proj,.work-card,.cert,.trophy-slot,.chan,.cls-quest,.experience-entry,.honor-item,.term,.home-win):hover{box-shadow:6px 6px 0 var(--accent)}
+  :is(.one-proj,.work-card,.cert,.trophy-slot,.chan,.cls-quest,.experience-entry,.home-win):hover :is([data-item],.work-icon,.trophy-object,.one-sticker){animation:mHop .5s var(--m-spring)}
+  :is(a,button):hover>[data-item]{animation:mHop .5s var(--m-spring)}
+  .page-vignette:hover,.hero-vignette:hover{animation:mWiggle .6s ease-in-out}
+  @keyframes mHop{40%{translate:0 -6px;rotate:-8deg}70%{translate:0 1px;rotate:4deg}}
+
+  /* ---- ambient: things that move on their own so the page never sits still ---- */
+  .page-vignette,.hero-vignette{animation:mBob 3.2s ease-in-out infinite}
+  @keyframes mBob{50%{translate:0 -8px}}
+  .section-title h2::before{animation:mSpin 4s steps(8) infinite}
+  @keyframes mSpin{to{rotate:360deg}}
+  .m-wiggle{animation:mWiggle .7s ease-in-out}  /* motion.js picks a random visible thing every few seconds */
+  @keyframes mWiggle{20%{rotate:-10deg;scale:1.1}40%{rotate:8deg}60%{rotate:-5deg}80%{rotate:3deg}}
+  .m-motes{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+  .m-motes i{position:absolute;bottom:-12px;width:6px;height:6px;background:var(--accent);opacity:0;animation:mMote linear infinite}
+  .m-motes i:nth-child(3n){background:var(--cyan)}.m-motes i:nth-child(3n+1){background:var(--amber)}
+  @keyframes mMote{10%{opacity:.5}90%{opacity:.4}to{opacity:0;translate:var(--dx,20px) -105vh;rotate:180deg}}
+
+  /* ---- cursor: a little trail of pixels (motion.js) ---- */
+  .m-spark{position:fixed;z-index:4000;width:6px;height:6px;margin:-3px 0 0 -3px;pointer-events:none;animation:mSpark .7s ease-out forwards}
+  @keyframes mSpark{to{opacity:0;translate:var(--sx) var(--sy);scale:.2}}
 }
